@@ -1,15 +1,15 @@
 package com.example.medicalqnaclient.datastructures.implementations;
 
-import com.example.medicalqnaclient.datastructures.interfaces.Stack;
+import com.example.medicalqnaclient.datastructures.interfaces.Queue;
 
-public class ArrayQueue<E> implements Stack<E> {
+public class ArrayQueue<E> implements Queue<E> {
     @Override
-    public void push(E element) {
+    public void enqueue(E element) {
 
     }
 
     @Override
-    public E pop() {
+    public E dequeue() {
         return null;
     }
 
