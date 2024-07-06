@@ -98,11 +98,11 @@ public class ArrayStack<E> implements Stack<E> {
 
     @Override
     public boolean isEmpty() {
-        return stack.length == 0;
+        return size() == 0;
     }
 
     @Override
     public int size() {
-        return stack.length;
+        return top + 1;
     }
 }
