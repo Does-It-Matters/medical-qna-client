@@ -9,7 +9,7 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-    <Button onAction="#onHelloButtonClick" prefHeight="150.0" prefWidth="57.0" text="Hello!" />
+    <Button onAction="#onHelloButtonClick" prefHeight="72.0" prefWidth="335.0" text="Hello, My Health Block!" />
 
     <Label fx:id="welcomeText" />
 </VBox>
