@@ -3,6 +3,8 @@ package com.example.medicalqnaclient;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
+import java.io.IOException;
+
 public class HelloController {
     @FXML
     private Label welcomeText;
@@ -10,5 +12,10 @@ public class HelloController {
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
+        try {
+            HelloApplication.setRoot("question-list-view.fxml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
