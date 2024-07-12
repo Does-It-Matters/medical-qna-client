@@ -37,7 +37,7 @@ public class Board {
         this.questionList.setList(questionList);
     }
 
-    public void setUsername() {
+    public void syncUsername() {
         this.menu.setUsername(Session.getUsername());
     }
 
