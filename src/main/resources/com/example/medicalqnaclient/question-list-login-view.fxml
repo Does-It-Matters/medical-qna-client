@@ -4,19 +4,19 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalqnaclient.controllers.user.QuestionListLoginedController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="416.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalqnaclient.controllers.user.QuestionListLoginedController">
    <children>
       <ComboBox fx:id="categoryComboBox" layoutX="16.0" layoutY="71.0" prefHeight="24.0" prefWidth="106.0" promptText="catetory" />
       <ListView fx:id="listView" layoutX="16.0" layoutY="120.0" prefHeight="253.0" prefWidth="499.0" />
       <TextArea fx:id="userQueryTextArea" layoutX="141.0" layoutY="46.0" prefHeight="50.0" prefWidth="297.0" />
-      <Button onAction="#onSearchButtonClick" layoutX="452.0" layoutY="46.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="63.0" text="Search" />
-      <Button onAction="#onLogoutButtonClick" layoutX="526.0" layoutY="14.0" mnemonicParsing="false" text="logout" />
+      <Button layoutX="452.0" layoutY="46.0" mnemonicParsing="false" onAction="#onSearchButtonClick" prefHeight="50.0" prefWidth="63.0" text="Search" />
+      <Button layoutX="526.0" layoutY="14.0" mnemonicParsing="false" onAction="#onLogoutButtonClick" text="logout" />
       <MenuButton fx:id="userNameMenuButton" layoutX="409.0" layoutY="14.0" mnemonicParsing="false" text="user name">
       </MenuButton>
+      <Button layoutX="200.0" layoutY="378.0" mnemonicParsing="false" text="prev" />
+      <Button layoutX="259.0" layoutY="378.0" mnemonicParsing="false" text="next" />
    </children>
 </AnchorPane>

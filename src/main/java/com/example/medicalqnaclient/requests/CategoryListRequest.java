@@ -6,6 +6,6 @@ import java.util.List;
 
 public class CategoryListRequest {
     public static String[] getQuestionCategory() {
-        return new String[]{"TOTAL", "ELDERS"};
+        return new String[]{"My Posts", "My Comments", "TOTAL", "ELDERS", };
     }
 }

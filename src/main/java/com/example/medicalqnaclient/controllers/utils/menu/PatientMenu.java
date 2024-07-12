@@ -11,7 +11,5 @@ public class PatientMenu extends MenuComponent {
     @Override
     protected void setMenuItem() {
         items.add(createMenuItem("Write post", "write-post.fxml"));
-        items.add(createMenuItem("My Posts", "my-posts.fxml"));
-        items.add(createMenuItem("My Comments", "my-comments.fxml"));
     }
 }

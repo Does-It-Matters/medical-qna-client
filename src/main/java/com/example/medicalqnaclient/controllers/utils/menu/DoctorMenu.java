@@ -10,6 +10,5 @@ public class DoctorMenu extends MenuComponent {
 
     @Override
     protected void setMenuItem() {
-        items.add(createMenuItem("My Comments", "my-comments.fxml"));
     }
 }

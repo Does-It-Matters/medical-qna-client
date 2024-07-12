@@ -15,6 +15,8 @@ public abstract class MenuComponent {
 
     public MenuComponent(MenuButton userNameMenuButton) {
         items = new ArrayList<>();
+        items.add(createMenuItem("My Profile", "my-profile.fxml"));
+
         this.userNameMenuButton = userNameMenuButton;
 
         setMenuItem();
