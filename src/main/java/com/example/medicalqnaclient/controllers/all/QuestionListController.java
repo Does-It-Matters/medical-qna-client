@@ -31,7 +31,7 @@ public class QuestionListController {
         category = new Category(categoryComboBox);
         category.setCategory(CategoryListRequest.getQuestionCategory());
 
-        questionList = new QuestionList(listView);
+        questionList = new QuestionList(listView, category);
         questionList.setList(QuestionTitleListRequest.getQuestionList());
     }
 

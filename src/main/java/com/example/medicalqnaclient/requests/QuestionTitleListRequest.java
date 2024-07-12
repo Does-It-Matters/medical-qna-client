@@ -14,4 +14,18 @@ public class QuestionTitleListRequest {
                 new Question(5, "Question 5")
         );
     }
+
+    public static List<Question> getQuestionListByCategory(String category) {
+        switch (category) {
+            case "TOTAL" : return getQuestionList();
+            case "ELDERS" : return List.of(
+                    new Question(1, "ELDERS Question 1"),
+                    new Question(2, "ELDERS Question 2"),
+                    new Question(3, "ELDERS Question 3"),
+                    new Question(4, "ELDERS Question 4"),
+                    new Question(5, "ELDERS Question 5")
+                );
+            default: return getQuestionList();
+        }
+    }
 }
