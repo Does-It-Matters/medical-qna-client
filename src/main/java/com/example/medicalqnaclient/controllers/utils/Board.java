@@ -37,8 +37,8 @@ public class Board {
         this.questionList.setList(questionList);
     }
 
-    public void setUsername(String username) {
-        this.menu.setUsername(username);
+    public void setUsername() {
+        this.menu.setUsername(Session.getUsername());
     }
 
     public void search() {

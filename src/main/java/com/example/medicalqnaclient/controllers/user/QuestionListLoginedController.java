@@ -34,7 +34,7 @@ public class QuestionListLoginedController {
         board = new Board(categoryComboBox, listView, userQueryTextArea, userNameMenuButton);
         board.setCategory(CategoryListRequest.getQuestionCategory());
         board.setList(QuestionTitleListRequest.getQuestionList());
-        board.setUsername(Session.getUsername());
+        board.setUsername();
     }
 
     @FXML
