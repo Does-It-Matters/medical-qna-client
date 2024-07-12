@@ -1,89 +1,44 @@
 package com.example.medicalqnaclient.controllers.user;
 
 import com.example.medicalqnaclient.HelloApplication;
-import com.example.medicalqnaclient.login.Role;
+import com.example.medicalqnaclient.controllers.utils.Category;
+import com.example.medicalqnaclient.controllers.utils.QuestionList;
+import com.example.medicalqnaclient.controllers.utils.UserMenu;
 import com.example.medicalqnaclient.login.Session;
-import javafx.collections.ObservableList;
+import com.example.medicalqnaclient.model.Question;
+import com.example.medicalqnaclient.requests.CategoryListRequest;
+import com.example.medicalqnaclient.requests.QuestionTitleListRequest;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
 import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class QuestionListLoginedController {
+    private Category category;
+    private QuestionList questionList;
+    private UserMenu menu;
+
+    @FXML
+    private ComboBox<String> categoryComboBox;
+
+    @FXML
+    private ListView<Question> listView;
 
     @FXML
     private MenuButton userNameMenuButton;
 
     @FXML
     protected void initialize() {
-        setUsername();
-        setRoleMenu();
-    }
+        category = new Category(categoryComboBox);
+        category.setCategory(CategoryListRequest.getQuestionCategory());
 
-    private void setUsername() {
-        String username = Session.getUsername();
+        questionList = new QuestionList(listView, category);
+        questionList.setList(QuestionTitleListRequest.getQuestionList());
 
-        if (username != null) {
-            userNameMenuButton.setText(username);
-            System.out.println(username);
-        }
-    }
-
-    private void setRoleMenu() {
-        Role role = Session.getRole();
-
-        switch (role) {
-            case PATIENT -> setPatientMenu();
-            case DOCTOR -> setDoctorMenu();
-            case ADMIN -> setAdminMenu();
-            default -> setPatientMenu();
-        };
-    }
-
-    private void setPatientMenu() {
-        List<MenuItem> items = new ArrayList<>();
-
-        items.add(createMenuItem("Write post", "write-post.fxml"));
-        items.add(createMenuItem("My Posts", "my-posts.fxml"));
-        items.add(createMenuItem("My Comments", "my-comments.fxml"));
-
-        updateMenuButtonItems(items);
-    }
-
-    private void setDoctorMenu() {
-        List<MenuItem> items = new ArrayList<>();
-        items.add(createMenuItem("My Comments", "my-comments.fxml"));
-
-        updateMenuButtonItems(items);
-    }
-
-    private void setAdminMenu() {
-        List<MenuItem> items = new ArrayList<>();
-        items.add(createMenuItem("System Monitoring", "system-monitoring.fxml"));
-
-        updateMenuButtonItems(items);
-    }
-
-    private MenuItem createMenuItem(String text, String view) {
-        MenuItem item = new MenuItem(text);
-        item.setOnAction(event -> {
-            try {
-                HelloApplication.setRoot(view);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
-
-        return item;
-    }
-
-    private void updateMenuButtonItems(List<MenuItem> items) {
-        ObservableList<MenuItem> existingItems = userNameMenuButton.getItems();
-        existingItems.clear();
-        existingItems.addAll(items);
+        menu = new UserMenu(userNameMenuButton, Session.getRole());
+        menu.setUsername(Session.getUsername());
     }
 
     @FXML

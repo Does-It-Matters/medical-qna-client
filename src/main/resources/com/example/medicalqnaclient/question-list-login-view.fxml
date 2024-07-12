@@ -12,10 +12,10 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="597.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalqnaclient.controllers.user.QuestionListLoginedController">
    <children>
       <Button onAction="#onLogoutButtonClick" layoutX="526.0" layoutY="14.0" mnemonicParsing="false" text="logout" />
-      <ListView layoutX="16.0" layoutY="120.0" prefHeight="253.0" prefWidth="499.0" />
+      <ListView fx:id="listView" layoutX="16.0" layoutY="120.0" prefHeight="253.0" prefWidth="499.0" />
       <Button layoutX="452.0" layoutY="46.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="63.0" text="Search" />
       <TextArea layoutX="141.0" layoutY="46.0" prefHeight="50.0" prefWidth="297.0" />
-      <ComboBox layoutX="16.0" layoutY="71.0" prefHeight="24.0" prefWidth="106.0" promptText="catetory" />
+      <ComboBox fx:id="categoryComboBox" layoutX="16.0" layoutY="71.0" prefHeight="24.0" prefWidth="106.0" promptText="catetory" />
       <MenuButton fx:id="userNameMenuButton" layoutX="409.0" layoutY="14.0" mnemonicParsing="false" text="user name">
       </MenuButton>
    </children>
