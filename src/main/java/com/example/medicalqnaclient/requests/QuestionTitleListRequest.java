@@ -28,4 +28,14 @@ public class QuestionTitleListRequest {
             default: return getQuestionList();
         }
     }
+
+    public static List<Question> search(String symptom) {
+        return List.of(
+                new Question(1, "Search 1"),
+                new Question(2, "Search 2"),
+                new Question(3, "Search 3"),
+                new Question(4, "Search 4"),
+                new Question(5, "Search 5")
+        );
+    }
 }

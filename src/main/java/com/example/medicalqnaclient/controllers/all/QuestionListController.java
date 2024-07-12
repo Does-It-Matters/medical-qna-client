@@ -26,6 +26,12 @@ public class QuestionListController {
     @FXML
     private ListView<Question> listView;
 
+
+    @FXML
+    protected void onSearchButtonClick() {
+        questionList.setList(QuestionTitleListRequest.search("symptom"));
+    }
+
     @FXML
     protected void initialize() {
         category = new Category(categoryComboBox);
