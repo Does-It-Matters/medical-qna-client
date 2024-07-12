@@ -1,6 +1,7 @@
 package com.example.medicalqnaclient.controllers.user;
 
 import com.example.medicalqnaclient.HelloApplication;
+import com.example.medicalqnaclient.controllers.utils.Board;
 import com.example.medicalqnaclient.controllers.utils.Category;
 import com.example.medicalqnaclient.controllers.utils.QuestionList;
 import com.example.medicalqnaclient.controllers.utils.UserMenu;
@@ -16,9 +17,7 @@ import javafx.scene.control.MenuButton;
 import java.io.IOException;
 
 public class QuestionListLoginedController {
-    private Category category;
-    private QuestionList questionList;
-    private UserMenu menu;
+    private Board board;
 
     @FXML
     private ComboBox<String> categoryComboBox;
@@ -31,14 +30,10 @@ public class QuestionListLoginedController {
 
     @FXML
     protected void initialize() {
-        category = new Category(categoryComboBox);
-        category.setCategory(CategoryListRequest.getQuestionCategory());
-
-        questionList = new QuestionList(listView, category);
-        questionList.setList(QuestionTitleListRequest.getQuestionList());
-
-        menu = new UserMenu(userNameMenuButton, Session.getRole());
-        menu.setUsername(Session.getUsername());
+        board = new Board(categoryComboBox, listView, userNameMenuButton);
+        board.setCategory(CategoryListRequest.getQuestionCategory());
+        board.setList(QuestionTitleListRequest.getQuestionList());
+        board.setUsername(Session.getUsername());
     }
 
     @FXML

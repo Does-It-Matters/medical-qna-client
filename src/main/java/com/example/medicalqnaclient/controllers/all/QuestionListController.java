@@ -1,6 +1,7 @@
 package com.example.medicalqnaclient.controllers.all;
 
 import com.example.medicalqnaclient.HelloApplication;
+import com.example.medicalqnaclient.controllers.utils.Board;
 import com.example.medicalqnaclient.controllers.utils.Category;
 import com.example.medicalqnaclient.controllers.utils.QuestionList;
 import com.example.medicalqnaclient.model.Question;
@@ -17,8 +18,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class QuestionListController {
-    private Category category;
-    private QuestionList questionList;
+    private Board board;
 
     @FXML
     private ComboBox<String> categoryComboBox;
@@ -26,19 +26,16 @@ public class QuestionListController {
     @FXML
     private ListView<Question> listView;
 
-
     @FXML
     protected void onSearchButtonClick() {
-        questionList.setList(QuestionTitleListRequest.search("symptom"));
+        board.setList(QuestionTitleListRequest.search("symptom"));
     }
 
     @FXML
     protected void initialize() {
-        category = new Category(categoryComboBox);
-        category.setCategory(CategoryListRequest.getQuestionCategory());
-
-        questionList = new QuestionList(listView, category);
-        questionList.setList(QuestionTitleListRequest.getQuestionList());
+        board = new Board(categoryComboBox, listView);
+        board.setCategory(CategoryListRequest.getQuestionCategory());
+        board.setList(QuestionTitleListRequest.getQuestionList());
     }
 
     @FXML
