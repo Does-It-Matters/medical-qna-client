@@ -1,5 +1,5 @@
 package com.example.medicalqnaclient.login;
 
 public enum Role {
-    PATIENT, DOCTOR, ADMIN;
+    PATIENT, DOCTOR, ADMIN, UNKNOWN;
 }
