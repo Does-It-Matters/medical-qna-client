@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 
 import java.io.IOException;
 import java.util.List;
@@ -27,15 +28,18 @@ public class QuestionListController {
     private ListView<Question> listView;
 
     @FXML
-    protected void onSearchButtonClick() {
-        board.setList(QuestionTitleListRequest.search("symptom"));
-    }
+    private TextArea userQueryTextArea;
 
     @FXML
     protected void initialize() {
-        board = new Board(categoryComboBox, listView);
+        board = new Board(categoryComboBox, listView, userQueryTextArea);
         board.setCategory(CategoryListRequest.getQuestionCategory());
         board.setList(QuestionTitleListRequest.getQuestionList());
+    }
+
+    @FXML
+    protected void onSearchButtonClick() {
+        board.search();
     }
 
     @FXML
