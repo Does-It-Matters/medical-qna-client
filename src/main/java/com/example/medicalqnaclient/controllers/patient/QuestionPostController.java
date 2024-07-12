@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 
 import java.io.IOException;
 
-public class WritePostController {
+public class QuestionPostController {
     @FXML
     protected void onHomeButtonClick() {
         try {
