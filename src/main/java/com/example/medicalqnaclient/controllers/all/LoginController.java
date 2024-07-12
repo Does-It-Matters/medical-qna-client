@@ -46,6 +46,25 @@ public class LoginController {
         }
     }
 
+    @FXML
+    protected void onPatientSignUpButtonClick() {
+        try {
+            HelloApplication.setRoot("patient-sign-up.fxml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    protected void onDoctorSignUpButtonClick() {
+        try {
+            HelloApplication.setRoot("doctor-sign-up.fxml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     private void loginFail() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Login failed");

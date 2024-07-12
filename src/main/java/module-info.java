@@ -20,4 +20,6 @@ module com.example.medicalqnaclient {
     opens com.example.medicalqnaclient.controllers.patient to javafx.fxml;
     exports com.example.medicalqnaclient.controllers.admin;
     opens com.example.medicalqnaclient.controllers.admin to javafx.fxml;
+    exports com.example.medicalqnaclient.controllers.nonuser;
+    opens com.example.medicalqnaclient.controllers.nonuser to javafx.fxml;
 }
