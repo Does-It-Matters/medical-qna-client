@@ -27,7 +27,20 @@
 
 <br>
 
+### Layered Architecture
+| |계층|역할|
+|-|-|-|
+|(1)|controllers|ui 입출력 전담|
+|(2)|business logic|데이터 처리 로직, 핵심 비즈니스 로직 처리|
+|(3)|out|데이터베이스, 파일, 네트워크 작업 처리|
+
+<br>
+
 ### 적용된 디자인패턴 
+| |패턴|적용 내용|
+|-|-|-|
+|(1)|Observer Pattern|카테고리 상태 관찰하여 질문 리스트 update|
+|(2)|Static Factory Method|사용자(환자, 의사, 운영자)에 따라 메뉴 버튼 아이템 변경|
 
 <br>
 
