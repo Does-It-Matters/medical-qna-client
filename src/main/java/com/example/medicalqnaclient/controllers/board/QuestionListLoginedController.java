@@ -1,8 +1,8 @@
-package com.example.medicalqnaclient.controllers.user;
+package com.example.medicalqnaclient.controllers.board;
 
 import com.example.medicalqnaclient.HelloApplication;
 import com.example.medicalqnaclient.businesslogic.board.Board;
-import com.example.medicalqnaclient.businesslogic.login.Session;
+import com.example.medicalqnaclient.businesslogic.user.Session;
 import com.example.medicalqnaclient.businesslogic.question.Question;
 import com.example.medicalqnaclient.out.requests.CategoryListRequest;
 import com.example.medicalqnaclient.out.requests.QuestionTitleListRequest;

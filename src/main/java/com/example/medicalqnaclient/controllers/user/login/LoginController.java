@@ -1,7 +1,7 @@
-package com.example.medicalqnaclient.controllers.all;
+package com.example.medicalqnaclient.controllers.user.login;
 
 import com.example.medicalqnaclient.HelloApplication;
-import com.example.medicalqnaclient.businesslogic.login.Authentication;
+import com.example.medicalqnaclient.businesslogic.user.Authentication;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;

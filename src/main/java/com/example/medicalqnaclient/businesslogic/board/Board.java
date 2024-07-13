@@ -1,7 +1,7 @@
 package com.example.medicalqnaclient.businesslogic.board;
 
 import com.example.medicalqnaclient.businesslogic.board.menu.UserMenu;
-import com.example.medicalqnaclient.businesslogic.login.Session;
+import com.example.medicalqnaclient.businesslogic.user.Session;
 import com.example.medicalqnaclient.businesslogic.question.Question;
 import com.example.medicalqnaclient.out.requests.QuestionTitleListRequest;
 import javafx.scene.control.ComboBox;

@@ -1,11 +1,11 @@
-package com.example.medicalqnaclient.controllers.nonuser;
+package com.example.medicalqnaclient.controllers.user.signup;
 
 import com.example.medicalqnaclient.HelloApplication;
 import javafx.fxml.FXML;
 
 import java.io.IOException;
 
-public class PatientSignUpController {
+public class DoctorSignUpController {
     @FXML
     protected void onHomeButtonClick() {
         try {

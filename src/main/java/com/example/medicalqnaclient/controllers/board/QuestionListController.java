@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.controllers.all;
+package com.example.medicalqnaclient.controllers.board;
 
 import com.example.medicalqnaclient.HelloApplication;
 import com.example.medicalqnaclient.businesslogic.board.Board;

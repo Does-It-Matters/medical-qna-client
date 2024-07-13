@@ -2,7 +2,7 @@ package com.example.medicalqnaclient.businesslogic.board.menu;
 
 import com.example.medicalqnaclient.businesslogic.board.menu.factorymethod.MenuComponent;
 import com.example.medicalqnaclient.businesslogic.board.menu.factorymethod.MenuFactory;
-import com.example.medicalqnaclient.businesslogic.login.Role;
+import com.example.medicalqnaclient.businesslogic.user.Role;
 import javafx.scene.control.MenuButton;
 
 public class UserMenu {

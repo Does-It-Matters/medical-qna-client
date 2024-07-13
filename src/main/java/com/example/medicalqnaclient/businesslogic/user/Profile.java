@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.businesslogic.login;
+package com.example.medicalqnaclient.businesslogic.user;
 
 import javafx.scene.control.Label;
 

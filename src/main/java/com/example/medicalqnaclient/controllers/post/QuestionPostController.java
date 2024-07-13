@@ -1,11 +1,11 @@
-package com.example.medicalqnaclient.controllers.patient;
+package com.example.medicalqnaclient.controllers.post;
 
 import com.example.medicalqnaclient.HelloApplication;
 import javafx.fxml.FXML;
 
 import java.io.IOException;
 
-public class MyPostsController {
+public class QuestionPostController {
     @FXML
     protected void onHomeButtonClick() {
         try {

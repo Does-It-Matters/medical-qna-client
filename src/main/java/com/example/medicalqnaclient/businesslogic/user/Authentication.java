@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.businesslogic.login;
+package com.example.medicalqnaclient.businesslogic.user;
 
 import com.example.medicalqnaclient.out.requests.LoginRequest;
 import javafx.scene.control.PasswordField;

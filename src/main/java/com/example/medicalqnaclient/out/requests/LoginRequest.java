@@ -1,6 +1,6 @@
 package com.example.medicalqnaclient.out.requests;
 
-import com.example.medicalqnaclient.businesslogic.login.Role;
+import com.example.medicalqnaclient.businesslogic.user.Role;
 
 //
 //import java.io.IOException;

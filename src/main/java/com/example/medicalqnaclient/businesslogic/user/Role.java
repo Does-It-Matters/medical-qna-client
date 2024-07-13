@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.businesslogic.login;
+package com.example.medicalqnaclient.businesslogic.user;
 
 public enum Role {
     PATIENT, DOCTOR, ADMIN, UNKNOWN;
