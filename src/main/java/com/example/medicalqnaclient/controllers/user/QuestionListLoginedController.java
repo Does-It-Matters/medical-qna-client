@@ -1,11 +1,11 @@
 package com.example.medicalqnaclient.controllers.user;
 
 import com.example.medicalqnaclient.HelloApplication;
-import com.example.medicalqnaclient.controllers.utils.Board;
-import com.example.medicalqnaclient.login.Session;
-import com.example.medicalqnaclient.model.Question;
-import com.example.medicalqnaclient.requests.CategoryListRequest;
-import com.example.medicalqnaclient.requests.QuestionTitleListRequest;
+import com.example.medicalqnaclient.businesslogic.board.Board;
+import com.example.medicalqnaclient.businesslogic.login.Session;
+import com.example.medicalqnaclient.businesslogic.question.Question;
+import com.example.medicalqnaclient.out.requests.CategoryListRequest;
+import com.example.medicalqnaclient.out.requests.QuestionTitleListRequest;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;

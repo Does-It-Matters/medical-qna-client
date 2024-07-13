@@ -1,7 +1,7 @@
 package com.example.medicalqnaclient.controllers.user;
 
 import com.example.medicalqnaclient.HelloApplication;
-import com.example.medicalqnaclient.controllers.utils.Profile;
+import com.example.medicalqnaclient.businesslogic.login.Profile;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 

@@ -1,22 +1,16 @@
 package com.example.medicalqnaclient.controllers.all;
 
 import com.example.medicalqnaclient.HelloApplication;
-import com.example.medicalqnaclient.controllers.utils.Board;
-import com.example.medicalqnaclient.controllers.utils.Category;
-import com.example.medicalqnaclient.controllers.utils.QuestionList;
-import com.example.medicalqnaclient.model.Question;
-import com.example.medicalqnaclient.requests.CategoryListRequest;
-import com.example.medicalqnaclient.requests.QuestionTitleListRequest;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import com.example.medicalqnaclient.businesslogic.board.Board;
+import com.example.medicalqnaclient.businesslogic.question.Question;
+import com.example.medicalqnaclient.out.requests.CategoryListRequest;
+import com.example.medicalqnaclient.out.requests.QuestionTitleListRequest;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 
 import java.io.IOException;
-import java.util.List;
 
 public class QuestionListController {
     private Board board;
