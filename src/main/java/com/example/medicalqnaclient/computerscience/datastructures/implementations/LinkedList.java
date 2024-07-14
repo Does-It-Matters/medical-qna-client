@@ -95,24 +95,54 @@ public class LinkedList<E> implements List<E> {
 
     @Override
     public void remove(int index) {
+        // index 범위, size 관련 exception 체크 예정
 
+        if (index == 0) {
+            head = null;
+            return;
+        }
+
+        Node<E> previous = null;
+        Node<E> current = head;
+        for (int i = 0; i < index; i++) {
+            previous = current;
+            current = current.next;
+        }
+
+        previous.next = current.next;
+        size--;
     }
 
-    public void removeFirst(E e) {
+    public void removeFirst() throws Exception {
+        if (size <= 0) {
+            throw new Exception("Empty can't remove");
+        }
 
+        head = head.next;
+        size--;
     }
 
-    public void removeLast(E e) {
+    public void removeLast() {
+        if (head == null) {
+            return;
+        }
 
+        Node<E> current;
+        for (current = head; current.next != null; current = current.next) {
+            ;
+        }
+
+        current = null;
+        size--;
     }
 
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return size == 0;
     }
 }
