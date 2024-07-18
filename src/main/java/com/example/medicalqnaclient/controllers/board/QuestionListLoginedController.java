@@ -3,7 +3,7 @@ package com.example.medicalqnaclient.controllers.board;
 import com.example.medicalqnaclient.HelloApplication;
 import com.example.medicalqnaclient.businesslogic.board.Board;
 import com.example.medicalqnaclient.businesslogic.user.Session;
-import com.example.medicalqnaclient.businesslogic.question.Question;
+import com.example.medicalqnaclient.businesslogic.question.QuestionTitle;
 import com.example.medicalqnaclient.out.network.user.requests.CategoryListRequest;
 import com.example.medicalqnaclient.out.network.user.requests.QuestionTitleListRequest;
 import javafx.fxml.FXML;
@@ -21,7 +21,7 @@ public class QuestionListLoginedController {
     private ComboBox<String> categoryComboBox;
 
     @FXML
-    private ListView<Question> listView;
+    private ListView<QuestionTitle> listView;
 
     @FXML
     private MenuButton userNameMenuButton;
