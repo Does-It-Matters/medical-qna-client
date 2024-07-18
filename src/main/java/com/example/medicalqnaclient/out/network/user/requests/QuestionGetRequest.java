@@ -5,6 +5,7 @@ import com.example.medicalqnaclient.out.network.config.ServerConfig;
 import com.example.medicalqnaclient.out.network.user.requests.responses.QuestionCategory;
 import com.example.medicalqnaclient.out.network.user.requests.responses.QuestionTitleListResponse;
 import com.example.medicalqnaclient.out.network.user.requests.responses.Response;
+import com.example.medicalqnaclient.out.network.user.requests.responses.WrittenQuestion;
 import com.example.medicalqnaclient.out.network.utils.Get;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -13,6 +14,18 @@ import java.util.List;
 
 public class QuestionGetRequest {
     private static final ObjectMapper objectMapper = new ObjectMapper();
+    public static WrittenQuestion getWrittenQuestion(int questionId) {
+        String url = ServerConfig.RUNNING.getBaseUrl() + "/api/v2/question/" + questionId;
+        try {
+            Response response = Get.getResponse(url);
+            WrittenQuestion writtenQuestion = objectMapper.readValue(response.getBody(), WrittenQuestion.class);
+            // 필요한 경우 상태 코드 처리
+            return writtenQuestion;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
     public static List<QuestionTitle> getQuestionListAll() {
 //        String encodedQueryString = URLEncoder.encode(queryString, StandardCharsets.UTF_8); 안전하게 url 인코딩 처리하기

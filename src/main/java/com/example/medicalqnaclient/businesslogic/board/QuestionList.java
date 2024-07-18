@@ -1,8 +1,10 @@
 package com.example.medicalqnaclient.businesslogic.board;
 
+import com.example.medicalqnaclient.HelloApplication;
 import com.example.medicalqnaclient.businesslogic.board.observerpattern.Observer;
 import com.example.medicalqnaclient.businesslogic.board.observerpattern.Subject;
 import com.example.medicalqnaclient.businesslogic.question.QuestionTitle;
+import com.example.medicalqnaclient.businesslogic.user.Session;
 import com.example.medicalqnaclient.out.network.user.requests.QuestionGetRequest;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,6 +25,11 @@ public class QuestionList implements Observer {
         listView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
                 handleSelectedQuestion(newValue);
+                try {
+                    HelloApplication.setRoot("question-view.fxml");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
     }
@@ -34,11 +41,7 @@ public class QuestionList implements Observer {
     }
 
     private void handleSelectedQuestion(QuestionTitle questionTitle) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Selected Question");
-        alert.setHeaderText(null);
-        alert.setContentText("question id: " + questionTitle.getQuestionId());
-        alert.showAndWait();
+        Session.setQuestionId(questionTitle.getQuestionId());
     }
 
     @Override

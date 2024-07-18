@@ -4,6 +4,7 @@ public class Session {
     private static String uid;
     private static String username;
     private static Role role;
+    private static int questionId;
 
     public static void set(String uid, String username, Role role) {
         setUid(uid);
@@ -23,6 +24,10 @@ public class Session {
         Session.role = role;
     }
 
+    public static void setQuestionId(int questionId) {
+        Session.questionId = questionId;
+    }
+
     public static String getUid() {
         return Session.uid;
     }
@@ -33,6 +38,10 @@ public class Session {
 
     public static Role getRole() {
         return Session.role;
+    }
+
+    public static int getQuestionId() {
+        return Session.questionId;
     }
 
     public static void clear() {
