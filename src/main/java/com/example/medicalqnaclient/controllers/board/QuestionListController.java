@@ -3,8 +3,8 @@ package com.example.medicalqnaclient.controllers.board;
 import com.example.medicalqnaclient.HelloApplication;
 import com.example.medicalqnaclient.businesslogic.board.Board;
 import com.example.medicalqnaclient.businesslogic.question.QuestionTitle;
-import com.example.medicalqnaclient.out.network.user.requests.CategoryListRequest;
-import com.example.medicalqnaclient.out.network.user.requests.QuestionTitleListRequest;
+import com.example.medicalqnaclient.out.network.user.requests.QuestionGetRequest;
+import com.example.medicalqnaclient.out.network.user.requests.responses.QuestionCategory;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
@@ -27,8 +27,8 @@ public class QuestionListController {
     @FXML
     protected void initialize() {
         board = new Board(categoryComboBox, listView, userQueryTextArea);
-        board.setCategory(CategoryListRequest.getQuestionCategory());
-        board.setList(QuestionTitleListRequest.getQuestionList());
+        board.setCategory(QuestionCategory.getQuestionCategory());
+        board.setList(QuestionGetRequest.getQuestionListAll());
     }
 
     @FXML

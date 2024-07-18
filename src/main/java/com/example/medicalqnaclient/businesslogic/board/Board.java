@@ -3,7 +3,7 @@ package com.example.medicalqnaclient.businesslogic.board;
 import com.example.medicalqnaclient.businesslogic.board.menu.UserMenu;
 import com.example.medicalqnaclient.businesslogic.user.Session;
 import com.example.medicalqnaclient.businesslogic.question.QuestionTitle;
-import com.example.medicalqnaclient.out.network.user.requests.QuestionTitleListRequest;
+import com.example.medicalqnaclient.out.network.user.requests.QuestionGetRequest;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MenuButton;
@@ -43,6 +43,6 @@ public class Board {
     }
 
     public void search() {
-        questionList.setList(QuestionTitleListRequest.search(userQueryTextArea.getText()));
+        questionList.setList(QuestionGetRequest.search(userQueryTextArea.getText()));
     }
 }

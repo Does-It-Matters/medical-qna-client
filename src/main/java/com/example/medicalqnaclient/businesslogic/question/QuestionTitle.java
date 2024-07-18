@@ -4,6 +4,8 @@ public class QuestionTitle {
     private int questionId;
     private String title;
 
+    public QuestionTitle() {}
+
     public QuestionTitle(int questionId, String title) {
         this.questionId = questionId;
         this.title = title;

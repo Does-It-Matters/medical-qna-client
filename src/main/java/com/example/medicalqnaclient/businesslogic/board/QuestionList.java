@@ -3,7 +3,7 @@ package com.example.medicalqnaclient.businesslogic.board;
 import com.example.medicalqnaclient.businesslogic.board.observerpattern.Observer;
 import com.example.medicalqnaclient.businesslogic.board.observerpattern.Subject;
 import com.example.medicalqnaclient.businesslogic.question.QuestionTitle;
-import com.example.medicalqnaclient.out.network.user.requests.QuestionTitleListRequest;
+import com.example.medicalqnaclient.out.network.user.requests.QuestionGetRequest;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
@@ -43,7 +43,7 @@ public class QuestionList implements Observer {
 
     @Override
     public void update(Subject subject) {
-        List<QuestionTitle> updatedQuestionTitles = QuestionTitleListRequest.getQuestionListByCategory(category.getState());
+        List<QuestionTitle> updatedQuestionTitles = QuestionGetRequest.getQuestionListByCategory(category.getState());
         setList(updatedQuestionTitles);
     }
 }
