@@ -1,6 +1,7 @@
 package com.example.medicalqnaclient.businesslogic.user;
 
-import com.example.medicalqnaclient.out.requests.LoginRequest;
+import com.example.medicalqnaclient.out.network.user.requests.LoginRequest;
+import com.example.medicalqnaclient.out.network.user.requests.responses.LoginResponse;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -17,23 +18,12 @@ public class Authentication {
         String uid = useridField.getText();
         String password = passwordField.getText();
 
-        Role role = LoginRequest.login(uid, password);
+        LoginResponse response = LoginRequest.post(uid, password);
 
-        if (role == Role.UNKNOWN) {
+        if (response.getRole() == Role.UNKNOWN) {
             throw new Exception("check id or password");
         }
 
-        Session.set(uid, uid, role);
-
-//            HttpURLConnection conn = LoginRequest.post(username, password);
-//            int responsecode = conn.getResponseCode();
-//
-//            switch (responsecode) {
-//                case HttpURLConnection.HTTP_OK:
-//                    HelloApplication.setRoot("question-list-view.fxml");
-//                    break;
-//                default:
-//                    loginFail();
-//            }
+        Session.set(response.getId(), response.getId(), response.getRole());
     }
 }

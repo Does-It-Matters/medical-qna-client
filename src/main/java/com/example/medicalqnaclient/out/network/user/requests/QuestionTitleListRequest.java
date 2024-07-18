@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.out.requests;
+package com.example.medicalqnaclient.out.network.user.requests;
 
 import com.example.medicalqnaclient.businesslogic.question.Question;
 

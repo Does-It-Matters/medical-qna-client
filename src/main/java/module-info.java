@@ -7,6 +7,10 @@ module com.example.medicalqnaclient {
     requires com.dlsc.formsfx;
     requires org.kordamp.ikonli.javafx;
     requires eu.hansolo.tilesfx;
+    requires java.net.http;
+    requires com.fasterxml.jackson.databind;
+    exports com.example.medicalqnaclient.out.network.user.requests.responses;
+    exports com.example.medicalqnaclient.businesslogic.user;
 
     opens com.example.medicalqnaclient to javafx.fxml;
     exports com.example.medicalqnaclient;

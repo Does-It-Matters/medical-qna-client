@@ -3,7 +3,7 @@ package com.example.medicalqnaclient.businesslogic.board;
 import com.example.medicalqnaclient.businesslogic.board.observerpattern.Observer;
 import com.example.medicalqnaclient.businesslogic.board.observerpattern.Subject;
 import com.example.medicalqnaclient.businesslogic.question.Question;
-import com.example.medicalqnaclient.out.requests.QuestionTitleListRequest;
+import com.example.medicalqnaclient.out.network.user.requests.QuestionTitleListRequest;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
