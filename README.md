@@ -42,7 +42,7 @@
 |(1)|Observer Pattern|카테고리 상태 관찰하여 질문 리스트 update|
 |(2)|Static Factory Method|사용자(환자, 의사, 운영자)에 따라 메뉴 버튼 아이템 변경|
 |(3)|Template Method Pattern|(2) 정적 팩토리 메소드 패턴과 함께 활용|
-|(4)|Blocking Queue와 <br> Producer-Consumer Pattern|로그를 전송받는 것와 처리하는 것을 두 Thread로 분리하여 <br> 실시간 모니터링 향상 목표 예정|
+|(4)|Blocking Queue와 <br> Producer-Consumer Pattern|로그를 전송받는 것과 처리하는 것을 두 Thread로 분리하여 <br> 실시간 모니터링 향상 목표 예정|
 
 <br>
 
