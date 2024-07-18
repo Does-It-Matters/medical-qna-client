@@ -2,6 +2,7 @@ package com.example.medicalqnaclient.controllers.post;
 
 import com.example.medicalqnaclient.HelloApplication;
 import com.example.medicalqnaclient.businesslogic.user.Session;
+import com.example.medicalqnaclient.out.network.user.requests.QuestionDeleteRequest;
 import com.example.medicalqnaclient.out.network.user.requests.QuestionGetRequest;
 import com.example.medicalqnaclient.out.network.user.requests.responses.WrittenQuestion;
 import javafx.fxml.FXML;
@@ -52,8 +53,11 @@ public class QuestionController {
     @FXML
     protected void onDeleteButtonClick() {
         try {
+            QuestionDeleteRequest.delete(Session.getQuestionId());
             HelloApplication.setRoot("question-list-login-view.fxml");
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
