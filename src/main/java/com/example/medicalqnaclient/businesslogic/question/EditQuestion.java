@@ -1,35 +1,32 @@
 package com.example.medicalqnaclient.businesslogic.question;
 
-import com.example.medicalqnaclient.businesslogic.user.Session;
 import com.example.medicalqnaclient.out.network.user.requests.QuestionEditRequest;
-import com.example.medicalqnaclient.out.network.user.requests.QuestionEnrollRequest;
 import com.example.medicalqnaclient.out.network.user.requests.responses.QuestionEditResponse;
-import com.example.medicalqnaclient.out.network.user.requests.responses.QuestionEnrollResponse;
 
-public class Question {
-    private String userId;
+public class EditQuestion {
+    private int questionId;
     private String title;
     private String symptom;
     private String content;
 
-    public Question(String id, String title, String symptom, String content) {
-        this.userId = id;
+    public EditQuestion(int questionId, String title, String symptom, String content) {
+        this.questionId = questionId;
         this.title = title;
         this.symptom = symptom;
         this.content = content;
     }
 
-    public String enroll() throws Exception {
-        QuestionEnrollResponse response = QuestionEnrollRequest.post(this);
+    public String edit() throws Exception {
+        QuestionEditResponse response = QuestionEditRequest.patch(this);
         return response.getResult();
     }
 
-    public String getUserId() {
-        return userId;
+    public int getQuestionId() {
+        return questionId;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setQuestionId(int questionId) {
+        this.questionId = questionId;
     }
 
     public String getTitle() {

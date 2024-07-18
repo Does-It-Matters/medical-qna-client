@@ -43,7 +43,7 @@ public class QuestionController {
     @FXML
     protected void onEditButtonClick() {
         try {
-            HelloApplication.setRoot("question-list-login-view.fxml");
+            HelloApplication.setRoot("question-edit.fxml");
         } catch (IOException e) {
             e.printStackTrace();
         }
