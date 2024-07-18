@@ -6,9 +6,13 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalqnaclient.controllers.user.signup.DoctorSignUpController">
    <children>
-      <TextField layoutX="194.0" layoutY="108.0" promptText="id" />
-      <TextField layoutX="194.0" layoutY="144.0" promptText="password" />
-      <Button layoutX="245.0" layoutY="229.0" mnemonicParsing="false" onAction="#onSignUpButtonClick" text="Sign Up" />
+      <TextField fx:id="id" layoutX="194.0" layoutY="66.0" promptText="id" />
+      <TextField fx:id="password" layoutX="194.0" layoutY="108.0" promptText="password" />
+      <TextField fx:id="name" layoutX="194.0" layoutY="148.0" promptText="name" />
+      <TextField fx:id="field" layoutX="194.0" layoutY="188.0" promptText="field" />
+      <TextField fx:id="hospital" layoutX="194.0" layoutY="232.0" promptText="hospital" />
+      <TextField fx:id="introduction" layoutX="194.0" layoutY="273.0" promptText="introduction" />
+      <Button layoutX="245.0" layoutY="324.0" mnemonicParsing="false" onAction="#onSignUpButtonClick" text="Sign Up" />
       <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#onHomeButtonClick" text="Home" />
    </children>
 </AnchorPane>
