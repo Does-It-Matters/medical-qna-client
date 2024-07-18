@@ -11,6 +11,7 @@ module com.example.medicalqnaclient {
     requires com.fasterxml.jackson.databind;
     exports com.example.medicalqnaclient.out.network.user.requests.responses;
     exports com.example.medicalqnaclient.businesslogic.user;
+    exports com.example.medicalqnaclient.businesslogic.question;
 
     opens com.example.medicalqnaclient to javafx.fxml;
     exports com.example.medicalqnaclient;
