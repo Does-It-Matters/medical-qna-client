@@ -4,12 +4,3 @@ controller를 위한 Exception 패키지
 
 예시 
 - 편집 권한이 없는 경우 
-
-실제 
-- 경우1 ~~
-<br> 예외: A Exception
-<br> 처리: 
-<br>
-- 경우2 ~~
-<br> 예외: B Exception
-<br> 처리: 
