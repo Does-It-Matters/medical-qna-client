@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalqnaclient.controllers.post.QuestionPostController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalqnaclient.user.post.QuestionPostController">
    <children>
       <ComboBox layoutX="21.0" layoutY="56.0" prefWidth="150.0" promptText="Body Part" />
       <ComboBox layoutX="21.0" layoutY="90.0" prefWidth="150.0" promptText="Category" />
