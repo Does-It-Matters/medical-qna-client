@@ -1,9 +1,9 @@
-package com.example.medicalqnaclient.user.state;
+package com.example.medicalqnaclient.user.state.factory;
 
 import com.example.medicalqnaclient.user.meditator.User;
 
 class Admin implements User {
-    private static User admin = new Admin();
+    private static final User admin = new Admin();
 
     private Admin () {}
 

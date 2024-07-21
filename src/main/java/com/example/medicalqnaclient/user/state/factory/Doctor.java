@@ -1,9 +1,9 @@
-package com.example.medicalqnaclient.user.state;
+package com.example.medicalqnaclient.user.state.factory;
 
 import com.example.medicalqnaclient.user.meditator.User;
 
 class Doctor implements User {
-    private static User doctor = new Doctor();
+    private static final User doctor = new Doctor();
 
     private Doctor() {}
 
