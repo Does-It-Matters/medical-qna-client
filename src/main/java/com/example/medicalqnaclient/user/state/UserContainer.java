@@ -1,6 +1,7 @@
 package com.example.medicalqnaclient.user.state;
 
 import com.example.medicalqnaclient.HelloApplication;
+import com.example.medicalqnaclient.controller.Fxml;
 import com.example.medicalqnaclient.user.meditator.User;
 import com.example.medicalqnaclient.user.state.factory.UserFactory;
 import com.example.medicalqnaclient.user.state.factory.UserType;
@@ -27,7 +28,7 @@ public class UserContainer implements User, Start {
 
     public UserContainer(Stage primaryStage, String title) throws IOException {
         this.primaryStage = primaryStage;
-        setupScene("hello-view.fxml", title, 900, 600);
+        setupScene(Fxml.START.getFxml(), title, 900, 600);
         state = UserFactory.getInstance(UserType.ALL);
     }
 

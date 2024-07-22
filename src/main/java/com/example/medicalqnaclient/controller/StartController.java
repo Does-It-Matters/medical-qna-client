@@ -6,7 +6,7 @@ import javafx.scene.control.Label;
 /**
  * 프로그램 실행 첫 화면
  */
-public class HelloController {
+public class StartController {
     @FXML
     private Label welcomeText;
 

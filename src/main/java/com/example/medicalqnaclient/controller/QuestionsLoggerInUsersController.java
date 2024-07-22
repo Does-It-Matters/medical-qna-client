@@ -7,7 +7,7 @@ import javafx.scene.control.*;
 /**
  * 로그인 후 질문 목록 조회 화면
  */
-public class QuestionListLoginedController {
+public class QuestionsLoggerInUsersController {
 
     @FXML
     private ComboBox<String> categoryComboBox;
