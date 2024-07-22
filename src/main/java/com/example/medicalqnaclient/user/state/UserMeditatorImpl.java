@@ -2,7 +2,8 @@ package com.example.medicalqnaclient.user.state;
 
 import com.example.medicalqnaclient.HelloApplication;
 import com.example.medicalqnaclient.controller.Fxml;
-import com.example.medicalqnaclient.user.meditator.User;
+import com.example.medicalqnaclient.user.meditator.UserMeditator;
+import com.example.medicalqnaclient.user.state.factory.User;
 import com.example.medicalqnaclient.user.state.factory.UserFactory;
 import com.example.medicalqnaclient.user.state.factory.UserType;
 import javafx.fxml.FXMLLoader;
@@ -14,11 +15,11 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UserContainer implements User, Start {
+public class UserMeditatorImpl implements UserMeditator, Start {
     private static final Map<UserType, User> users = new HashMap<>();
 
     private final Stage primaryStage;
-    private User state;
+    private User user;
 
     static {
         for (UserType userType: UserType.values()) {
@@ -26,10 +27,10 @@ public class UserContainer implements User, Start {
         }
     }
 
-    public UserContainer(Stage primaryStage, String title) throws IOException {
+    public UserMeditatorImpl(Stage primaryStage, String title) throws IOException {
         this.primaryStage = primaryStage;
         setupScene(Fxml.START.getFxml(), title, 900, 600);
-        state = UserFactory.getInstance(UserType.ALL);
+        user = UserFactory.getInstance(UserType.ALL);
     }
 
     private void setRoot(String fxml) throws IOException {
@@ -54,7 +55,7 @@ public class UserContainer implements User, Start {
 
     @Override
     public void goHome() {
-
+        user.goHome();
     }
 
     @Override
