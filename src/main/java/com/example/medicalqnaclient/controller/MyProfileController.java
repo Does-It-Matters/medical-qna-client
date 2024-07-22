@@ -1,12 +1,12 @@
-package com.example.medicalqnaclient.v1.controllers.user.mydata;
+package com.example.medicalqnaclient.controller;
 
-import com.example.medicalqnaclient.HelloApplication;
 import com.example.medicalqnaclient.v1.businesslogic.user.Profile;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-import java.io.IOException;
-
+/**
+ * 본인 프로필 조회 화면
+ */
 public class MyProfileController {
     private Profile profile;
 
@@ -18,15 +18,10 @@ public class MyProfileController {
 
     @FXML
     protected void initialize() {
-        profile = new Profile(idLabel, roleLabel);
     }
 
+    // 1. 홈 화면 요청
     @FXML
     protected void onHomeButtonClick() {
-        try {
-            HelloApplication.setRoot("question-list-login-view.fxml");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

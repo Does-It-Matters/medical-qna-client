@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalqnaclient.user.post.QuestionEditController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalqnaclient.controller.QuestionEditController">
    <children>
       <Button layoutX="21.0" layoutY="22.0" mnemonicParsing="false" onAction="#onHomeButtonClick" text="home" />
       <Button layoutX="498.0" layoutY="77.0" mnemonicParsing="false" onAction="#onEditButtonClick" prefHeight="0.0" prefWidth="55.0" text="Edit" />

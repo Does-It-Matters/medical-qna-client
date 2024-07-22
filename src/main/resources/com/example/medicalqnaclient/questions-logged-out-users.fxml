@@ -6,7 +6,7 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalqnaclient.user.board.QuestionListController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="695.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalqnaclient.controller.QuestionsLoggedOutUsersController">
    <children>
       <Button layoutX="631.0" layoutY="14.0" mnemonicParsing="false" onAction="#onLoginButtonClick" text="login" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
       <TextArea fx:id="userQueryTextArea" layoutX="165.0" layoutY="50.0" prefHeight="51.0" prefWidth="417.0" promptText="enter your symptom" />
