@@ -10,7 +10,7 @@ public class HelloController {
     @FXML
     private Label welcomeText;
 
-    // 홈 화면 요청
+    // 1. 홈 화면 요청
     @FXML
     protected void onHelloButtonClick() {
     }

@@ -25,13 +25,13 @@ public class QuestionListLoginedController {
     protected void initialize() {
     }
 
-    // 검색 요청
-    @FXML
-    protected void onSearchButtonClick() {
-    }
-
-    // 로그아웃 요청
+    // 3. 로그아웃 요청
     @FXML
     protected void onLogoutButtonClick() {
+    }
+
+    // 11. 검색 요청
+    @FXML
+    protected void onSearchButtonClick() {
     }
 }

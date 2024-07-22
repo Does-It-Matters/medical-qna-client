@@ -22,7 +22,7 @@ public class QuestionEditController {
     protected void onHomeButtonClick() {
     }
 
-    // 질문 수정 요청
+    // 9. 질문 수정 요청
     @FXML
     private void onEditButtonClick() {
     }

@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
  */
 public class SystemMonitoringController {
 
-    // 홈 화면 요청 
+    // 1. 홈 화면 요청
     @FXML
     protected void onHomeButtonClick() {
     }

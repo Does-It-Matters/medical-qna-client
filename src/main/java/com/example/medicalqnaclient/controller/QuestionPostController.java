@@ -17,12 +17,12 @@ public class QuestionPostController {
     @FXML
     private TextArea questionTextArea;
 
-    // 홈 화면 요청
+    // 1. 홈 화면 요청
     @FXML
     protected void onHomeButtonClick() {
     }
 
-    // 질문 등록 요청
+    // 7. 질문 등록 요청
     @FXML
     private void onWriteButtonClick() {
     }

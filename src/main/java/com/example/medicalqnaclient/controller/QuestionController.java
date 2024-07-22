@@ -23,17 +23,17 @@ public class QuestionController {
     protected void initialize() {
     }
 
-    // 홈 화면 요청
+    // 1. 홈 화면 요청
     @FXML
     protected void onHomeButtonClick() {
     }
 
-    // 질문 수정 요청
+    // 9. 질문 수정 요청
     @FXML
     protected void onEditButtonClick() {
     }
 
-    // 질문 삭제 요청
+    // 10. 질문 삭제 요청
     @FXML
     protected void onDeleteButtonClick() {
     }

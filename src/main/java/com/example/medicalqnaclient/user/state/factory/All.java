@@ -10,4 +10,59 @@ class All implements User {
     static User getInstance () {
         return all;
     }
+
+    @Override
+    public void goHome() {
+
+    }
+
+    @Override
+    public void login() {
+
+    }
+
+    @Override
+    public void logout() {
+
+    }
+
+    @Override
+    public void signUpAsPatient() {
+
+    }
+
+    @Override
+    public void signUpAsDoctor() {
+
+    }
+
+    @Override
+    public void getMyProfile() {
+
+    }
+
+    @Override
+    public void postQuestion() {
+
+    }
+
+    @Override
+    public void readQuestion() {
+
+    }
+
+    @Override
+    public void editQuestion() {
+
+    }
+
+    @Override
+    public void deleteQuestion() {
+
+    }
+
+    @Override
+    public void search() {
+
+    }
 }

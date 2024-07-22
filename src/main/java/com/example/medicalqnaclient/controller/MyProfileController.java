@@ -20,7 +20,7 @@ public class MyProfileController {
     protected void initialize() {
     }
 
-    // 홈 화면 요청
+    // 1. 홈 화면 요청
     @FXML
     protected void onHomeButtonClick() {
     }

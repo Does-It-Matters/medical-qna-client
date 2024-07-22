@@ -13,12 +13,12 @@ public class PatientSignUpController {
     @FXML
     private TextField password;
 
-    // 홈 화면 요청
+    // 1. 홈 화면 요청
     @FXML
     protected void onHomeButtonClick() {
     }
 
-    // 환자 회원 가입 요청
+    // 4. 환자 회원 가입 요청
     @FXML
     protected void onSignUpButtonClick() {
     }

@@ -24,13 +24,13 @@ public class QuestionListController {
     protected void initialize() {
     }
 
-    // 검색 요청
-    @FXML
-    protected void onSearchButtonClick() {
-    }
-
-    // 로그인 요청
+    // 2. 로그인 요청
     @FXML
     protected void onLoginButtonClick() {
+    }
+
+    // 11. 검색 요청
+    @FXML
+    protected void onSearchButtonClick() {
     }
 }

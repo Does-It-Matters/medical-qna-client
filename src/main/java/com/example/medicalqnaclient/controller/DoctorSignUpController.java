@@ -25,12 +25,12 @@ public class DoctorSignUpController {
     @FXML
     private TextField introduction;
 
-    // 홈 화면 요청
+    // 1. 홈 화면 요청
     @FXML
     protected void onHomeButtonClick() {
     }
 
-    // 의료진 회원 가입 요청
+    // 5. 의료진 회원 가입 요청
     @FXML
     protected void onSignUpButtonClick() {
     }

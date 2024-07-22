@@ -22,22 +22,22 @@ public class LoginController {
         auth = new Authentication(useridField, passwordField);
     }
 
-    // 로그인 요청
-    @FXML
-    protected void onLoginButtonClick() {
-    }
-
-    // 홈 화면 요청
+    // 1. 홈 화면 요청
     @FXML
     protected void onHomeButtonClick() {
     }
 
-    // 환자 회원 가입 요청
+    // 2. 로그인 요청
+    @FXML
+    protected void onLoginButtonClick() {
+    }
+
+    // 4. 환자 회원 가입 요청
     @FXML
     protected void onPatientSignUpButtonClick() {
     }
 
-    // 의료진 회원 가입 요청
+    // 5. 의료진 회원 가입 요청
     @FXML
     protected void onDoctorSignUpButtonClick() {
     }
