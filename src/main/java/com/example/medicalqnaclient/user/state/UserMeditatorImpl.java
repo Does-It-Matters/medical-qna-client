@@ -15,10 +15,11 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UserMeditatorImpl implements UserMeditator, Start {
+public class UserMeditatorImpl implements UserMeditator {
     private static final Map<UserType, User> users = new HashMap<>();
+    private static final UserMeditator meditator = new UserMeditatorImpl();
 
-    private final Stage primaryStage;
+    private Stage primaryStage;
     private User user;
 
     static {
@@ -27,35 +28,45 @@ public class UserMeditatorImpl implements UserMeditator, Start {
         }
     }
 
-    public UserMeditatorImpl(Stage primaryStage, String title) throws IOException {
-        this.primaryStage = primaryStage;
-        setupScene(Fxml.START.getFxml(), title, 900, 600);
+    private UserMeditatorImpl() {
         user = UserFactory.getInstance(UserType.ALL);
     }
 
-    private void setRoot(String fxml) throws IOException {
-        primaryStage.getScene().setRoot(loadFXML(fxml));
-    }
-
-    private void setupScene(String fxml, String title, int width, int height) throws IOException {
-        Scene scene = new Scene(loadFXML(fxml), width, height);
-        primaryStage.setTitle(title);
-        primaryStage.setScene(scene);
-    }
-
-    private Parent loadFXML(String fxml) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxml));
-        return fxmlLoader.load();
+    private Parent loadFXML(Fxml fxml) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxml.getFxml()));
+            System.out.println("Loading FXML: " + fxml.getFxml());
+            return fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Failed to load scene: " + e.getMessage());
+            return null;
+        }
     }
 
     @Override
-    public void start() {
+    public void start(Stage primaryStage, String title, int width, int height) {
+        this.primaryStage = primaryStage;
+        Scene scene = new Scene((loadFXML(Fxml.START)), width, height);
+        primaryStage.setTitle(title);
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 
     @Override
     public void goHome() {
-        user.goHome();
+        Parent root;
+        if (user.isLoggedIn()) {
+            root = loadFXML(Fxml.QUESTIONS_LOGGED_IN_USERS);
+        } else {
+            root = loadFXML(Fxml.QUESTIONS_LOGGED_OUT_USERS);
+        }
+
+        if (root != null) {
+            primaryStage.getScene().setRoot(root);
+        } else {
+            System.err.println("Failed to load new scene");
+        }
     }
 
     @Override
@@ -65,7 +76,8 @@ public class UserMeditatorImpl implements UserMeditator, Start {
 
     @Override
     public void logout() {
-
+        user = UserFactory.getInstance(UserType.ALL);
+        goHome();
     }
 
     @Override
@@ -106,5 +118,9 @@ public class UserMeditatorImpl implements UserMeditator, Start {
     @Override
     public void search() {
 
+    }
+
+    public static UserMeditator getInstance() {
+        return meditator;
     }
 }

@@ -10,13 +10,13 @@ class Admin implements User {
     }
 
     @Override
-    public void goHome() {
+    public void login() {
 
     }
 
     @Override
-    public void login() {
-
+    public boolean isLoggedIn() {
+        return true;
     }
 
     @Override

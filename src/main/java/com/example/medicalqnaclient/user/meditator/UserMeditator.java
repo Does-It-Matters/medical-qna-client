@@ -1,6 +1,6 @@
 package com.example.medicalqnaclient.user.meditator;
 
-public interface UserMeditator {
+public interface UserMeditator extends Start {
     // 1. 홈 화면 요청
     public void goHome();
 

@@ -1,5 +1,7 @@
 package com.example.medicalqnaclient.controller;
 
+import com.example.medicalqnaclient.user.meditator.UserMeditator;
+import com.example.medicalqnaclient.user.state.UserMeditatorImpl;
 import com.example.medicalqnaclient.v1.businesslogic.question.QuestionTitle;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -7,7 +9,9 @@ import javafx.scene.control.*;
 /**
  * 로그인 후 질문 목록 조회 화면
  */
-public class QuestionsLoggerInUsersController {
+public class QuestionsLoggedInUsersController {
+
+    private static final UserMeditator meditator = UserMeditatorImpl.getInstance();
 
     @FXML
     private ComboBox<String> categoryComboBox;
