@@ -1,14 +1,23 @@
 package com.example.medicalqnaclient.user.state;
 
+import com.example.medicalqnaclient.HelloApplication;
 import com.example.medicalqnaclient.user.meditator.User;
 import com.example.medicalqnaclient.user.state.factory.UserFactory;
 import com.example.medicalqnaclient.user.state.factory.UserType;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UserContainer implements User {
+public class UserContainer implements User, Start {
     private static final Map<UserType, User> users = new HashMap<>();
+
+    private final Stage primaryStage;
+    private User state;
 
     static {
         for (UserType userType: UserType.values()) {
@@ -16,7 +25,31 @@ public class UserContainer implements User {
         }
     }
 
-    private User state;
+    public UserContainer(Stage primaryStage, String title) throws IOException {
+        this.primaryStage = primaryStage;
+        setupScene("hello-view.fxml", title, 900, 600);
+        state = UserFactory.getInstance(UserType.ALL);
+    }
+
+    private void setRoot(String fxml) throws IOException {
+        primaryStage.getScene().setRoot(loadFXML(fxml));
+    }
+
+    private void setupScene(String fxml, String title, int width, int height) throws IOException {
+        Scene scene = new Scene(loadFXML(fxml), width, height);
+        primaryStage.setTitle(title);
+        primaryStage.setScene(scene);
+    }
+
+    private Parent loadFXML(String fxml) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxml));
+        return fxmlLoader.load();
+    }
+
+    @Override
+    public void start() {
+        primaryStage.show();
+    }
 
     @Override
     public void goHome() {
