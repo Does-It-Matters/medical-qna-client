@@ -7,7 +7,6 @@ import javafx.stage.Stage;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.core.env.AbstractEnvironment;
 
 import java.io.IOException;
 
@@ -39,8 +38,6 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-        System.setProperty(AbstractEnvironment.DEFAULT_PROFILES_PROPERTY_NAME, "default");
-        System.setProperty("spring.rsocket.server.enabled", "false");
 
         launch();
     }
