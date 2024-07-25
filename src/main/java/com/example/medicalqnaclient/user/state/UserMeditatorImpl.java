@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+//@Component
 public class UserMeditatorImpl implements UserMeditator {
     private static final Map<UserType, User> users = new HashMap<>();
     private static final UserMeditator meditator = new UserMeditatorImpl();
@@ -22,12 +23,15 @@ public class UserMeditatorImpl implements UserMeditator {
     private Stage primaryStage;
     private User user;
 
+//    @Autowired
+//    private ConfigurableApplicationContext context;
     static {
         for (UserType userType: UserType.values()) {
             users.put(userType, UserFactory.getInstance(userType));
         }
     }
 
+//    @Autowired
     private UserMeditatorImpl() {
         user = UserFactory.getInstance(UserType.ALL);
     }
@@ -35,6 +39,9 @@ public class UserMeditatorImpl implements UserMeditator {
     private Parent loadFXML(Fxml fxml) {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxml.getFxml()));
+            // FXMLLoader는 컨트롤러를 기본 생성자로 인스턴스화
+            // Spring으로 통합 시, ApplicationContext로 컨트롤러 인스턴스화
+            // fxmlLoader.setControllerFactory(context::getBean);
             System.out.println("Loading FXML: " + fxml.getFxml());
             return fxmlLoader.load();
         } catch (IOException e) {
