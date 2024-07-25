@@ -5,7 +5,7 @@ import com.example.medicalqnaclient.user.state.UserMeditatorImpl;
 import com.example.medicalqnaclient.v1.businesslogic.question.QuestionTitle;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * 로그인 후 질문 목록 조회 화면
