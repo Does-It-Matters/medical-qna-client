@@ -2,17 +2,10 @@ package com.example.medicalqnaclient.controller;
 
 import com.example.medicalqnaclient.user.meditator.UserMeditator;
 import com.example.medicalqnaclient.user.state.UserMeditatorImpl;
-import io.rsocket.Payload;
-import io.rsocket.RSocket;
-import io.rsocket.core.RSocketConnector;
-import io.rsocket.transport.netty.client.TcpClientTransport;
-import io.rsocket.util.DefaultPayload;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import org.springframework.messaging.rsocket.RSocketRequester;
-import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
 import java.time.Duration;
 
@@ -25,7 +18,6 @@ public class StartController {
 //    @Autowired
     private static final UserMeditator meditator = UserMeditatorImpl.getInstance();
 
-//    private RSocket rSocket;
     private RSocketRequester requester;
 
     @FXML
@@ -40,17 +32,6 @@ public class StartController {
         if (requester == null) {
             rsocketLabel.setText("Failed to connect to RSocket server");
         }
-// RSocket connect
-//        try {
-//            rSocket = RSocketConnector.create()
-//                    .connect(TcpClientTransport.create("localhost", 7000))
-//                    .block();
-//            if (rSocket == null) {
-//                throw new RuntimeException("Failed to connect to RSocket server");
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
     }
 
     // 1. 홈 화면 요청
@@ -72,15 +53,6 @@ public class StartController {
                             rsocketLabel.setText("Error: " + error.getMessage());
                         })
                 );
-// Example Request-Response
-//        try {
-//            rSocket.requestResponse(DefaultPayload.create("request-response"))
-//                    .map(Payload::getDataUtf8)
-//                    .doOnNext(result -> rsocketLabel.setText("Response Result: " + result))
-//                    .block();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
     }
 
     @FXML
@@ -97,8 +69,6 @@ public class StartController {
                             rsocketLabel.setText("Fire-And-Forget sent");
                         })
                 );
-// Example Fire-And-Forget
-//        rSocket.fireAndForget(DefaultPayload.create("Fire-And-Forget")).block();
     }
 
     @FXML
@@ -119,12 +89,6 @@ public class StartController {
                             rsocketLabel.setText("Stream completed");
                         })
                 );
-// Example Stream
-//        rSocket.requestStream(DefaultPayload.create("Stream"))
-//                .map(Payload::getDataUtf8)
-//                .doOnNext(result -> rsocketLabel.setText("Stream Result: " + result))
-//                .take(10) // Limit for demonstration
-//                .blockLast();
     }
 
     @FXML
@@ -148,13 +112,6 @@ public class StartController {
                             rsocketLabel.setText("Channel completed");
                         })
                 );
-// Example Channel
-//        rSocket.requestChannel(Flux.interval(Duration.ofSeconds(1))
-//                        .map(i -> DefaultPayload.create("Channel Request " + i))
-//                        .take(10))
-//                .map(Payload::getDataUtf8)
-//                .doOnNext(result -> rsocketLabel.setText("Channel Result: " + result))
-//                .blockLast();
     }
 
 
@@ -163,9 +120,5 @@ public class StartController {
         if (requester != null) {
             requester.rsocketClient().dispose();
         }
-// Clean up RSocket connection
-//        if (rSocket != null) {
-//            rSocket.dispose();
-//        }
     }
 }
