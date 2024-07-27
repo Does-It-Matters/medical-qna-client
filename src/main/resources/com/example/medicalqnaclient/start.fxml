@@ -9,11 +9,6 @@
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-    <Button onAction="#onHelloButtonClick" prefHeight="72.0" prefWidth="335.0" text="Hello, My Health Block!" />
-   <Label fx:id="rsocketLabel" text="RSocket" />
-   <Button onAction="#onRequestResponseClick" mnemonicParsing="false" text="Request Response" />
-   <Button onAction="#onFireAndForgetClick" mnemonicParsing="false" text="Fire and Forget" />
-   <Button onAction="#onStreamClick" mnemonicParsing="false" text="Stream" />
-   <Button onAction="#onChannelClick" mnemonicParsing="false" text="Channel" />
     <Label fx:id="welcomeText" />
+    <Button onAction="#onHelloButtonClick" prefHeight="72.0" prefWidth="335.0" text="Hello, My Health Block!" />
 </VBox>

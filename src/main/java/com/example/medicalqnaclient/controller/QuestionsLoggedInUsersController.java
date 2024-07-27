@@ -10,14 +10,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.util.List;
-//import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * 로그인 후 질문 목록 조회 화면
  */
 public class QuestionsLoggedInUsersController {
-//    @Autowired
-//    private UserMeditator userMeditator;
     private static final UserMeditator meditator = UserMeditatorImpl.getInstance();
 
     @FXML
@@ -72,5 +69,10 @@ public class QuestionsLoggedInUsersController {
         } catch (UnauthorizedAccessException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    protected void onMonitorButtonClick() {
+        meditator.getMonitorView();
     }
 }

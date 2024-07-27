@@ -195,6 +195,11 @@ public class UserMeditatorImpl implements UserMeditator {
         setScene(loadFXML(Fxml.QUESTION_EDIT));
     }
 
+    @Override
+    public void getMonitorView() {
+        setScene(loadFXML(Fxml.SYSTEM_MONITORING));
+    }
+
     public static UserMeditator getInstance() {
         return meditator;
     }

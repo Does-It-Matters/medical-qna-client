@@ -11,14 +11,11 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 
 import java.util.List;
-//import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * 로그인하지 않은 질문 목록 조회 화면
  */
 public class QuestionsLoggedOutUsersController {
-//    @Autowired
-//    private UserMeditator userMeditator;
     private static final UserMeditator meditator = UserMeditatorImpl.getInstance();
 
     @FXML
