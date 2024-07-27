@@ -200,6 +200,16 @@ public class UserMeditatorImpl implements UserMeditator {
         setScene(loadFXML(Fxml.SYSTEM_MONITORING));
     }
 
+    @Override
+    public void getRSocketTestView() {
+        setScene(loadFXML(Fxml.RSOCKET_TEST));
+    }
+
+    @Override
+    public void getLoadTestView() {
+        setScene(loadFXML(Fxml.LOAD_TEST));
+    }
+
     public static UserMeditator getInstance() {
         return meditator;
     }

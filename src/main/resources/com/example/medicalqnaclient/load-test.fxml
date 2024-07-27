@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.geometry.Insets?>
+
+<GridPane fx:id="grid" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.medicalqnaclient.controller.LoadTestController">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    <vgap>5</vgap>
+    <hgap>5</hgap>
+
+    <Label text="URL:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <TextField fx:id="urlTextField" text="" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+    <Label text="JSON Body:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="jsonBodyTextField" text="" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+    <Label text="Virtual Users:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextField fx:id="usersTextField" text="100" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+    <Label text="Requests per User:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <TextField fx:id="requestsTextField" text="10" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+    <Button text="GET" onAction="#onGetClick" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <Button text="POST" onAction="#onPostClick" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    <Button text="PATCH" onAction="#onPatchClick" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <Button text="DELETE" onAction="#onDeleteClick" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+    <Button text="PUT" onAction="#onPutClick" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+
+    <Label fx:id="statusLabel" text="Ready" GridPane.rowIndex="7" GridPane.columnIndex="0" GridPane.columnSpan="2"/>
+
+    <LineChart fx:id="chart" title="Request Results" GridPane.rowIndex="8" GridPane.columnIndex="0" GridPane.columnSpan="2">
+        <xAxis>
+            <NumberAxis label="Time (s)"/>
+        </xAxis>
+        <yAxis>
+            <NumberAxis label="Requests"/>
+        </yAxis>
+    </LineChart>
+</GridPane>

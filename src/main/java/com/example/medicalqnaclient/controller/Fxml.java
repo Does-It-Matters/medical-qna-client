@@ -15,6 +15,8 @@ public enum Fxml {
     QUESTION_POST("question-post.fxml"),
     QUESTION_EDIT("question-edit.fxml"),
 
+    RSOCKET_TEST("rsocket-test.fxml"),
+    LOAD_TEST("load-test.fxml"),
     SYSTEM_MONITORING("system-monitoring.fxml");
 
     private String fxml;
