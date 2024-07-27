@@ -1,7 +1,20 @@
 package com.example.medicalqnaclient.user.state.factory;
 
+import com.example.medicalqnaclient.server.facade.Server;
+import com.example.medicalqnaclient.server.facade.tasks.question.edit.QuestionEditResponse;
+import com.example.medicalqnaclient.server.facade.tasks.question.enroll.QuestionEnrollResponse;
+import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
+import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
+import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
+import com.example.medicalqnaclient.user.state.factory.exception.AlreadyLoggedInException;
+import com.example.medicalqnaclient.user.state.factory.exception.UnauthorizedAccessException;
+
+import java.util.List;
+
 class Patient implements User {
     private static final User patient = new Patient();
+
+    private String id;
 
     private Patient() {}
 
@@ -10,8 +23,13 @@ class Patient implements User {
     }
 
     @Override
-    public void login() {
+    public void setId(String id) {
+        this.id = id;
+    }
 
+    @Override
+    public LoginResponse login(Server server, String id, String pw) throws AlreadyLoggedInException {
+        throw new AlreadyLoggedInException();
     }
 
     @Override
@@ -25,13 +43,13 @@ class Patient implements User {
     }
 
     @Override
-    public void signUpAsPatient() {
-
+    public void signUpAsPatient(Server server, String id, String pw) {
+        throw new UnauthorizedAccessException();
     }
 
     @Override
-    public void signUpAsDoctor() {
-
+    public void signUpAsDoctor(Server server, String id, String pw, String name, String field, String hospital, String introduction) {
+        throw new UnauthorizedAccessException();
     }
 
     @Override
@@ -40,27 +58,37 @@ class Patient implements User {
     }
 
     @Override
-    public void postQuestion() {
-
+    public QuestionEnrollResponse postQuestion(Server server, String title, String symptom, String content) {
+        return server.enrollQuestion(id, title, symptom, content);
     }
 
     @Override
-    public void readQuestion() {
-
+    public QuestionResponse readQuestion(Server server, int questionId) {
+        return server.readQuestion(questionId);
     }
 
     @Override
-    public void editQuestion() {
-
+    public QuestionEditResponse editQuestion(Server server, int questionId, String title, String symptom, String content) {
+        return server.editQuestion(questionId, title, symptom, content);
     }
 
     @Override
-    public void deleteQuestion() {
-
+    public void deleteQuestion(Server server, int questionId) {
+        server.deleteQuestion(questionId);
     }
 
     @Override
-    public void search() {
+    public List<QuestionTitle> search(Server server, String query) {
+        return server.search(query);
+    }
 
+    @Override
+    public List<QuestionTitle> getQuestionList(Server server) {
+        return server.getQuestionList();
+    }
+
+    @Override
+    public boolean canPostQuestion() {
+        return true;
     }
 }
