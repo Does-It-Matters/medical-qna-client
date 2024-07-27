@@ -4,8 +4,8 @@ public class UserFactory {
     public static User getInstance(UserType type) {
         return switch (type) {
             case PATIENT -> Patient.getInstance();
-            case DOCTOR -> Patient.getInstance();
-            case ADMIN -> Patient.getInstance();
+            case DOCTOR -> Doctor.getInstance();
+            case ADMIN -> Admin.getInstance();
             default -> All.getInstance();
         };
     }

@@ -39,8 +39,6 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-//        System.setProperty(AbstractEnvironment.DEFAULT_PROFILES_PROPERTY_NAME, "default");
-//        System.setProperty("spring.rsocket.server.enabled", "false");
 
         launch();
     }
