@@ -53,6 +53,7 @@ public interface UserMeditator extends Start {
 
     public void getEditQuestionView();
 
+    public void getMonitorView();
 //    public void monitorSystemResources();
 //
 //    public void monitorLogs();

@@ -18,6 +18,7 @@
       </MenuButton>
       <Button layoutX="200.0" layoutY="378.0" mnemonicParsing="false" text="prev" />
       <Button layoutX="259.0" layoutY="378.0" mnemonicParsing="false" text="next" />
-      <Button onAction="#onPostButtonClick" layoutX="16.0" layoutY="38.0" mnemonicParsing="false" text="Post" />
+      <Button layoutX="16.0" layoutY="38.0" mnemonicParsing="false" onAction="#onPostButtonClick" text="Post" />
+      <Button layoutX="332.0" layoutY="14.0" mnemonicParsing="false" onAction="#onMonitorButtonClick" text="Monitor" />
    </children>
 </AnchorPane>
