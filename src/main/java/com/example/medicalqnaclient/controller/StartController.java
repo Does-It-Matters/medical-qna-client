@@ -24,4 +24,9 @@ public class StartController {
     protected void onHelloButtonClick() {
         meditator.goHome();
     }
+
+    @FXML
+    protected void onMonitorButtonClick() {
+        meditator.getMonitorView();
+    }
 }

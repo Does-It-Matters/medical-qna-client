@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.controller;
+package com.example.medicalqnaclient.controller.qna;
 
 import com.example.medicalqnaclient.user.meditator.UserMeditator;
 import com.example.medicalqnaclient.user.state.UserMeditatorImpl;
@@ -69,10 +69,5 @@ public class QuestionsLoggedInUsersController {
         } catch (UnauthorizedAccessException e) {
             e.printStackTrace();
         }
-    }
-
-    @FXML
-    protected void onMonitorButtonClick() {
-        meditator.getMonitorView();
     }
 }

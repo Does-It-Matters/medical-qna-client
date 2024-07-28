@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.controller;
+package com.example.medicalqnaclient.controller.qna;
 
 import com.example.medicalqnaclient.user.meditator.UserMeditator;
 import com.example.medicalqnaclient.user.state.UserMeditatorImpl;
@@ -6,9 +6,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
 /**
- * 환자 회원 가입 화면
+ * 의료진 회원 가입 화면
  */
-public class PatientSignUpController {
+public class DoctorSignUpController {
     private static final UserMeditator meditator = UserMeditatorImpl.getInstance();
 
     @FXML
@@ -17,15 +17,27 @@ public class PatientSignUpController {
     @FXML
     private TextField password;
 
+    @FXML
+    private TextField name;
+
+    @FXML
+    private TextField field;
+
+    @FXML
+    private TextField hospital;
+
+    @FXML
+    private TextField introduction;
+
     // 1. 홈 화면 요청
     @FXML
     protected void onHomeButtonClick() {
         meditator.goHome();
     }
 
-    // 4. 환자 회원 가입 요청
+    // 5. 의료진 회원 가입 요청
     @FXML
     protected void onSignUpButtonClick() {
-        meditator.signUpAsPatient(id.getText(), password.getText());
+        meditator.signUpAsDoctor(id.getText(), password.getText(), name.getText(), field.getText(), hospital.getText(), introduction.getText());
     }
 }

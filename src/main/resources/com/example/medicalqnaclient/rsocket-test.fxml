@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalqnaclient.controller.RSocketTestController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medicalqnaclient.controller.monitor.RSocketTestController">
    <children>
       <Label fx:id="rsocketLabel" layoutX="39.0" layoutY="59.0" prefHeight="16.0" prefWidth="520.0" text="RSocket response" />
       <Button onAction="#onMainClick" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="Main" />
