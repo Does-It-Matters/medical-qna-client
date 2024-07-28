@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.controller;
+package com.example.medicalqnaclient.controller.qna;
 
 import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
 import com.example.medicalqnaclient.user.meditator.UserMeditator;

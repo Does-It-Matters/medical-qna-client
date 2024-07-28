@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.controller;
+package com.example.medicalqnaclient.controller.monitor;
 
 import com.example.medicalqnaclient.user.meditator.UserMeditator;
 import com.example.medicalqnaclient.user.state.UserMeditatorImpl;
@@ -9,10 +9,7 @@ import reactor.core.publisher.Flux;
 
 import java.time.Duration;
 
-/**
- * 운영 첫 화면
- */
-public class SystemMonitoringController {
+public class RSocketTestController {
     private static final UserMeditator meditator = UserMeditatorImpl.getInstance();
 
     private RSocketRequester requester;
@@ -31,10 +28,9 @@ public class SystemMonitoringController {
         }
     }
 
-    // 1. 홈 화면 요청
     @FXML
-    protected void onHomeButtonClick() {
-        meditator.goHome();
+    protected void onMainClick() {
+        meditator.getMonitorView();
     }
 
     @FXML
