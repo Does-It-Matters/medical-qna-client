@@ -6,6 +6,8 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
@@ -14,6 +16,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
@@ -59,27 +62,46 @@ public class LoadTestController {
 
     @FXML
     protected void onGetClick() {
-        startLoadTest("GET");
+        showConfirmationDialog("GET");
     }
 
     @FXML
     protected void onPostClick() {
-        startLoadTest("POST");
+        showConfirmationDialog("POST");
     }
 
     @FXML
     protected void onPatchClick() {
-        startLoadTest("PATCH");
+        showConfirmationDialog("PATCH");
     }
 
     @FXML
     protected void onDeleteClick() {
-        startLoadTest("DELETE");
+        showConfirmationDialog("DELETE");
     }
 
     @FXML
     protected void onPutClick() {
-        startLoadTest("PUT");
+        showConfirmationDialog("PUT");
+    }
+
+    private void showConfirmationDialog(String method) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Warning");
+        alert.setHeaderText("High Traffic Alert");
+        alert.setContentText("!! Be aware of Cloud Service costs !!\n\nContinue?");
+
+        ButtonType proceedButton = new ButtonType("Proceed");
+        ButtonType cancelButton = ButtonType.CANCEL;
+
+        alert.getButtonTypes().setAll(proceedButton, cancelButton);
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.isPresent() && result.get() == proceedButton) {
+            startLoadTest(method);
+        } else {
+            statusLabel.setText("Test canceled.");
+        }
     }
 
     private void startLoadTest(String method) {
