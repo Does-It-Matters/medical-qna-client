@@ -19,7 +19,7 @@
 배경: v1의 결합도가 강하고 계층 분리가 명확하게 되지 않아 유지보수와 확장에 어려움을 느낌
 |v1 개선! 객체들 간의 결합도를 낮추기 위한 객체들의 상호작용|
 |-|
-|<details><summary>1. Controller 계층과의 결합도 줄이기 - Meditator 패턴 (UserContainer)</summary><br>- controller 계층은 화면 입출력 역할에 집중<br>- controller 계층은 오직 UserContainer 객체와 상호작용 <br>- UserContainer가 controller 계층과 비즈니스 로직 클래스들의 상호작용을 중재 </details> &nbsp;&nbsp;&nbsp;&rarr;&nbsp; v1의 controller 계층이 가진 복잡한 의존도 문제를 완화|
+|<details><summary>1. Controller 계층과의 결합도 줄이기 - Mediator 패턴 (UserContainer)</summary><br>- controller 계층은 화면 입출력 역할에 집중<br>- controller 계층은 오직 UserContainer 객체와 상호작용 <br>- UserContainer가 controller 계층과 비즈니스 로직 클래스들의 상호작용을 중재 </details> &nbsp;&nbsp;&nbsp;&rarr;&nbsp; v1의 controller 계층이 가진 복잡한 의존도 문제를 완화|
 |<details><summary>2. 환자, 의사, 운영자 구분 - State 패턴 (User)</summary><br>- 각 상태들(환자, 의사, 운영자)은 User 인터페이스 구현<br>- UserContainer가 상태 관리 </details> &nbsp;&nbsp;&nbsp;&rarr; v1의 상태를 직접 확인하여 경우의 수를 처리하는 문제 완화|
 |<details><summary>3. 트랜잭션 스크립트 문제 - Delegation 활용</summary><br>- 각 상태들은 처리해야 할 작업들을 객체로 가짐 </details> &nbsp;&nbsp;&nbsp;&rarr; v1의 데이터를 직접 절차적으로 처리하는 과정 대신 작업 처리 객체들에 위임|
 |<details><summary>4. new 생성 - 의존성 주입</summary><br>- UserContainer는 각 상태들의 생성자로 서버를 주입<br>- 각 상태들은 서버로 처리해야 할 작업 객체들의 생성자에 서버를 주입 </details> &nbsp;&nbsp;&nbsp;&rarr; v1의 new로 인한 구체적인 구현에 의존하는 문제 완화|

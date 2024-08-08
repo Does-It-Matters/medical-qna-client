@@ -1,7 +1,7 @@
 package com.example.medicalqnaclient.controller.qna;
 
-import com.example.medicalqnaclient.user.meditator.UserMeditator;
-import com.example.medicalqnaclient.user.state.UserMeditatorImpl;
+import com.example.medicalqnaclient.user.mediator.UserMediator;
+import com.example.medicalqnaclient.user.state.UserMediatorImpl;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -9,7 +9,7 @@ import javafx.scene.control.*;
  * 질문 등록 화면
  */
 public class QuestionPostController {
-    private static final UserMeditator meditator = UserMeditatorImpl.getInstance();
+    private static final UserMediator mediator = UserMediatorImpl.getInstance();
 
     @FXML
     private TextField titleTextField;
@@ -23,12 +23,12 @@ public class QuestionPostController {
     // 1. 홈 화면 요청
     @FXML
     protected void onHomeButtonClick() {
-        meditator.goHome();
+        mediator.goHome();
     }
 
     // 7. 질문 등록 요청
     @FXML
     private void onWriteButtonClick() {
-        meditator.postQuestion(titleTextField.getText(), symptomTextArea.getText(), questionTextArea.getText());
+        mediator.postQuestion(titleTextField.getText(), symptomTextArea.getText(), questionTextArea.getText());
     }
 }

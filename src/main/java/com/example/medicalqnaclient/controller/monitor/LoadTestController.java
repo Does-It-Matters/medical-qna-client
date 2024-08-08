@@ -1,7 +1,7 @@
 package com.example.medicalqnaclient.controller.monitor;
 
-import com.example.medicalqnaclient.user.meditator.UserMeditator;
-import com.example.medicalqnaclient.user.state.UserMeditatorImpl;
+import com.example.medicalqnaclient.user.mediator.UserMediator;
+import com.example.medicalqnaclient.user.state.UserMediatorImpl;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
@@ -22,7 +22,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
 public class LoadTestController {
-    private static final UserMeditator meditator = UserMeditatorImpl.getInstance();
+    private static final UserMediator mediator = UserMediatorImpl.getInstance();
     private static final HttpClient httpClient = HttpClient.newBuilder()
             .version(HttpClient.Version.HTTP_2)
             .connectTimeout(Duration.ofSeconds(10))
@@ -57,7 +57,7 @@ public class LoadTestController {
 
     @FXML
     protected void onMainClick() {
-        meditator.getMonitorView();
+        mediator.getMonitorView();
     }
 
     @FXML

@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.user.meditator;
+package com.example.medicalqnaclient.user.mediator;
 
 import javafx.stage.Stage;
 

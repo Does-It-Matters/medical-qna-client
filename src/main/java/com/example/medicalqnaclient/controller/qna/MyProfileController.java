@@ -1,7 +1,7 @@
 package com.example.medicalqnaclient.controller.qna;
 
-import com.example.medicalqnaclient.user.meditator.UserMeditator;
-import com.example.medicalqnaclient.user.state.UserMeditatorImpl;
+import com.example.medicalqnaclient.user.mediator.UserMediator;
+import com.example.medicalqnaclient.user.state.UserMediatorImpl;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -9,7 +9,7 @@ import javafx.scene.control.Label;
  * 본인 프로필 조회 화면
  */
 public class MyProfileController {
-    @FXML    private static final UserMeditator meditator = UserMeditatorImpl.getInstance();
+    @FXML    private static final UserMediator mediator = UserMediatorImpl.getInstance();
 
     private Label idLabel;
 
@@ -23,6 +23,6 @@ public class MyProfileController {
     // 1. 홈 화면 요청
     @FXML
     protected void onHomeButtonClick() {
-        meditator.goHome();
+        mediator.goHome();
     }
 }

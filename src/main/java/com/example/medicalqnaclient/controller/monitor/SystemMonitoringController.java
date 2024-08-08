@@ -1,9 +1,7 @@
 package com.example.medicalqnaclient.controller.monitor;
 
-import com.example.medicalqnaclient.user.meditator.UserMeditator;
-import com.example.medicalqnaclient.user.state.UserMeditatorImpl;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.example.medicalqnaclient.user.mediator.UserMediator;
+import com.example.medicalqnaclient.user.state.UserMediatorImpl;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -25,7 +23,7 @@ import java.util.List;
  * 운영 첫 화면
  */
 public class SystemMonitoringController {
-    private static final UserMeditator meditator = UserMeditatorImpl.getInstance();
+    private static final UserMediator mediator = UserMediatorImpl.getInstance();
 
     private RSocketRequester requester;
     private Disposable cpuStatsSubscription;
@@ -48,17 +46,17 @@ public class SystemMonitoringController {
     // 1. 홈 화면 요청
     @FXML
     protected void onHomeButtonClick() {
-        meditator.goHome();
+        mediator.goHome();
     }
 
     @FXML
     protected void onRSocketTestButtonClick() {
-        meditator.getRSocketTestView();
+        mediator.getRSocketTestView();
     }
 
     @FXML
     protected void onLoadTestButtonClick() {
-        meditator.getLoadTestView();
+        mediator.getLoadTestView();
     }
 
     @FXML

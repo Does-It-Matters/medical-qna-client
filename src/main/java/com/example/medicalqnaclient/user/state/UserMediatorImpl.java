@@ -7,7 +7,7 @@ import com.example.medicalqnaclient.server.facade.ServiceServer;
 import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
 import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
 import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
-import com.example.medicalqnaclient.user.meditator.UserMeditator;
+import com.example.medicalqnaclient.user.mediator.UserMediator;
 import com.example.medicalqnaclient.user.state.factory.User;
 import com.example.medicalqnaclient.user.state.factory.UserFactory;
 import com.example.medicalqnaclient.user.state.factory.UserType;
@@ -24,9 +24,9 @@ import java.util.List;
 import java.util.Map;
 
 //@Component
-public class UserMeditatorImpl implements UserMeditator {
+public class UserMediatorImpl implements UserMediator {
     private static final Map<UserType, User> users = new HashMap<>();
-    private static final UserMeditator meditator = new UserMeditatorImpl();
+    private static final UserMediator mediator = new UserMediatorImpl();
 
     private Stage primaryStage;
     private User user;
@@ -42,7 +42,7 @@ public class UserMeditatorImpl implements UserMeditator {
     }
 
 //    @Autowired
-    private UserMeditatorImpl() {
+    private UserMediatorImpl() {
         user = UserFactory.getInstance(UserType.ALL);
         server = new ServiceServer();
     }
@@ -210,7 +210,7 @@ public class UserMeditatorImpl implements UserMeditator {
         setScene(loadFXML(Fxml.LOAD_TEST));
     }
 
-    public static UserMeditator getInstance() {
-        return meditator;
+    public static UserMediator getInstance() {
+        return mediator;
     }
 }
