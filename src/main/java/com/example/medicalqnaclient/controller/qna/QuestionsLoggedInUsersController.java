@@ -1,7 +1,7 @@
 package com.example.medicalqnaclient.controller.qna;
 
-import com.example.medicalqnaclient.user.meditator.UserMeditator;
-import com.example.medicalqnaclient.user.state.UserMeditatorImpl;
+import com.example.medicalqnaclient.user.mediator.UserMediator;
+import com.example.medicalqnaclient.user.state.UserMediatorImpl;
 import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
 import com.example.medicalqnaclient.user.state.factory.exception.UnauthorizedAccessException;
 import javafx.collections.FXCollections;
@@ -15,7 +15,7 @@ import java.util.List;
  * 로그인 후 질문 목록 조회 화면
  */
 public class QuestionsLoggedInUsersController {
-    private static final UserMeditator meditator = UserMeditatorImpl.getInstance();
+    private static final UserMediator mediator = UserMediatorImpl.getInstance();
 
     @FXML
     private ComboBox<String> categoryComboBox;
@@ -31,23 +31,23 @@ public class QuestionsLoggedInUsersController {
 
     @FXML
     protected void initialize() {
-        setList(meditator.getQuestionList());
+        setList(mediator.getQuestionList());
     }
 
     private void handleSelectedQuestion(QuestionTitle questionTitle) {
-        meditator.readQuestion(questionTitle.getQuestionId());
+        mediator.readQuestion(questionTitle.getQuestionId());
     }
 
     // 3. 로그아웃 요청
     @FXML
     protected void onLogoutButtonClick() {
-        meditator.logout();
+        mediator.logout();
     }
 
     // 11. 검색 요청
     @FXML
     protected void onSearchButtonClick() {
-        setList(meditator.search(userQueryTextArea.getText()));
+        setList(mediator.search(userQueryTextArea.getText()));
     }
 
     private void setList(List<QuestionTitle> list) {
@@ -65,7 +65,7 @@ public class QuestionsLoggedInUsersController {
     @FXML
     protected void onPostButtonClick() {
         try {
-            meditator.getPostQuestionView();
+            mediator.getPostQuestionView();
         } catch (UnauthorizedAccessException e) {
             e.printStackTrace();
         }

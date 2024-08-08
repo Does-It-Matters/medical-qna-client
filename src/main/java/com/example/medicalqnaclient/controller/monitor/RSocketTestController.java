@@ -1,7 +1,7 @@
 package com.example.medicalqnaclient.controller.monitor;
 
-import com.example.medicalqnaclient.user.meditator.UserMeditator;
-import com.example.medicalqnaclient.user.state.UserMeditatorImpl;
+import com.example.medicalqnaclient.user.mediator.UserMediator;
+import com.example.medicalqnaclient.user.state.UserMediatorImpl;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import org.springframework.messaging.rsocket.RSocketRequester;
@@ -10,7 +10,7 @@ import reactor.core.publisher.Flux;
 import java.time.Duration;
 
 public class RSocketTestController {
-    private static final UserMeditator meditator = UserMeditatorImpl.getInstance();
+    private static final UserMediator mediator = UserMediatorImpl.getInstance();
 
     private RSocketRequester requester;
 
@@ -30,7 +30,7 @@ public class RSocketTestController {
 
     @FXML
     protected void onMainClick() {
-        meditator.getMonitorView();
+        mediator.getMonitorView();
     }
 
     @FXML

@@ -33,13 +33,14 @@ module com.example.medicalqnaclient {
     exports com.example.medicalqnaclient.server.facade.tasks.signup.patient to com.fasterxml.jackson.databind;
     exports com.example.medicalqnaclient.server.facade.tasks.signup.doctor to com.fasterxml.jackson.databind;
     opens com.example.medicalqnaclient.user.state to spring.core;
-    opens com.example.medicalqnaclient.user.meditator to spring.core;
+    opens com.example.medicalqnaclient.user.mediator to spring.core;
     opens com.example.medicalqnaclient to javafx.fxml, spring.core;
+    opens com.example.medicalqnaclient.controller.monitor to javafx.fxml, spring.core;
     exports com.example.medicalqnaclient.controller.monitor;
-    opens com.example.medicalqnaclient.controller.monitor to javafx.fxml;
     exports com.example.medicalqnaclient.controller.qna;
     opens com.example.medicalqnaclient.controller.qna to javafx.fxml;
 
     requires org.slf4j;
     requires ch.qos.logback.classic;
+    requires spring.web;
 }

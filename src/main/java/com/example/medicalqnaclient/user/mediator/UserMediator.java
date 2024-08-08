@@ -1,11 +1,11 @@
-package com.example.medicalqnaclient.user.meditator;
+package com.example.medicalqnaclient.user.mediator;
 
 import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
 import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
 
 import java.util.List;
 
-public interface UserMeditator extends Start {
+public interface UserMediator extends Start {
     // 1. 홈 화면 요청
     public void goHome();
 

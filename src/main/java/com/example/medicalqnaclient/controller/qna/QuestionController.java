@@ -1,8 +1,8 @@
 package com.example.medicalqnaclient.controller.qna;
 
 import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
-import com.example.medicalqnaclient.user.meditator.UserMeditator;
-import com.example.medicalqnaclient.user.state.UserMeditatorImpl;
+import com.example.medicalqnaclient.user.mediator.UserMediator;
+import com.example.medicalqnaclient.user.state.UserMediatorImpl;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
  * 질문 조회 화면
  */
 public class QuestionController {
-    private static final UserMeditator meditator = UserMeditatorImpl.getInstance();
+    private static final UserMediator mediator = UserMediatorImpl.getInstance();
 
     @FXML
     private Label titleLabel;
@@ -26,7 +26,7 @@ public class QuestionController {
 
     @FXML
     protected void initialize() {
-        QuestionResponse response = meditator.readQuestion();
+        QuestionResponse response = mediator.readQuestion();
         titleLabel.setText(response.getQuestionDetail().getTitle());
         idLabel.setText(response.getQuestionDetail().getUid());
         symptomLabel.setText(response.getQuestionDetail().getSymptom());
@@ -36,18 +36,18 @@ public class QuestionController {
     // 1. 홈 화면 요청
     @FXML
     protected void onHomeButtonClick() {
-        meditator.goHome();
+        mediator.goHome();
     }
 
     // 9. 질문 수정 요청
     @FXML
     protected void onEditButtonClick() {
-        meditator.getEditQuestionView();
+        mediator.getEditQuestionView();
     }
 
     // 10. 질문 삭제 요청
     @FXML
     protected void onDeleteButtonClick() {
-        meditator.deleteQuestion();
+        mediator.deleteQuestion();
     }
 }
