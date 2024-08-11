@@ -33,55 +33,56 @@ public class ServiceServer implements Server {
 
     @Override
     public LoginResponse login(String id, String password) throws Exception {
-        String url = config.getBaseUrl() + "/api/v2/sign-in";
+        String url = urlProvider.getLoginUrl();
         return loginRequest.post(url, id, password);
     }
 
     @Override
     public List<QuestionTitle> getQuestionList() {
 //        String encodedQueryString = URLEncoder.encode(queryString, StandardCharsets.UTF_8); 안전하게 url 인코딩 처리하기
-        String url = config.getBaseUrl() + "/api/v2/question/list";
+        String url = urlProvider.getQuestionListUrl();
         return questionsGetRequest.getQuestionListAll(url);
     }
 
     @Override
     public List<QuestionTitle> search(String query) {
+        String url = urlProvider.getSearchUrl();
         return questionsGetRequest.search(query);
     }
 
     @Override
     public QuestionResponse readQuestion(int questionId) {
-        String url = config.getBaseUrl() + "/api/v2/question/";
+        String url = urlProvider.getQuestionUrl();
         return questionGetRequest.getQuestion(url, questionId);
     }
 
     @Override
     public SignUpResponse signUpAsPatient(String id, String pw) {
-        String url = config.getBaseUrl() + "/api/v2/patient/sign-up";
+        String url = urlProvider.getSignUpAsPatientUrl();
         return patientSignUpRequest.post(url, id, pw);
     }
 
     @Override
     public SignUpResponse signUpAsDoctor(String id, String pw, String name, String field, String hospital, String introduction) {
-        String url = config.getBaseUrl() + "/api/v2/doctor/sign-up";
+        String url = urlProvider.getSignUpAsDoctorUrl();
         return doctorSignUpRequest.post(url, id, pw, name, field, hospital, introduction);
     }
 
     @Override
     public QuestionEnrollResponse enrollQuestion(String id, String title, String symptom, String content) {
-        String url = config.getBaseUrl() + "/api/v2/question/enroll";
+        String url = urlProvider.getEnrollQuestionUrl();
         return questionEnrollRequest.post(url, id, title, symptom, content);
     }
 
     @Override
     public QuestionEditResponse editQuestion(int questionId, String title, String symptom, String content) {
-        String url = config.getBaseUrl() + "/api/v2/question";
+        String url = urlProvider.getEditQuestionUrl();
         return questionEditRequest.patch(url, questionId, title, symptom, content);
     }
 
     @Override
     public QuestionDeleteResponse deleteQuestion(int questionId) {
-        String url = config.getBaseUrl() + "/api/v2/question/";
+        String url = urlProvider.getDeleteQuestionUrl();
         return questionDeleteRequest.delete(url, questionId);
     }
 }
