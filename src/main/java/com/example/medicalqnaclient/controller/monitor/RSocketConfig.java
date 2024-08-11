@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.codec.json.Jackson2JsonDecoder;
 import org.springframework.http.codec.json.Jackson2JsonEncoder;
+import org.springframework.messaging.rsocket.RSocketRequester;
 import org.springframework.messaging.rsocket.RSocketStrategies;
 import org.springframework.messaging.rsocket.annotation.support.RSocketMessageHandler;
 
@@ -32,5 +33,10 @@ public class RSocketConfig {
         RSocketMessageHandler handler = new RSocketMessageHandler();
         handler.setRSocketStrategies(rSocketStrategies);
         return handler;
+    }
+
+    @Bean
+    public RSocketRequester.Builder rSocketRequesterBuilder(RSocketStrategies rSocketStrategies) {
+        return RSocketRequester.builder().rsocketStrategies(rSocketStrategies);
     }
 }

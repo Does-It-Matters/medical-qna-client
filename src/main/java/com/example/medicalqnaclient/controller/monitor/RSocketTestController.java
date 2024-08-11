@@ -4,24 +4,34 @@ import com.example.medicalqnaclient.user.mediator.UserMediator;
 import com.example.medicalqnaclient.user.state.UserMediatorImpl;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.rsocket.RSocketRequester;
+import org.springframework.stereotype.Controller;
 import reactor.core.publisher.Flux;
 
 import java.time.Duration;
 
+@Controller
 public class RSocketTestController {
     private static final UserMediator mediator = UserMediatorImpl.getInstance();
 
     private RSocketRequester requester;
+
+    @Autowired
+    private RSocketRequester.Builder requesterBuilder;
 
     @FXML
     private Label rsocketLabel;
 
     @FXML
     public void initialize() {
-        this.requester = RSocketRequester.builder()
+        this.requester = requesterBuilder
                 .connectTcp("localhost", 7000)
                 .block();
+//
+//        this.requester = RSocketRequester.builder()
+//                .connectTcp("localhost", 7000)
+//                .block();
 
         if (requester == null) {
             rsocketLabel.setText("Failed to connect to RSocket server");
