@@ -25,6 +25,12 @@ public class BasicPageManager implements PageManager {
     }
 
     @Override
+    public void setStage(Stage stage, String title) {
+        this.stage = stage;
+        stage.setTitle(title);
+    }
+
+    @Override
     public void show(PageType type) {
         Page page = pages.get(type);
         stage.setScene(page.getScene());
