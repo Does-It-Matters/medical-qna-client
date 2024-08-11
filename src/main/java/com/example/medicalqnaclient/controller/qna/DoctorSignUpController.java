@@ -38,6 +38,6 @@ public class DoctorSignUpController {
     // 5. 의료진 회원 가입 요청
     @FXML
     protected void onSignUpButtonClick() {
-        meditator.signUpAsDoctor(id.getText(), password.getText(), name.getText(), field.getText(), hospital.getText(), introduction.getText());
+        mediator.signUpAsDoctor(id.getText(), password.getText(), name.getText(), field.getText(), hospital.getText(), introduction.getText());
     }
 }
