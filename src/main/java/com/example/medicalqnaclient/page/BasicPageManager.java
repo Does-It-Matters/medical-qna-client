@@ -1,15 +1,19 @@
 package com.example.medicalqnaclient.page;
 
+import com.example.medicalqnaclient.page.start.StartPage;
 import javafx.stage.Stage;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.example.medicalqnaclient.page.PageType.START_PAGE;
+
 public class BasicPageManager implements PageManager {
-    private final static Map<PageType, Page> pages;
+    private final static Map<PageType, Page> PAGES;
 
     static {
-        pages = new HashMap<>();
+        PAGES = new HashMap<>();
+        PAGES.put(START_PAGE, StartPage.getPage());
     }
 
     private Stage stage;
@@ -32,7 +36,7 @@ public class BasicPageManager implements PageManager {
 
     @Override
     public void show(PageType type) {
-        Page page = pages.get(type);
+        Page page = PAGES.get(type);
         stage.setScene(page.getScene());
         stage.setTitle(page.getTitle());
         stage.show();
