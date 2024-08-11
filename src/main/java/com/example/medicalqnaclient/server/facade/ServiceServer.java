@@ -21,7 +21,14 @@ import java.util.List;
 
 public class ServiceServer implements Server {
     private final ServerConfig config = ServerConfig.LOCALHOST;
+    /**
+     * Url 관련 로직 위임
+     */
     private final UrlProvider urlProvider = new UrlProvider(config);
+
+    /**
+     * 각 요청 클래스를 인스턴스화하여 테스트 용이하도록 진행
+     */
     private final LoginRequest loginRequest = new LoginRequest();
     private final QuestionsGetRequest questionsGetRequest = new QuestionsGetRequest();
     private final QuestionGetRequest questionGetRequest = new QuestionGetRequest();

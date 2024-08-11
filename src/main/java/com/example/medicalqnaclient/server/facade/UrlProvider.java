@@ -2,6 +2,9 @@ package com.example.medicalqnaclient.server.facade;
 
 import com.example.medicalqnaclient.server.facade.config.ServerConfig;
 
+/**
+ * Url 관련 로직 집중화
+ */
 class UrlProvider {
     private final ServerConfig config;
 
