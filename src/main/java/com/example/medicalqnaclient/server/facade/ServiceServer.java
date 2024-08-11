@@ -20,27 +20,16 @@ import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse
 import java.util.List;
 
 public class ServiceServer implements Server {
-    private ServerConfig config;
-    private LoginRequest loginRequest;
-    private QuestionsGetRequest questionsGetRequest;
-    private QuestionGetRequest questionGetRequest;
-    private PatientSignUpRequest patientSignUpRequest;
-    private DoctorSignUpRequest doctorSignUpRequest;
-    private QuestionEnrollRequest questionEnrollRequest;
-    private QuestionEditRequest questionEditRequest;
-    private QuestionDeleteRequest questionDeleteRequest;
-
-    public ServiceServer() {
-        config = ServerConfig.LOCALHOST;
-        loginRequest = new LoginRequest();
-        questionsGetRequest = new QuestionsGetRequest();
-        questionGetRequest = new QuestionGetRequest();
-        patientSignUpRequest = new PatientSignUpRequest();
-        doctorSignUpRequest = new DoctorSignUpRequest();
-        questionEnrollRequest = new QuestionEnrollRequest();
-        questionEditRequest = new QuestionEditRequest();
-        questionDeleteRequest = new QuestionDeleteRequest();
-    }
+    private final ServerConfig config = ServerConfig.LOCALHOST;
+    private final UrlProvider urlProvider = new UrlProvider(config);
+    private final LoginRequest loginRequest = new LoginRequest();
+    private final QuestionsGetRequest questionsGetRequest = new QuestionsGetRequest();
+    private final QuestionGetRequest questionGetRequest = new QuestionGetRequest();
+    private final PatientSignUpRequest patientSignUpRequest = new PatientSignUpRequest();
+    private final DoctorSignUpRequest doctorSignUpRequest = new DoctorSignUpRequest();
+    private final QuestionEnrollRequest questionEnrollRequest = new QuestionEnrollRequest();
+    private final QuestionEditRequest questionEditRequest = new QuestionEditRequest();
+    private final QuestionDeleteRequest questionDeleteRequest = new QuestionDeleteRequest();
 
     @Override
     public LoginResponse login(String id, String password) throws Exception {
