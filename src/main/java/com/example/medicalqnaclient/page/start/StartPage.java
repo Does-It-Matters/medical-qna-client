@@ -3,34 +3,30 @@ package com.example.medicalqnaclient.page.start;
 import com.example.medicalqnaclient.page.Page;
 import com.example.medicalqnaclient.page.PageStrategy;
 import com.example.medicalqnaclient.user.mediator.UserMediator;
-import com.example.medicalqnaclient.user.state.UserMediatorImpl;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 
 public class StartPage implements Page {
-    private static final Page SINGLETON = new StartPage(BasicStartStrategy.getStrategy());
-    private static final UserMediator mediator = UserMediatorImpl.getInstance();
+    private final Scene scene;
+    private final String title;
 
-    private final Scene SCENE;
-    private final String TITLE;
-
-    private StartPage(PageStrategy pageStrategy) {
+    private StartPage(PageStrategy pageStrategy, UserMediator mediator) {
         Pane layout = pageStrategy.createLayout(mediator);
-        SCENE = new Scene(layout, 400, 300);
-        TITLE = "Start Page";
+        this.scene = new Scene(layout, 400, 300);
+        this.title = "Start Page";
     }
 
     @Override
     public Scene getScene() {
-        return SCENE;
+        return scene;
     }
 
     @Override
     public String getTitle() {
-        return TITLE;
+        return title;
     }
 
-    public static Page getPage() {
-        return SINGLETON;
+    public static StartPage createPage(PageStrategy strategy, UserMediator mediator) {
+        return new StartPage(strategy, mediator);
     }
 }
