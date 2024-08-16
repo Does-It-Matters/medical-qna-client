@@ -18,6 +18,7 @@ public abstract class AbstractPage implements Page {
 
     @Override
     public final Scene getScene(int width, int height) {
+        updateStrategy();
         return new Scene(strategy.createLayout(), width, height);
     }
 
