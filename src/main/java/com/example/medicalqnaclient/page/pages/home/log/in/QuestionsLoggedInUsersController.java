@@ -1,7 +1,7 @@
 package com.example.medicalqnaclient.page.pages.home.log.in;
 
 import com.example.medicalqnaclient.page.core.ViewController;
-import com.example.medicalqnaclient.page.event.Publisher;
+import com.example.medicalqnaclient.page.event.publishers.QnAPublisher;
 import com.example.medicalqnaclient.user.mediator.UserMediator;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
@@ -21,7 +21,7 @@ public class QuestionsLoggedInUsersController extends ViewController {
     private Button postButton;
 
     @Autowired
-    public QuestionsLoggedInUsersController(Publisher publisher, UserMediator mediator) {
+    public QuestionsLoggedInUsersController(QnAPublisher publisher, UserMediator mediator) {
         super(publisher, mediator);
     }
 

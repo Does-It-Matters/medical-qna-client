@@ -1,7 +1,7 @@
 package com.example.medicalqnaclient.page.pages.start.basic;
 
 import com.example.medicalqnaclient.page.core.ViewController;
-import com.example.medicalqnaclient.page.event.Publisher;
+import com.example.medicalqnaclient.page.event.publishers.QnAPublisher;
 import com.example.medicalqnaclient.user.mediator.UserMediator;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class BasicStartController extends ViewController {
 
-    public BasicStartController(Publisher publisher, UserMediator mediator) {
+    public BasicStartController(QnAPublisher publisher, UserMediator mediator) {
         super(publisher, mediator);
     }
 

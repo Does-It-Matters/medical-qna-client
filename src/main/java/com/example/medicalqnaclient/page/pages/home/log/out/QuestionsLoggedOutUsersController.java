@@ -1,7 +1,7 @@
 package com.example.medicalqnaclient.page.pages.home.log.out;
 
 import com.example.medicalqnaclient.page.core.ViewController;
-import com.example.medicalqnaclient.page.event.Publisher;
+import com.example.medicalqnaclient.page.event.publishers.QnAPublisher;
 import com.example.medicalqnaclient.user.mediator.UserMediator;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -41,7 +41,7 @@ public class QuestionsLoggedOutUsersController extends ViewController {
     }
 
     @Autowired
-    public QuestionsLoggedOutUsersController(Publisher publisher, UserMediator mediator) {
+    public QuestionsLoggedOutUsersController(QnAPublisher publisher, UserMediator mediator) {
         super(publisher, mediator);
     }
 

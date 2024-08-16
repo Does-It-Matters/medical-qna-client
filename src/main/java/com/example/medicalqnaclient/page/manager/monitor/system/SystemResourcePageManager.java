@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.page.manager.qna;
+package com.example.medicalqnaclient.page.manager.monitor.system;
 
 import com.example.medicalqnaclient.page.core.Page;
 import com.example.medicalqnaclient.page.core.PageManager;

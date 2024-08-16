@@ -1,13 +1,14 @@
-package com.example.medicalqnaclient.page.event;
+package com.example.medicalqnaclient.page.event.publishers;
 
+import com.example.medicalqnaclient.page.event.events.GoHomeEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Publisher {
+public class QnAPublisher {
     private final ApplicationEventPublisher eventPublisher;
 
-    public Publisher(ApplicationEventPublisher eventPublisher) {
+    public QnAPublisher(ApplicationEventPublisher eventPublisher) {
         this.eventPublisher = eventPublisher;
     }
 
