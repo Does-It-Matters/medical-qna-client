@@ -1,6 +1,6 @@
 package com.example.medicalqnaclient.page.qna;
 
-import com.example.medicalqnaclient.page.MyController;
+import com.example.medicalqnaclient.page.ViewController;
 import com.example.medicalqnaclient.user.mediator.UserMediator;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class QuestionsLoggedInUsersController implements MyController {
+public class QuestionsLoggedInUsersController implements ViewController {
     private final UserMediator mediator;
     private ComboBox<String> categoryComboBox;
     private ListView<String> listView;
