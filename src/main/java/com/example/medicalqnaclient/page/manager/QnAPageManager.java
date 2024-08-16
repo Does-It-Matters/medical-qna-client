@@ -1,5 +1,6 @@
 package com.example.medicalqnaclient.page.manager;
 
+import com.example.medicalqnaclient.page.core.PageManager;
 import com.example.medicalqnaclient.page.core.Start;
 import com.example.medicalqnaclient.page.core.Page;
 import com.example.medicalqnaclient.page.core.PageType;
@@ -16,7 +17,7 @@ import static com.example.medicalqnaclient.page.core.PageType.HOME_PAGE;
 import static com.example.medicalqnaclient.page.core.PageType.START_PAGE;
 
 @Component
-public class QnAPageManager implements com.example.medicalqnaclient.page.core.PageManager, Start {
+public class QnAPageManager implements PageManager, Start {
     private final Map<PageType, Page> PAGES = new HashMap<>();
     private Stage stage;
     private int width;
