@@ -32,7 +32,6 @@ public class UserMediatorImpl implements UserMediator {
 //    private static final Map<UserType, User> users = new HashMap<>();
 //    private static final UserMediator mediator = new UserMediatorImpl();
 
-    private PageManager pageManager;
 //    private User user;
 //    private Server server;
 //    private int readingQuestionId;
@@ -66,11 +65,6 @@ public class UserMediatorImpl implements UserMediator {
 //        }
 //    }
 
-    @Override
-    public void start(Stage primaryStage, String title, int width, int height) {
-        pageManager = new BasicPageManager(primaryStage, title);
-        pageManager.show(START_PAGE, this);
-    }
 //
 //    @Override
 //    public void goHome() {

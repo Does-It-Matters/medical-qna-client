@@ -1,28 +1,32 @@
 package com.example.medicalqnaclient.page;
 
-import com.example.medicalqnaclient.page.start.BasicStartStrategy;
 import com.example.medicalqnaclient.page.start.StartPage;
 import com.example.medicalqnaclient.user.mediator.UserMediator;
 import com.example.medicalqnaclient.user.state.UserMediatorImpl;
 import javafx.stage.Stage;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import static com.example.medicalqnaclient.page.PageType.START_PAGE;
 
+@Component
 public class BasicPageManager implements PageManager {
     private final static Map<PageType, Page> PAGES = new HashMap<>();
     private Stage stage;
 
-    public BasicPageManager(Stage stage, String title) {
-        this.stage = stage;
+    @Override
+    public void start(Stage primaryStage, String title, int width, int height) {
+        this.stage = primaryStage;
         stage.setTitle(title);
-        initializePages();
+        initializePages(width, height);
+
+        show(START_PAGE, new UserMediatorImpl());
     }
 
-    private void initializePages() {
-        PAGES.put(START_PAGE, new StartPage("Start page", 400, 300));
+    private void initializePages(int width, int height) {
+        PAGES.put(START_PAGE, new StartPage("Start page", width, height));
     }
 
     @Override

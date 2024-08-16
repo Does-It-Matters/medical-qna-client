@@ -26,6 +26,7 @@ module com.example.medicalqnaclient {
 //    exports com.example.medicalqnaclient.server.facade.tasks.question.edit;
 //    exports com.example.medicalqnaclient.server.facade.tasks.question.delete;
 
+    exports com.example.medicalqnaclient.page;
     exports com.example.medicalqnaclient;
 //    exports com.example.medicalqnaclient.controller;
 //    exports com.example.medicalqnaclient.server.facade.tasks.signup.common to com.fasterxml.jackson.databind;
@@ -34,6 +35,7 @@ module com.example.medicalqnaclient {
     opens com.example.medicalqnaclient.user.state to spring.core;
     opens com.example.medicalqnaclient.user.mediator to spring.core;
     opens com.example.medicalqnaclient to javafx.fxml, spring.core;
+    opens com.example.medicalqnaclient.page to spring.core;
 //    opens com.example.medicalqnaclient.controller.monitor to spring.core;
 //    exports com.example.medicalqnaclient.controller.monitor;
 //    exports com.example.medicalqnaclient.controller.qna;
