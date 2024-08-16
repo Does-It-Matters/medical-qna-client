@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.page.start;
+package com.example.medicalqnaclient.page.start.basic;
 
 import com.example.medicalqnaclient.page.PageStrategy;
 import com.example.medicalqnaclient.user.mediator.UserMediator;

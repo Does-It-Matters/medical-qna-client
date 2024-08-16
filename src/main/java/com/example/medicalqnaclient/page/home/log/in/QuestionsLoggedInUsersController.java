@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.page.qna;
+package com.example.medicalqnaclient.page.home.log.in;
 
 import com.example.medicalqnaclient.page.ViewController;
 import com.example.medicalqnaclient.user.mediator.UserMediator;

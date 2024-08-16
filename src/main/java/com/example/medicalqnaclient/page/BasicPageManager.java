@@ -1,6 +1,6 @@
 package com.example.medicalqnaclient.page;
 
-import com.example.medicalqnaclient.page.qna.HomePage;
+import com.example.medicalqnaclient.page.home.HomePage;
 import com.example.medicalqnaclient.page.start.StartPage;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
