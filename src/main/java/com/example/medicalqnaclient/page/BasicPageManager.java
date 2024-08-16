@@ -14,7 +14,6 @@ import static com.example.medicalqnaclient.page.PageType.START_PAGE;
 public class BasicPageManager implements PageManager {
     private final static Map<PageType, Page> PAGES = new HashMap<>();
     private Stage stage;
-    private final UserMediator mediator = UserMediatorImpl.getInstance();
 
     public BasicPageManager(Stage stage, String title) {
         this.stage = stage;
@@ -23,7 +22,7 @@ public class BasicPageManager implements PageManager {
     }
 
     private void initializePages() {
-        PAGES.put(START_PAGE, StartPage.createPage(new BasicStartStrategy(), mediator));
+        PAGES.put(START_PAGE, new StartPage("Start page", 400, 300));
     }
 
     @Override
@@ -38,9 +37,9 @@ public class BasicPageManager implements PageManager {
     }
 
     @Override
-    public void show(PageType type) {
+    public void show(PageType type, UserMediator mediator) {
         Page page = PAGES.get(type);
-        stage.setScene(page.getScene());
+        stage.setScene(page.getScene(mediator));
         stage.setTitle(page.getTitle());
         stage.show();
     }
