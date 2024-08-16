@@ -12,4 +12,9 @@ public class StartPage extends AbstractPage {
     public StartPage(PageStrategy strategy) {
         super("Start Page", strategy);
     }
+
+    @Override
+    protected void updateStrategy() {
+        this.strategy = strategy;
+    }
 }

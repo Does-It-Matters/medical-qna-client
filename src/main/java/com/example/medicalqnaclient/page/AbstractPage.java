@@ -12,12 +12,14 @@ public abstract class AbstractPage implements Page {
     }
 
     @Override
-    public String getTitle() {
+    public final String getTitle() {
         return title;
     }
 
     @Override
-    public Scene getScene(int width, int height) {
+    public final Scene getScene(int width, int height) {
         return new Scene(strategy.createLayout(), width, height);
     }
+
+    protected abstract void updateStrategy();
 }
