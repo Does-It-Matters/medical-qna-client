@@ -1,24 +1,16 @@
 package com.example.medicalqnaclient.user.state;
 
-import com.example.medicalqnaclient.HelloApplication;
-//import com.example.medicalqnaclient.controller.Fxml;
 //import com.example.medicalqnaclient.server.facade.Server;
 //import com.example.medicalqnaclient.server.facade.ServiceServer;
 //import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
 //import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
 //import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
-import com.example.medicalqnaclient.page.BasicPageManager;
-import com.example.medicalqnaclient.page.PageManager;
 import com.example.medicalqnaclient.user.mediator.UserMediator;
 //import com.example.medicalqnaclient.user.state.factory.User;
 //import com.example.medicalqnaclient.user.state.factory.UserFactory;
 //import com.example.medicalqnaclient.user.state.factory.UserType;
 import com.example.medicalqnaclient.user.state.factory.exception.AlreadyLoggedInException;
 import com.example.medicalqnaclient.user.state.factory.exception.UnauthorizedAccessException;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -27,19 +19,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.example.medicalqnaclient.page.PageType.START_PAGE;
-
 @Component
 public class UserMediatorImpl implements UserMediator {
 //    private static final Map<UserType, User> users = new HashMap<>();
-//    private static final UserMediator mediator = new UserMediatorImpl();
 
 //    private User user;
 //    private Server server;
 //    private int readingQuestionId;
 
-//    @Autowired
-//    private ConfigurableApplicationContext context;
 //    static {
 //        for (UserType userType: UserType.values()) {
 //            users.put(userType, UserFactory.getInstance(userType));
@@ -51,21 +38,6 @@ public class UserMediatorImpl implements UserMediator {
 //        user = UserFactory.getInstance(UserType.ALL);
 //        server = new ServiceServer();
     }
-
-//    private Parent loadFXML(Fxml fxml) {
-//        try {
-//            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxml.getFxml()));
-//            // FXMLLoader는 컨트롤러를 기본 생성자로 인스턴스화
-//            // Spring으로 통합 시, ApplicationContext로 컨트롤러 인스턴스화
-//            // fxmlLoader.setControllerFactory(context::getBean);
-//            System.out.println("Loading FXML: " + fxml.getFxml());
-//            return fxmlLoader.load();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            System.err.println("Failed to load scene: " + e.getMessage());
-//            return null;
-//        }
-//    }
 
 //
 //    @Override
@@ -205,9 +177,5 @@ public class UserMediatorImpl implements UserMediator {
 //    @Override
 //    public void getLoadTestView() {
 //        setScene(loadFXML(Fxml.LOAD_TEST));
-//    }
-//
-//    public static UserMediator getInstance() {
-//        return mediator;
 //    }
 }
