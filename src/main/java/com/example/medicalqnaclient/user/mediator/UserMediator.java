@@ -5,7 +5,7 @@ package com.example.medicalqnaclient.user.mediator;
 
 import java.util.List;
 
-public interface UserMediator extends Start {
+public interface UserMediator {
 //    // 1. 홈 화면 요청
 //    public void goHome();
 //

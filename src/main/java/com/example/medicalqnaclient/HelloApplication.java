@@ -1,7 +1,7 @@
 package com.example.medicalqnaclient;
 
-import com.example.medicalqnaclient.user.mediator.Start;
-import com.example.medicalqnaclient.user.state.UserMediatorImpl;
+import com.example.medicalqnaclient.page.BasicPageManager;
+import com.example.medicalqnaclient.page.Start;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,8 +26,7 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-//        UserMediatorImpl mediator = context.getBean(UserMediatorImpl.class);
-        final Start application = new UserMediatorImpl();
+        final Start application = context.getBean(BasicPageManager.class);
         application.start(stage, "My Health Block", 900, 600);
     }
 

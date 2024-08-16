@@ -2,29 +2,26 @@ package com.example.medicalqnaclient.page.start;
 
 import com.example.medicalqnaclient.page.Page;
 import com.example.medicalqnaclient.page.PageStrategy;
-import com.example.medicalqnaclient.user.mediator.UserMediator;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class StartPage implements Page {
     private final String title;
-    private final int width;
-    private final int height;
     private final PageStrategy strategy;
 
-    public StartPage(String title, int width, int height) {
-        this.title = title;
-        this.width = width;
-        this.height = height;
-        this.strategy = new BasicStartStrategy();
+    @Autowired
+    public StartPage(PageStrategy strategy) {
+        this.title = "Start Page";
+        this.strategy = strategy;
     }
 
     @Override
-    public Scene getScene(UserMediator mediator) {
-        Pane layout = strategy.createLayout(mediator);
-        Scene scene = new Scene(layout, width, height);
-
-        return scene;
+    public Scene getScene(int width, int height) {
+        Pane layout = strategy.createLayout();
+        return new Scene(layout, width, height);
     }
 
     @Override
