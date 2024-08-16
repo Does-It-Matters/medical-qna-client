@@ -21,21 +21,20 @@ import java.util.Map;
 
 @Component
 public class UserMediatorImpl implements UserMediator {
-    private static final Map<UserType, User> users = new HashMap<>();
-
-    private User user;
+    private final Map<UserType, User> users = new HashMap<>();
+    private final User user;
+    private final UserFactory userFactory;
 //    private Server server;
 //    private int readingQuestionId;
 
-    static {
-        for (UserType userType: UserType.values()) {
-            users.put(userType, UserFactory.getInstance(userType));
-        }
-    }
-
     @Autowired
-    public UserMediatorImpl() {
-        user = UserFactory.getInstance(UserType.ALL);
+    public UserMediatorImpl(UserFactory userFactory) {
+        this.userFactory = userFactory;
+        for (UserType userType: UserType.values()) {
+            users.put(userType, this.userFactory.getInstance(userType));
+        }
+
+        user = this.userFactory.getInstance(UserType.ALL);
 //        server = new ServiceServer();
     }
 

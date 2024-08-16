@@ -43,6 +43,9 @@ module com.example.medicalqnaclient {
     exports com.example.medicalqnaclient.user.state;
     opens com.example.medicalqnaclient.user.state to spring.core;
 
+    exports com.example.medicalqnaclient.user.state.factory;
+    opens com.example.medicalqnaclient.user.state.factory to spring.core;
+
 //    opens com.example.medicalqnaclient.controller.monitor to spring.core;
 //    exports com.example.medicalqnaclient.controller.monitor;
 //    exports com.example.medicalqnaclient.controller.qna;

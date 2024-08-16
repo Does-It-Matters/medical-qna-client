@@ -8,19 +8,15 @@ package com.example.medicalqnaclient.user.state.factory;
 //import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
 import com.example.medicalqnaclient.user.state.factory.exception.AlreadyLoggedInException;
 import com.example.medicalqnaclient.user.state.factory.exception.UnauthorizedAccessException;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 class Patient implements User {
-    private static final User patient = new Patient();
-
     private String id;
 
     private Patient() {}
-
-    static User getInstance () {
-        return patient;
-    }
 //
 //    @Override
 //    public void setId(String id) {

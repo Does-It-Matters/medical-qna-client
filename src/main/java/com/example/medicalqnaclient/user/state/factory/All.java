@@ -7,17 +7,13 @@ package com.example.medicalqnaclient.user.state.factory;
 //import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
 //import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
 import com.example.medicalqnaclient.user.state.factory.exception.AlreadyLoggedInException;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 class All implements User {
-    private static final User all = new All();
-
     private All() {}
-
-    static User getInstance () {
-        return all;
-    }
 
 //    @Override
 //    public void setId(String id) {
