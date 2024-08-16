@@ -1,52 +1,52 @@
-//package com.example.medicalqnaclient.user.state;
-//
-//import com.example.medicalqnaclient.HelloApplication;
-////import com.example.medicalqnaclient.controller.Fxml;
-////import com.example.medicalqnaclient.server.facade.Server;
-////import com.example.medicalqnaclient.server.facade.ServiceServer;
-////import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
-////import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
-////import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
-////import com.example.medicalqnaclient.user.mediator.UserMediator;
-////import com.example.medicalqnaclient.user.state.factory.User;
-////import com.example.medicalqnaclient.user.state.factory.UserFactory;
-////import com.example.medicalqnaclient.user.state.factory.UserType;
-//import com.example.medicalqnaclient.user.state.factory.exception.AlreadyLoggedInException;
-//import com.example.medicalqnaclient.user.state.factory.exception.UnauthorizedAccessException;
-//import javafx.fxml.FXMLLoader;
-//import javafx.scene.Parent;
-//import javafx.scene.Scene;
-//import javafx.stage.Stage;
-//
-//import java.io.IOException;
-//import java.util.HashMap;
-//import java.util.List;
-//import java.util.Map;
-//
-////@Component
-//public class UserMediatorImpl implements UserMediator {
+package com.example.medicalqnaclient.user.state;
+
+import com.example.medicalqnaclient.HelloApplication;
+//import com.example.medicalqnaclient.controller.Fxml;
+//import com.example.medicalqnaclient.server.facade.Server;
+//import com.example.medicalqnaclient.server.facade.ServiceServer;
+//import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
+//import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
+//import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
+import com.example.medicalqnaclient.user.mediator.UserMediator;
+//import com.example.medicalqnaclient.user.state.factory.User;
+//import com.example.medicalqnaclient.user.state.factory.UserFactory;
+//import com.example.medicalqnaclient.user.state.factory.UserType;
+import com.example.medicalqnaclient.user.state.factory.exception.AlreadyLoggedInException;
+import com.example.medicalqnaclient.user.state.factory.exception.UnauthorizedAccessException;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+//@Component
+public class UserMediatorImpl implements UserMediator {
 //    private static final Map<UserType, User> users = new HashMap<>();
 //    private static final UserMediator mediator = new UserMediatorImpl();
-//
-//    private Stage primaryStage;
+
+    private Stage primaryStage;
 //    private User user;
 //    private Server server;
 //    private int readingQuestionId;
-//
-////    @Autowired
-////    private ConfigurableApplicationContext context;
+
+//    @Autowired
+//    private ConfigurableApplicationContext context;
 //    static {
 //        for (UserType userType: UserType.values()) {
 //            users.put(userType, UserFactory.getInstance(userType));
 //        }
 //    }
-//
-////    @Autowired
-//    private UserMediatorImpl() {
+
+//    @Autowired
+    private UserMediatorImpl() {
 //        user = UserFactory.getInstance(UserType.ALL);
 //        server = new ServiceServer();
-//    }
-//
+    }
+
 //    private Parent loadFXML(Fxml fxml) {
 //        try {
 //            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(fxml.getFxml()));
@@ -61,15 +61,15 @@
 //            return null;
 //        }
 //    }
-//
-//    @Override
-//    public void start(Stage primaryStage, String title, int width, int height) {
-//        this.primaryStage = primaryStage;
+
+    @Override
+    public void start(Stage primaryStage, String title, int width, int height) {
+        this.primaryStage = primaryStage;
 //        Scene scene = new Scene((loadFXML(Fxml.START)), width, height);
 //        primaryStage.setTitle(title);
 //        primaryStage.setScene(scene);
 //        primaryStage.show();
-//    }
+    }
 //
 //    @Override
 //    public void goHome() {
@@ -213,4 +213,4 @@
 //    public static UserMediator getInstance() {
 //        return mediator;
 //    }
-//}
+}
