@@ -7,6 +7,8 @@ import com.example.medicalqnaclient.HelloApplication;
 //import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
 //import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
 //import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
+import com.example.medicalqnaclient.page.BasicPageManager;
+import com.example.medicalqnaclient.page.PageManager;
 import com.example.medicalqnaclient.user.mediator.UserMediator;
 //import com.example.medicalqnaclient.user.state.factory.User;
 //import com.example.medicalqnaclient.user.state.factory.UserFactory;
@@ -23,12 +25,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.example.medicalqnaclient.page.PageType.START_PAGE;
+
 //@Component
 public class UserMediatorImpl implements UserMediator {
 //    private static final Map<UserType, User> users = new HashMap<>();
 //    private static final UserMediator mediator = new UserMediatorImpl();
 
-    private Stage primaryStage;
+    private PageManager pageManager;
 //    private User user;
 //    private Server server;
 //    private int readingQuestionId;
@@ -42,7 +46,7 @@ public class UserMediatorImpl implements UserMediator {
 //    }
 
 //    @Autowired
-    private UserMediatorImpl() {
+    public UserMediatorImpl() {
 //        user = UserFactory.getInstance(UserType.ALL);
 //        server = new ServiceServer();
     }
@@ -64,11 +68,8 @@ public class UserMediatorImpl implements UserMediator {
 
     @Override
     public void start(Stage primaryStage, String title, int width, int height) {
-        this.primaryStage = primaryStage;
-//        Scene scene = new Scene((loadFXML(Fxml.START)), width, height);
-//        primaryStage.setTitle(title);
-//        primaryStage.setScene(scene);
-//        primaryStage.show();
+        pageManager = new BasicPageManager(primaryStage, title);
+        pageManager.show(START_PAGE, this);
     }
 //
 //    @Override
