@@ -40,6 +40,9 @@ module com.example.medicalqnaclient {
     exports com.example.medicalqnaclient.page.start;
     opens com.example.medicalqnaclient.page.start to spring.core;
 
+    exports com.example.medicalqnaclient.page.qna;
+    opens com.example.medicalqnaclient.page.qna to spring.core;
+
     exports com.example.medicalqnaclient.user.state;
     opens com.example.medicalqnaclient.user.state to spring.core;
 

@@ -17,7 +17,7 @@ public class BasicPageManager implements PageManager {
     private int width;
     private int height;
 
-    private final StartPage startPage;
+    private final Page startPage;
 
     @Autowired
     public BasicPageManager(StartPage startPage) {
