@@ -38,15 +38,19 @@ public class UserMediatorImpl implements UserMediator {
 //        server = new ServiceServer();
     }
 
-
     @Override
-    public void goHome() {
-        if (user.isLoggedIn()) {
+    public boolean isLoggedIn() {
+        return false;
+    }
+
+//    @Override
+//    public void goHome() {
+//        if (user.isLoggedIn()) {
 //            setScene(loadFXML(Fxml.QUESTIONS_LOGGED_IN_USERS));
 //        } else {
 //            setScene(loadFXML(Fxml.QUESTIONS_LOGGED_OUT_USERS));
-        }
-    }
+//        }
+//    }
 //
 //    private void setScene(Parent root) {
 //        if (root != null) {

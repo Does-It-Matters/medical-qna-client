@@ -6,8 +6,10 @@ package com.example.medicalqnaclient.user.mediator;
 import java.util.List;
 
 public interface UserMediator {
-    // 1. 홈 화면 요청
-    public void goHome();
+    public boolean isLoggedIn();
+
+//    // 1. 홈 화면 요청
+//    public void goHome();
 //
 //    // 2. 로그인 요청
 //    public void login(String id, String pw);
