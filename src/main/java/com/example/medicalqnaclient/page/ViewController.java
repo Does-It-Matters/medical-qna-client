@@ -1,7 +1,14 @@
 package com.example.medicalqnaclient.page;
 
 import javafx.scene.layout.Pane;
+import org.springframework.context.ApplicationEventPublisher;
 
-public interface ViewController {
-    Pane getLayout();
+public abstract class ViewController {
+    protected final ApplicationEventPublisher eventPublisher;
+
+    public ViewController(ApplicationEventPublisher eventPublisher) {
+        this.eventPublisher = eventPublisher;
+    }
+
+    public abstract Pane getLayout();
 }

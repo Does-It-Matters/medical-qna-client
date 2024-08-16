@@ -9,10 +9,11 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 @Component
-public class QuestionsLoggedOutUsersController implements ViewController {
+public class QuestionsLoggedOutUsersController extends ViewController {
     private final UserMediator mediator;
     private ComboBox<String> categoryComboBox;
     private ListView<String> listView;
@@ -22,7 +23,8 @@ public class QuestionsLoggedOutUsersController implements ViewController {
     private Button searchButton;
 
     @Autowired
-    public QuestionsLoggedOutUsersController(UserMediator mediator) {
+    public QuestionsLoggedOutUsersController(UserMediator mediator, ApplicationEventPublisher applicationEventPublisher) {
+        super(applicationEventPublisher);
         this.mediator = mediator;
     }
 

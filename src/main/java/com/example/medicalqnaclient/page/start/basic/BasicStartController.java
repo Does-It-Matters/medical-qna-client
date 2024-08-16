@@ -4,10 +4,16 @@ import com.example.medicalqnaclient.page.ViewController;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 @Component
-public class BasicStartController implements ViewController {
+public class BasicStartController extends ViewController {
+
+    public BasicStartController(ApplicationEventPublisher applicationEventPublisher) {
+        super(applicationEventPublisher);
+    }
+
     @Override
     public Pane getLayout() {
         VBox root = new VBox(10);

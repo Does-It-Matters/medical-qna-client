@@ -6,10 +6,11 @@ import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 @Component
-public class QuestionsLoggedInUsersController implements ViewController {
+public class QuestionsLoggedInUsersController extends ViewController {
     private final UserMediator mediator;
     private ComboBox<String> categoryComboBox;
     private ListView<String> listView;
@@ -21,7 +22,8 @@ public class QuestionsLoggedInUsersController implements ViewController {
     private Button postButton;
 
     @Autowired
-    public QuestionsLoggedInUsersController(UserMediator mediator) {
+    public QuestionsLoggedInUsersController(UserMediator mediator, ApplicationEventPublisher eventPublisher) {
+        super(eventPublisher);
         this.mediator = mediator;
     }
 
