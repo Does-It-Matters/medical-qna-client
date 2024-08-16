@@ -1,29 +1,27 @@
-package com.example.medicalqnaclient.page.start;
+package com.example.medicalqnaclient.page.pages.start.basic;
 
-import com.example.medicalqnaclient.page.PageStrategy;
+import com.example.medicalqnaclient.page.core.ViewController;
+import com.example.medicalqnaclient.page.event.Publisher;
 import com.example.medicalqnaclient.user.mediator.UserMediator;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class BasicStartStrategy implements PageStrategy {
-    private final UserMediator userMediator;
+public class BasicStartController extends ViewController {
 
-    @Autowired
-    public BasicStartStrategy(UserMediator userMediator) {
-        this.userMediator = userMediator;
+    public BasicStartController(Publisher publisher, UserMediator mediator) {
+        super(publisher, mediator);
     }
 
     @Override
-    public Pane createLayout() {
+    public Pane getLayout() {
         VBox root = new VBox(10);
         Button goHomeButton = new Button("Go Home");
         Button getMonitorPageButton = new Button("Monitor page");
 
-//        goHomeButton.setOnAction(e -> mediator.goHome());
+        goHomeButton.setOnAction(e -> publisher.publishGoHomeEvent());
 //        getMonitorPageButton.setOnAction(e -> mediator.getMonitorView());
 
         root.getChildren().addAll(goHomeButton, getMonitorPageButton);
