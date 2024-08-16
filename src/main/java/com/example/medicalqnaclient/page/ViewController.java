@@ -1,8 +1,8 @@
 package com.example.medicalqnaclient.page;
 
+import com.example.medicalqnaclient.page.event.Publisher;
 import com.example.medicalqnaclient.user.mediator.UserMediator;
 import javafx.scene.layout.Pane;
-import org.springframework.context.ApplicationEventPublisher;
 
 /**
  * 역할
@@ -12,11 +12,11 @@ import org.springframework.context.ApplicationEventPublisher;
  * 3. 이벤트를 발행
  */
 public abstract class ViewController {
-    protected final ApplicationEventPublisher eventPublisher;
+    protected final Publisher publisher;
     private final UserMediator mediator;
 
-    public ViewController(ApplicationEventPublisher eventPublisher, UserMediator mediator) {
-        this.eventPublisher = eventPublisher;
+    public ViewController(Publisher publisher, UserMediator mediator) {
+        this.publisher = publisher;
         this.mediator = mediator;
     }
 

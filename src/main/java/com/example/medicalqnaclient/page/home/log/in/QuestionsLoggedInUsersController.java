@@ -1,12 +1,12 @@
 package com.example.medicalqnaclient.page.home.log.in;
 
 import com.example.medicalqnaclient.page.ViewController;
+import com.example.medicalqnaclient.page.event.Publisher;
 import com.example.medicalqnaclient.user.mediator.UserMediator;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -21,8 +21,8 @@ public class QuestionsLoggedInUsersController extends ViewController {
     private Button postButton;
 
     @Autowired
-    public QuestionsLoggedInUsersController(ApplicationEventPublisher eventPublisher, UserMediator mediator) {
-        super(eventPublisher, mediator);
+    public QuestionsLoggedInUsersController(Publisher publisher, UserMediator mediator) {
+        super(publisher, mediator);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.example.medicalqnaclient.page.home.log.out;
 
 import com.example.medicalqnaclient.page.ViewController;
+import com.example.medicalqnaclient.page.event.Publisher;
 import com.example.medicalqnaclient.user.mediator.UserMediator;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -9,7 +10,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -41,8 +41,8 @@ public class QuestionsLoggedOutUsersController extends ViewController {
     }
 
     @Autowired
-    public QuestionsLoggedOutUsersController(ApplicationEventPublisher applicationEventPublisher, UserMediator mediator) {
-        super(applicationEventPublisher, mediator);
+    public QuestionsLoggedOutUsersController(Publisher publisher, UserMediator mediator) {
+        super(publisher, mediator);
     }
 
 //    private void handleSelectedQuestion(QuestionTitle questionTitle) {
