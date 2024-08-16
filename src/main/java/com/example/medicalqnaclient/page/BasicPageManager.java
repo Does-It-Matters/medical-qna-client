@@ -1,9 +1,8 @@
 package com.example.medicalqnaclient.page;
 
 import com.example.medicalqnaclient.page.start.StartPage;
-import com.example.medicalqnaclient.user.mediator.UserMediator;
-import com.example.medicalqnaclient.user.state.UserMediatorImpl;
 import javafx.stage.Stage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -15,18 +14,29 @@ import static com.example.medicalqnaclient.page.PageType.START_PAGE;
 public class BasicPageManager implements PageManager {
     private final static Map<PageType, Page> PAGES = new HashMap<>();
     private Stage stage;
+    private int width;
+    private int height;
+
+    private final StartPage startPage;
+
+    @Autowired
+    public BasicPageManager(StartPage startPage) {
+        this.startPage = startPage;
+
+        initializePages();
+    }
+
+    private void initializePages() {
+        PAGES.put(START_PAGE, startPage);
+    }
 
     @Override
     public void start(Stage primaryStage, String title, int width, int height) {
         this.stage = primaryStage;
-        stage.setTitle(title);
-        initializePages(width, height);
+        this.width = width;
+        this.height = height;
 
-        show(START_PAGE, new UserMediatorImpl());
-    }
-
-    private void initializePages(int width, int height) {
-        PAGES.put(START_PAGE, new StartPage("Start page", width, height));
+        show(START_PAGE);
     }
 
     @Override
@@ -41,9 +51,9 @@ public class BasicPageManager implements PageManager {
     }
 
     @Override
-    public void show(PageType type, UserMediator mediator) {
+    public void show(PageType type) {
         Page page = PAGES.get(type);
-        stage.setScene(page.getScene(mediator));
+        stage.setScene(page.getScene(width, height));
         stage.setTitle(page.getTitle());
         stage.show();
     }

@@ -19,6 +19,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -27,7 +29,7 @@ import java.util.Map;
 
 import static com.example.medicalqnaclient.page.PageType.START_PAGE;
 
-//@Component
+@Component
 public class UserMediatorImpl implements UserMediator {
 //    private static final Map<UserType, User> users = new HashMap<>();
 //    private static final UserMediator mediator = new UserMediatorImpl();
@@ -44,7 +46,7 @@ public class UserMediatorImpl implements UserMediator {
 //        }
 //    }
 
-//    @Autowired
+    @Autowired
     public UserMediatorImpl() {
 //        user = UserFactory.getInstance(UserType.ALL);
 //        server = new ServiceServer();

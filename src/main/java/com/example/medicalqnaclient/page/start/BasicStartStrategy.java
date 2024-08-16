@@ -5,11 +5,20 @@ import com.example.medicalqnaclient.user.mediator.UserMediator;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BasicStartStrategy implements PageStrategy {
+    private final UserMediator userMediator;
+
+    @Autowired
+    public BasicStartStrategy(UserMediator userMediator) {
+        this.userMediator = userMediator;
+    }
 
     @Override
-    public Pane createLayout(UserMediator mediator) {
+    public Pane createLayout() {
         VBox root = new VBox(10);
         Button goHomeButton = new Button("Go Home");
         Button getMonitorPageButton = new Button("Monitor page");

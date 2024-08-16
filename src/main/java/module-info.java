@@ -32,10 +32,17 @@ module com.example.medicalqnaclient {
 //    exports com.example.medicalqnaclient.server.facade.tasks.signup.common to com.fasterxml.jackson.databind;
 //    exports com.example.medicalqnaclient.server.facade.tasks.signup.patient to com.fasterxml.jackson.databind;
 //    exports com.example.medicalqnaclient.server.facade.tasks.signup.doctor to com.fasterxml.jackson.databind;
-    opens com.example.medicalqnaclient.user.state to spring.core;
     opens com.example.medicalqnaclient.user.mediator to spring.core;
     opens com.example.medicalqnaclient to javafx.fxml, spring.core;
     opens com.example.medicalqnaclient.page to spring.core;
+
+    // spring 빈 생성하기 위해서 exports와 opens 둘 다 설정하기
+    exports com.example.medicalqnaclient.page.start;
+    opens com.example.medicalqnaclient.page.start to spring.core;
+
+    exports com.example.medicalqnaclient.user.state;
+    opens com.example.medicalqnaclient.user.state to spring.core;
+
 //    opens com.example.medicalqnaclient.controller.monitor to spring.core;
 //    exports com.example.medicalqnaclient.controller.monitor;
 //    exports com.example.medicalqnaclient.controller.qna;
