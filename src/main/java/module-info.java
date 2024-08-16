@@ -26,7 +26,6 @@ module com.example.medicalqnaclient {
 //    exports com.example.medicalqnaclient.server.facade.tasks.question.edit;
 //    exports com.example.medicalqnaclient.server.facade.tasks.question.delete;
 
-    exports com.example.medicalqnaclient.page;
     exports com.example.medicalqnaclient;
 //    exports com.example.medicalqnaclient.controller;
 //    exports com.example.medicalqnaclient.server.facade.tasks.signup.common to com.fasterxml.jackson.databind;
@@ -37,26 +36,30 @@ module com.example.medicalqnaclient {
     opens com.example.medicalqnaclient.page to spring.core;
 
     // spring 빈 생성하기 위해서 exports와 opens 둘 다 설정하기
-    exports com.example.medicalqnaclient.page.start;
-    opens com.example.medicalqnaclient.page.start to spring.core;
+    exports com.example.medicalqnaclient.page.pages.start;
+    opens com.example.medicalqnaclient.page.pages.start to spring.core;
 
     exports com.example.medicalqnaclient.page.event;
     opens com.example.medicalqnaclient.page.event to spring.core;
 
-    exports com.example.medicalqnaclient.page.home;
-    opens com.example.medicalqnaclient.page.home to spring.core;
+    exports com.example.medicalqnaclient.page.pages.home;
+    opens com.example.medicalqnaclient.page.pages.home to spring.core;
 
     exports com.example.medicalqnaclient.user.state;
     opens com.example.medicalqnaclient.user.state to spring.core;
 
     exports com.example.medicalqnaclient.user.state.factory;
     opens com.example.medicalqnaclient.user.state.factory to spring.core;
-    exports com.example.medicalqnaclient.page.home.log.in;
-    opens com.example.medicalqnaclient.page.home.log.in to spring.core;
-    exports com.example.medicalqnaclient.page.home.log.out;
-    opens com.example.medicalqnaclient.page.home.log.out to spring.core;
-    exports com.example.medicalqnaclient.page.start.basic;
-    opens com.example.medicalqnaclient.page.start.basic to spring.core;
+    exports com.example.medicalqnaclient.page.pages.home.log.in;
+    opens com.example.medicalqnaclient.page.pages.home.log.in to spring.core;
+    exports com.example.medicalqnaclient.page.pages.home.log.out;
+    opens com.example.medicalqnaclient.page.pages.home.log.out to spring.core;
+    exports com.example.medicalqnaclient.page.pages.start.basic;
+    opens com.example.medicalqnaclient.page.pages.start.basic to spring.core;
+    exports com.example.medicalqnaclient.page.core;
+    opens com.example.medicalqnaclient.page.core to spring.core;
+    exports com.example.medicalqnaclient.page.manager;
+    opens com.example.medicalqnaclient.page.manager to spring.core;
 
 //    opens com.example.medicalqnaclient.controller.monitor to spring.core;
 //    exports com.example.medicalqnaclient.controller.monitor;

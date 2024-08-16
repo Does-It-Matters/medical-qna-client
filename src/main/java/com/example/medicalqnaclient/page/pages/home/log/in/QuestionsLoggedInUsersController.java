@@ -1,25 +1,29 @@
-package com.example.medicalqnaclient.page.home.log.out;
+package com.example.medicalqnaclient.page.pages.home.log.in;
 
-import com.example.medicalqnaclient.page.ViewController;
+import com.example.medicalqnaclient.page.core.ViewController;
 import com.example.medicalqnaclient.page.event.Publisher;
 import com.example.medicalqnaclient.user.mediator.UserMediator;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class QuestionsLoggedOutUsersController extends ViewController {
+public class QuestionsLoggedInUsersController extends ViewController {
     private ComboBox<String> categoryComboBox;
     private ListView<String> listView;
 //    private ListView<QuestionTitle> listView;
+    private MenuButton userNameMenuButton;
     private TextArea userQueryTextArea;
-    private Button loginButton;
+    private Button logoutButton;
     private Button searchButton;
+    private Button postButton;
+
+    @Autowired
+    public QuestionsLoggedInUsersController(Publisher publisher, UserMediator mediator) {
+        super(publisher, mediator);
+    }
 
     @Override
     public Pane getLayout() {
@@ -27,30 +31,28 @@ public class QuestionsLoggedOutUsersController extends ViewController {
 
         categoryComboBox = new ComboBox<>();
         listView = new ListView<>();
+        userNameMenuButton = new MenuButton("User");
         userQueryTextArea = new TextArea();
-        loginButton = new Button("Login");
+        logoutButton = new Button("Logout");
         searchButton = new Button("Search");
+        postButton = new Button("Post");
 
-//        loginButton.setOnAction(e -> onLoginButtonClick());
+//        logoutButton.setOnAction(e -> onLogoutButtonClick());
 //        searchButton.setOnAction(e -> onSearchButtonClick());
+//        postButton.setOnAction(e -> onPostButtonClick());
 
-        layout.getChildren().addAll(categoryComboBox, listView, userQueryTextArea, searchButton, loginButton);
+        layout.getChildren().addAll(userNameMenuButton, categoryComboBox, listView, userQueryTextArea, searchButton, postButton, logoutButton);
 //        setList(mediator.getQuestionList());
 
         return layout;
-    }
-
-    @Autowired
-    public QuestionsLoggedOutUsersController(Publisher publisher, UserMediator mediator) {
-        super(publisher, mediator);
     }
 
 //    private void handleSelectedQuestion(QuestionTitle questionTitle) {
 //        mediator.readQuestion(questionTitle.getQuestionId());
 //    }
 //
-//    protected void onLoginButtonClick() {
-//        mediator.getLoginView();
+//    protected void onLogoutButtonClick() {
+//        mediator.logout();
 //    }
 //
 //    protected void onSearchButtonClick() {
@@ -66,5 +68,13 @@ public class QuestionsLoggedOutUsersController extends ViewController {
 //                handleSelectedQuestion(newValue);
 //            }
 //        });
+//    }
+//
+//    protected void onPostButtonClick() {
+//        try {
+//            mediator.getPostQuestionView();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 //    }
 }

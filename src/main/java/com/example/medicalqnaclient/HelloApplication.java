@@ -1,7 +1,7 @@
 package com.example.medicalqnaclient;
 
-import com.example.medicalqnaclient.page.BasicPageManager;
-import com.example.medicalqnaclient.page.Start;
+import com.example.medicalqnaclient.page.manager.QnAPageManager;
+import com.example.medicalqnaclient.page.core.Start;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -26,8 +26,8 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        final Start application = context.getBean(BasicPageManager.class);
-        application.start(stage, "My Health Block", 900, 600);
+        final Start application = context.getBean(QnAPageManager.class);
+        application.start(stage, 900, 600);
     }
 
 

@@ -1,10 +1,10 @@
 package com.example.medicalqnaclient.page.event;
 
-import com.example.medicalqnaclient.page.PageManager;
+import com.example.medicalqnaclient.page.core.PageManager;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
-import static com.example.medicalqnaclient.page.PageType.HOME_PAGE;
+import static com.example.medicalqnaclient.page.core.PageType.HOME_PAGE;
 
 @Component
 public class Listener {

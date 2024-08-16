@@ -1,7 +1,7 @@
-package com.example.medicalqnaclient.page.start;
+package com.example.medicalqnaclient.page.pages.start;
 
-import com.example.medicalqnaclient.page.AbstractPage;
-import com.example.medicalqnaclient.page.start.basic.BasicStartStrategy;
+import com.example.medicalqnaclient.page.pages.start.basic.BasicStartStrategy;
+import com.example.medicalqnaclient.page.core.AbstractPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

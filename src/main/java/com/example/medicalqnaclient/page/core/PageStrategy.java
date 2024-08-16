@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.page;
+package com.example.medicalqnaclient.page.core;
 
 import javafx.scene.layout.Pane;
 

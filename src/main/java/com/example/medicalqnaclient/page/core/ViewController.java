@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.page;
+package com.example.medicalqnaclient.page.core;
 
 import com.example.medicalqnaclient.page.event.Publisher;
 import com.example.medicalqnaclient.user.mediator.UserMediator;
