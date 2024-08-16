@@ -1,6 +1,6 @@
 package com.example.medicalqnaclient;
 
-import com.example.medicalqnaclient.page.manager.QnAPageManager;
+import com.example.medicalqnaclient.page.manager.application.QnAPageManager;
 import com.example.medicalqnaclient.page.core.Start;
 import javafx.application.Application;
 import javafx.stage.Stage;
