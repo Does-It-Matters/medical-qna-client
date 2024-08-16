@@ -1,5 +1,6 @@
 package com.example.medicalqnaclient.page;
 
+import com.example.medicalqnaclient.page.event.Listener;
 import com.example.medicalqnaclient.page.home.HomePage;
 import com.example.medicalqnaclient.page.start.StartPage;
 import javafx.stage.Stage;
@@ -15,6 +16,8 @@ import static com.example.medicalqnaclient.page.PageType.START_PAGE;
 @Component
 public class BasicPageManager implements PageManager {
     private final static Map<PageType, Page> PAGES = new HashMap<>();
+
+    private final Listener listener;
     private Stage stage;
     private int width;
     private int height;
@@ -23,7 +26,8 @@ public class BasicPageManager implements PageManager {
     private final Page homePage;
 
     @Autowired
-    public BasicPageManager(StartPage startPage, HomePage homePage) {
+    public BasicPageManager(Listener listener, StartPage startPage, HomePage homePage) {
+        this.listener = listener;
         this.startPage = startPage;
         this.homePage = homePage;
 

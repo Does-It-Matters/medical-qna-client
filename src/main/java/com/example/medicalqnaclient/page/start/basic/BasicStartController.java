@@ -21,7 +21,7 @@ public class BasicStartController extends ViewController {
         Button goHomeButton = new Button("Go Home");
         Button getMonitorPageButton = new Button("Monitor page");
 
-//        goHomeButton.setOnAction(e -> mediator.goHome());
+        goHomeButton.setOnAction(e -> publisher.publishGoHomeEvent());
 //        getMonitorPageButton.setOnAction(e -> mediator.getMonitorView());
 
         root.getChildren().addAll(goHomeButton, getMonitorPageButton);
