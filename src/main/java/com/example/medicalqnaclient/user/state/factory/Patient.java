@@ -1,26 +1,26 @@
-//package com.example.medicalqnaclient.user.state.factory;
-//
+package com.example.medicalqnaclient.user.state.factory;
+
 //import com.example.medicalqnaclient.server.facade.Server;
 //import com.example.medicalqnaclient.server.facade.tasks.question.edit.QuestionEditResponse;
 //import com.example.medicalqnaclient.server.facade.tasks.question.enroll.QuestionEnrollResponse;
 //import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
 //import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
 //import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
-//import com.example.medicalqnaclient.user.state.factory.exception.AlreadyLoggedInException;
-//import com.example.medicalqnaclient.user.state.factory.exception.UnauthorizedAccessException;
-//
-//import java.util.List;
-//
-//class Patient implements User {
-//    private static final User patient = new Patient();
-//
-//    private String id;
-//
-//    private Patient() {}
-//
-//    static User getInstance () {
-//        return patient;
-//    }
+import com.example.medicalqnaclient.user.state.factory.exception.AlreadyLoggedInException;
+import com.example.medicalqnaclient.user.state.factory.exception.UnauthorizedAccessException;
+
+import java.util.List;
+
+class Patient implements User {
+    private static final User patient = new Patient();
+
+    private String id;
+
+    private Patient() {}
+
+    static User getInstance () {
+        return patient;
+    }
 //
 //    @Override
 //    public void setId(String id) {
@@ -31,12 +31,12 @@
 //    public LoginResponse login(Server server, String id, String pw) throws AlreadyLoggedInException {
 //        throw new AlreadyLoggedInException();
 //    }
-//
-//    @Override
-//    public boolean isLoggedIn() {
-//        return true;
-//    }
-//
+
+    @Override
+    public boolean isLoggedIn() {
+        return true;
+    }
+
 //    @Override
 //    public void logout() {
 //
@@ -91,4 +91,4 @@
 //    public boolean canPostQuestion() {
 //        return true;
 //    }
-//}
+}

@@ -6,9 +6,9 @@ package com.example.medicalqnaclient.user.state;
 //import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
 //import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
 import com.example.medicalqnaclient.user.mediator.UserMediator;
-//import com.example.medicalqnaclient.user.state.factory.User;
-//import com.example.medicalqnaclient.user.state.factory.UserFactory;
-//import com.example.medicalqnaclient.user.state.factory.UserType;
+import com.example.medicalqnaclient.user.state.factory.User;
+import com.example.medicalqnaclient.user.state.factory.UserFactory;
+import com.example.medicalqnaclient.user.state.factory.UserType;
 import com.example.medicalqnaclient.user.state.factory.exception.AlreadyLoggedInException;
 import com.example.medicalqnaclient.user.state.factory.exception.UnauthorizedAccessException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,33 +21,33 @@ import java.util.Map;
 
 @Component
 public class UserMediatorImpl implements UserMediator {
-//    private static final Map<UserType, User> users = new HashMap<>();
+    private static final Map<UserType, User> users = new HashMap<>();
 
-//    private User user;
+    private User user;
 //    private Server server;
 //    private int readingQuestionId;
 
-//    static {
-//        for (UserType userType: UserType.values()) {
-//            users.put(userType, UserFactory.getInstance(userType));
-//        }
-//    }
+    static {
+        for (UserType userType: UserType.values()) {
+            users.put(userType, UserFactory.getInstance(userType));
+        }
+    }
 
     @Autowired
     public UserMediatorImpl() {
-//        user = UserFactory.getInstance(UserType.ALL);
+        user = UserFactory.getInstance(UserType.ALL);
 //        server = new ServiceServer();
     }
 
-//
-//    @Override
-//    public void goHome() {
-//        if (user.isLoggedIn()) {
+
+    @Override
+    public void goHome() {
+        if (user.isLoggedIn()) {
 //            setScene(loadFXML(Fxml.QUESTIONS_LOGGED_IN_USERS));
 //        } else {
 //            setScene(loadFXML(Fxml.QUESTIONS_LOGGED_OUT_USERS));
-//        }
-//    }
+        }
+    }
 //
 //    private void setScene(Parent root) {
 //        if (root != null) {
