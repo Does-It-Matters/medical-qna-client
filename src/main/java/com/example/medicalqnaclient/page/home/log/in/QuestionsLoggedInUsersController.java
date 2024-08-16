@@ -11,7 +11,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class QuestionsLoggedInUsersController extends ViewController {
-    private final UserMediator mediator;
     private ComboBox<String> categoryComboBox;
     private ListView<String> listView;
 //    private ListView<QuestionTitle> listView;
@@ -22,9 +21,8 @@ public class QuestionsLoggedInUsersController extends ViewController {
     private Button postButton;
 
     @Autowired
-    public QuestionsLoggedInUsersController(UserMediator mediator, ApplicationEventPublisher eventPublisher) {
-        super(eventPublisher);
-        this.mediator = mediator;
+    public QuestionsLoggedInUsersController(ApplicationEventPublisher eventPublisher, UserMediator mediator) {
+        super(eventPublisher, mediator);
     }
 
     @Override

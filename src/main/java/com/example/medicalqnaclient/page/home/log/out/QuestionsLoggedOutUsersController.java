@@ -14,19 +14,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class QuestionsLoggedOutUsersController extends ViewController {
-    private final UserMediator mediator;
     private ComboBox<String> categoryComboBox;
     private ListView<String> listView;
 //    private ListView<QuestionTitle> listView;
     private TextArea userQueryTextArea;
     private Button loginButton;
     private Button searchButton;
-
-    @Autowired
-    public QuestionsLoggedOutUsersController(UserMediator mediator, ApplicationEventPublisher applicationEventPublisher) {
-        super(applicationEventPublisher);
-        this.mediator = mediator;
-    }
 
     @Override
     public Pane getLayout() {
@@ -45,6 +38,11 @@ public class QuestionsLoggedOutUsersController extends ViewController {
 //        setList(mediator.getQuestionList());
 
         return layout;
+    }
+
+    @Autowired
+    public QuestionsLoggedOutUsersController(ApplicationEventPublisher applicationEventPublisher, UserMediator mediator) {
+        super(applicationEventPublisher, mediator);
     }
 
 //    private void handleSelectedQuestion(QuestionTitle questionTitle) {
