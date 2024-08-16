@@ -10,7 +10,7 @@ public class StartPage implements Page {
     private final String title;
     private final int width;
     private final int height;
-    private final BasicStartStrategy strategy;
+    private final PageStrategy strategy;
 
     public StartPage(String title, int width, int height) {
         this.title = title;
