@@ -14,8 +14,8 @@ public class BasicStartStrategy implements PageStrategy {
         Button goHomeButton = new Button("Go Home");
         Button getMonitorPageButton = new Button("Monitor page");
 
-        goHomeButton.setOnAction(e -> mediator.goHome());
-        getMonitorPageButton.setOnAction(e -> mediator.getMonitorView());
+//        goHomeButton.setOnAction(e -> mediator.goHome());
+//        getMonitorPageButton.setOnAction(e -> mediator.getMonitorView());
 
         root.getChildren().addAll(goHomeButton, getMonitorPageButton);
         return root;

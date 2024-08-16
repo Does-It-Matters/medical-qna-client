@@ -27,7 +27,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 //        UserMediatorImpl mediator = context.getBean(UserMediatorImpl.class);
-        final Start application = UserMediatorImpl.getInstance();
+        final Start application = new UserMediatorImpl();
         application.start(stage, "My Health Block", 900, 600);
     }
 
