@@ -1,7 +1,7 @@
 package com.example.medicalqnaclient.page.core;
 
-import com.example.medicalqnaclient.page.event.Publisher;
-import com.example.medicalqnaclient.user.mediator.UserMediator;
+import com.example.medicalqnaclient.page.event.publishers.QnAPublisher;
+import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
 import javafx.scene.layout.Pane;
 
 /**
@@ -12,10 +12,10 @@ import javafx.scene.layout.Pane;
  * 3. 이벤트를 발행
  */
 public abstract class ViewController {
-    protected final Publisher publisher;
-    private final UserMediator mediator;
+    protected final QnAPublisher publisher;
+    private final ReadWriteUserMediator mediator;
 
-    public ViewController(Publisher publisher, UserMediator mediator) {
+    public ViewController(QnAPublisher publisher, ReadWriteUserMediator mediator) {
         this.publisher = publisher;
         this.mediator = mediator;
     }

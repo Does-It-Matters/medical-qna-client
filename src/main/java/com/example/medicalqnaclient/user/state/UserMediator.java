@@ -5,22 +5,18 @@ package com.example.medicalqnaclient.user.state;
 //import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
 //import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
 //import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
-import com.example.medicalqnaclient.user.mediator.UserMediator;
+import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
 import com.example.medicalqnaclient.user.state.factory.User;
 import com.example.medicalqnaclient.user.state.factory.UserFactory;
 import com.example.medicalqnaclient.user.state.factory.UserType;
-import com.example.medicalqnaclient.user.state.factory.exception.AlreadyLoggedInException;
-import com.example.medicalqnaclient.user.state.factory.exception.UnauthorizedAccessException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Component
-public class UserMediatorImpl implements UserMediator {
+public class UserMediator implements ReadWriteUserMediator {
     private final Map<UserType, User> users = new HashMap<>();
     private final User user;
     private final UserFactory userFactory;
@@ -28,7 +24,7 @@ public class UserMediatorImpl implements UserMediator {
 //    private int readingQuestionId;
 
     @Autowired
-    public UserMediatorImpl(UserFactory userFactory) {
+    public UserMediator(UserFactory userFactory) {
         this.userFactory = userFactory;
         for (UserType userType: UserType.values()) {
             users.put(userType, this.userFactory.getInstance(userType));
