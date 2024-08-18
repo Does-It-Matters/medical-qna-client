@@ -4,18 +4,18 @@ import com.example.medicalqnaclient.page.core.AbstractPage;
 import com.example.medicalqnaclient.page.core.PageStrategy;
 import com.example.medicalqnaclient.page.pages.home.log.in.LoggedInStrategy;
 import com.example.medicalqnaclient.page.pages.home.log.out.LoggedOutStrategy;
-import com.example.medicalqnaclient.user.mediator.UserMediator;
+import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class HomePage extends AbstractPage {
-    private final UserMediator userMediator;
+    private final ReadWriteUserMediator userMediator;
     private final PageStrategy loggedInStrategy;
     private final PageStrategy loggedOutStrategy;
 
     @Autowired
-    public HomePage(UserMediator userMediator, LoggedInStrategy loggedInStrategy, LoggedOutStrategy loggedOutStrategy) {
+    public HomePage(ReadWriteUserMediator userMediator, LoggedInStrategy loggedInStrategy, LoggedOutStrategy loggedOutStrategy) {
         super("Home Page", loggedInStrategy);
         this.userMediator = userMediator;
         this.loggedInStrategy = loggedInStrategy;

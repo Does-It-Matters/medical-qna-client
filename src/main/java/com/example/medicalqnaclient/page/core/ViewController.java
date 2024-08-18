@@ -1,7 +1,7 @@
 package com.example.medicalqnaclient.page.core;
 
 import com.example.medicalqnaclient.page.event.publishers.QnAPublisher;
-import com.example.medicalqnaclient.user.mediator.UserMediator;
+import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
 import javafx.scene.layout.Pane;
 
 /**
@@ -13,9 +13,9 @@ import javafx.scene.layout.Pane;
  */
 public abstract class ViewController {
     protected final QnAPublisher publisher;
-    private final UserMediator mediator;
+    private final ReadWriteUserMediator mediator;
 
-    public ViewController(QnAPublisher publisher, UserMediator mediator) {
+    public ViewController(QnAPublisher publisher, ReadWriteUserMediator mediator) {
         this.publisher = publisher;
         this.mediator = mediator;
     }
