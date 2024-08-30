@@ -58,7 +58,7 @@ public class LoginController extends ViewController {
         doctorSignUpButton = new Button("Sign Up as Doctor");
 
 //        loginButton.setOnAction(e -> onLoginButtonClick());
-//        homeButton.setOnAction(e -> onHomeButtonClick());
+        homeButton.setOnAction(e -> onHomeButtonClick());
 //        patientSignUpButton.setOnAction(e -> onPatientSignUpButtonClick());
 //        doctorSignUpButton.setOnAction(e -> onDoctorSignUpButtonClick());
 
@@ -88,15 +88,15 @@ public class LoginController extends ViewController {
 //        }
 //    }
 
-//    /**
-//     * <b> 역할: 홈 버튼 클릭 시 호출 </b>
-//     * <p>
-//     * - 홈 화면으로 이동 <br>
-//     * </p>
-//     */
-//    protected void onHomeButtonClick() {
-//        mediator.goHome();
-//    }
+    /**
+     * <b> 역할: 홈 버튼 클릭 시 호출 </b>
+     * <p>
+     * - 홈 화면으로 이동 <br>
+     * </p>
+     */
+    protected void onHomeButtonClick() {
+        publisher.publishGoHomeEvent();
+    }
 
 //    /**
 //     * <b> 역할: 환자 회원가입 버튼 클릭 시 호출 </b>
