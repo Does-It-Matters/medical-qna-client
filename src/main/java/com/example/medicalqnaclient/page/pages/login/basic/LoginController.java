@@ -1,7 +1,6 @@
 package com.example.medicalqnaclient.page.pages.login.basic;
 
 import com.example.medicalqnaclient.page.core.ViewController;
-import com.example.medicalqnaclient.page.core.PageManager;
 import com.example.medicalqnaclient.page.event.publishers.QnAPublisher;
 import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
 import javafx.scene.control.Button;
@@ -17,7 +16,7 @@ import org.springframework.stereotype.Component;
  * <p>
  * 1. 로그인 ui로 사용자 입력을 처리 <br>
  * 2. 서버로 로그인 요청 <br>
- * 3. 로그인 요청 수행 후 {@link PageManager}에 다음 페이지 요청 <br>
+ * 3. 로그인 요청 수행 후 {@link com.example.medicalqnaclient.page.core.PageManager}에 다음 페이지 요청 <br>
  * </p>
  */
 @Component
