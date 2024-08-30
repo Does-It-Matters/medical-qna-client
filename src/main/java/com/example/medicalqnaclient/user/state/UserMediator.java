@@ -1,7 +1,5 @@
 package com.example.medicalqnaclient.user.state;
 
-//import com.example.medicalqnaclient.server.facade.Server;
-//import com.example.medicalqnaclient.server.facade.ServiceServer;
 //import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
 //import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
 //import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
@@ -20,7 +18,6 @@ public class UserMediator implements ReadWriteUserMediator {
     private final Map<UserType, User> users = new HashMap<>();
     private final User user;
     private final UserFactory userFactory;
-//    private Server server;
 //    private int readingQuestionId;
 
     @Autowired
@@ -31,7 +28,6 @@ public class UserMediator implements ReadWriteUserMediator {
         }
 
         user = this.userFactory.getInstance(UserType.ALL);
-//        server = new ServiceServer();
     }
 
     @Override
