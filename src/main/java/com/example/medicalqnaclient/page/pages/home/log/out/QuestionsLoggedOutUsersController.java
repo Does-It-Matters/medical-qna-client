@@ -12,6 +12,9 @@ import javafx.scene.layout.VBox;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * <b> 역할: 로그아웃된 상태에서 질문 목록 조회 컨트롤러 클래스 </b>
+ */
 @Component
 public class QuestionsLoggedOutUsersController extends ViewController {
     private ComboBox<String> categoryComboBox;
@@ -21,6 +24,20 @@ public class QuestionsLoggedOutUsersController extends ViewController {
     private Button loginButton;
     private Button searchButton;
 
+    @Autowired
+    public QuestionsLoggedOutUsersController(QnAPublisher publisher, ReadWriteUserMediator mediator) {
+        super(publisher, mediator);
+    }
+
+    /**
+     * <b> 역할: ui 메소드 </b>
+     * <p>
+     * - 화면 ui 구성
+     * - 핸들러 설정
+     * </p>
+     *
+     * @return 화면 ui
+     */
     @Override
     public Pane getLayout() {
         VBox layout = new VBox(10);
@@ -31,7 +48,7 @@ public class QuestionsLoggedOutUsersController extends ViewController {
         loginButton = new Button("Login");
         searchButton = new Button("Search");
 
-//        loginButton.setOnAction(e -> onLoginButtonClick());
+        loginButton.setOnAction(e -> onLoginButtonClick());
 //        searchButton.setOnAction(e -> onSearchButtonClick());
 
         layout.getChildren().addAll(categoryComboBox, listView, userQueryTextArea, searchButton, loginButton);
@@ -40,18 +57,20 @@ public class QuestionsLoggedOutUsersController extends ViewController {
         return layout;
     }
 
-    @Autowired
-    public QuestionsLoggedOutUsersController(QnAPublisher publisher, ReadWriteUserMediator mediator) {
-        super(publisher, mediator);
-    }
 
 //    private void handleSelectedQuestion(QuestionTitle questionTitle) {
 //        mediator.readQuestion(questionTitle.getQuestionId());
 //    }
-//
-//    protected void onLoginButtonClick() {
-//        mediator.getLoginView();
-//    }
+
+    /**
+     * <b> 역할: 로그인 버튼 클릭에 대한 메소드 </b>
+     * <p>
+     * - 로그인 이벤트 발행
+     * </p>
+     */
+    protected void onLoginButtonClick() {
+        publisher.publishLoginEvent();
+    }
 //
 //    protected void onSearchButtonClick() {
 //        setList(mediator.search(userQueryTextArea.getText()));
