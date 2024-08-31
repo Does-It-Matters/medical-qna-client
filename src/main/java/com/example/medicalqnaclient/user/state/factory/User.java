@@ -10,7 +10,7 @@ import com.example.medicalqnaclient.user.state.factory.exception.AlreadyLoggedIn
 import java.util.List;
 
 public interface User {
-//    public void setId(String id);
+    public void setId(String id);
     public LoginResponse login(String id, String password) throws AlreadyLoggedInException;
     public boolean isLoggedIn();
 //    public void logout();

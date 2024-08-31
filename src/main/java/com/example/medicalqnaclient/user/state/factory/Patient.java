@@ -22,11 +22,10 @@ class Patient extends AbstractUser {
         super(server);
     }
 
-//
-//    @Override
-//    public void setId(String id) {
-//        this.id = id;
-//    }
+    @Override
+    public void setId(String id) {
+        this.id = id;
+    }
 
     @Override
     public boolean isLoggedIn() {

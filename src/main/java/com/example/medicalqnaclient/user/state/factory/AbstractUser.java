@@ -13,6 +13,10 @@ public abstract class AbstractUser implements User {
     }
 
     @Override
+    public void setId(String id) {
+    }
+
+    @Override
     public LoginResponse login(String id, String pw) throws AlreadyLoggedInException {
         throw new AlreadyLoggedInException();
     }

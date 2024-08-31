@@ -21,10 +21,6 @@ class All extends AbstractUser {
         super(server);
     }
 
-//    @Override
-//    public void setId(String id) {
-//    }
-
     @Override
     public LoginResponse login(String id, String pw) throws AlreadyLoggedInException {
         try {

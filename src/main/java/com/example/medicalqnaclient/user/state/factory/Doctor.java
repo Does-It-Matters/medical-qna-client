@@ -21,10 +21,11 @@ class Doctor extends AbstractUser {
     private Doctor (Server server) {
         super(server);
     }
-//    @Override
-//    public void setId(String id) {
-//        this.id = id;
-//    }
+
+    @Override
+    public void setId(String id) {
+        this.id = id;
+    }
 
     @Override
     public LoginResponse login(String id, String pw) throws AlreadyLoggedInException {
