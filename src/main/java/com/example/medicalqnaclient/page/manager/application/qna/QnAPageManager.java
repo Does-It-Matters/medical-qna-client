@@ -6,6 +6,12 @@ import com.example.medicalqnaclient.page.core.Page;
 import com.example.medicalqnaclient.page.core.PageType;
 import com.example.medicalqnaclient.page.pages.home.HomePage;
 import com.example.medicalqnaclient.page.pages.login.LoginPage;
+import com.example.medicalqnaclient.page.pages.profile.MyProfilePage;
+import com.example.medicalqnaclient.page.pages.question.QuestionEditPage;
+import com.example.medicalqnaclient.page.pages.question.QuestionPostPage;
+import com.example.medicalqnaclient.page.pages.question.QuestionViewPage;
+import com.example.medicalqnaclient.page.pages.sign.up.doctor.DoctorSignUpPage;
+import com.example.medicalqnaclient.page.pages.sign.up.patient.PatientSignUpPage;
 import com.example.medicalqnaclient.page.pages.start.StartPage;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,16 +49,26 @@ public class QnAPageManager implements PageManager, Start {
      * </p>
      */
     @Autowired
-    public QnAPageManager(StartPage startPage, HomePage homePage, LoginPage loginPage) {
+    public QnAPageManager(
+            StartPage startPage,
+            HomePage homePage,
+            LoginPage loginPage,
+            DoctorSignUpPage doctorSignUpPage,
+            PatientSignUpPage patientSignUpPage,
+            MyProfilePage myProfilePage,
+            QuestionViewPage questionViewPage,
+            QuestionPostPage questionPostPage,
+            QuestionEditPage questionEditPage
+    ) {
         PAGES.put(START_PAGE, startPage);
         PAGES.put(HOME_PAGE, homePage);
         PAGES.put(LOGIN_PAGE, loginPage);
-//        PAGES.put(DOCTOR_SIGN_UP_PAGE, Page);
-//        PAGES.put(PATIENT_SIGN_UP_PAGE, Page);
-//        PAGES.put(MY_PROFILE_PAGE, Page);
-//        PAGES.put(QUESTION_VIEW_PAGE, Page);
-//        PAGES.put(QUESTION_POST_PAGE, Page);
-//        PAGES.put(QUESTION_EDIT_PAGE, Page);
+        PAGES.put(DOCTOR_SIGN_UP_PAGE, doctorSignUpPage);
+        PAGES.put(PATIENT_SIGN_UP_PAGE, patientSignUpPage);
+        PAGES.put(MY_PROFILE_PAGE, myProfilePage);
+        PAGES.put(QUESTION_VIEW_PAGE, questionViewPage);
+        PAGES.put(QUESTION_POST_PAGE, questionPostPage);
+        PAGES.put(QUESTION_EDIT_PAGE, questionEditPage);
     }
 
     @Override
