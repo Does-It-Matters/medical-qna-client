@@ -63,7 +63,8 @@ public class QuestionEditController extends ViewController {
      * </p>
      */
     protected void onEditButtonClick() {
-//        mediator.editQuestion(titleTextField.getText(), symptomTextArea.getText(), questionTextArea.getText());
+        mediator.editQuestion(titleTextField.getText(), symptomTextArea.getText(), questionTextArea.getText());
+        publisher.publishGoHomeEvent();
     }
 
     /**

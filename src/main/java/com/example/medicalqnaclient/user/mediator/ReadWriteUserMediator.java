@@ -15,7 +15,7 @@ public interface ReadWriteUserMediator extends ReadUserMediator {
     public void postQuestion(String title, String symptom, String content);
     public void setReadingQuestionId(int questionId);
     public QuestionResponse readQuestion();
-//    public void editQuestion(String title, String symptom, String content);
+    public void editQuestion(String title, String symptom, String content);
 //    public void deleteQuestion();
     public List<QuestionTitle> search(String query);
     public List<QuestionTitle> getQuestionList();

@@ -1,6 +1,7 @@
 package com.example.medicalqnaclient.user.state.factory;
 
 import com.example.medicalqnaclient.server.facade.Server;
+import com.example.medicalqnaclient.server.facade.tasks.question.edit.QuestionEditResponse;
 import com.example.medicalqnaclient.server.facade.tasks.question.enroll.QuestionEnrollResponse;
 import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
 import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
@@ -59,5 +60,10 @@ public abstract class AbstractUser implements User {
     @Override
     public List<QuestionTitle> search(String query) {
         return server.search(query);
+    }
+
+    @Override
+    public QuestionEditResponse editQuestion(int questionId, String title, String symptom, String content) {
+        return null;
     }
 }

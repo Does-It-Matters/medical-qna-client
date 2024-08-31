@@ -82,11 +82,10 @@ public class UserMediator implements ReadWriteUserMediator {
         return user.readQuestion(readingQuestionId);
     }
 
-//    @Override
-//    public void editQuestion(String title, String symptom, String content) {
-//        user.editQuestion(server, readingQuestionId, title, symptom, content);
-//        setScene(loadFXML(Fxml.QUESTION));
-//    }
+    @Override
+    public void editQuestion(String title, String symptom, String content) {
+        user.editQuestion(readingQuestionId, title, symptom, content);
+    }
 //
 //    @Override
 //    public void deleteQuestion() {

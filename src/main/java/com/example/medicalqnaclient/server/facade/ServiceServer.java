@@ -3,8 +3,8 @@ package com.example.medicalqnaclient.server.facade;
 import com.example.medicalqnaclient.server.facade.config.ServerConfig;
 //import com.example.medicalqnaclient.server.facade.tasks.question.delete.QuestionDeleteRequest;
 //import com.example.medicalqnaclient.server.facade.tasks.question.delete.QuestionDeleteResponse;
-//import com.example.medicalqnaclient.server.facade.tasks.question.edit.QuestionEditRequest;
-//import com.example.medicalqnaclient.server.facade.tasks.question.edit.QuestionEditResponse;
+import com.example.medicalqnaclient.server.facade.tasks.question.edit.QuestionEditRequest;
+import com.example.medicalqnaclient.server.facade.tasks.question.edit.QuestionEditResponse;
 import com.example.medicalqnaclient.server.facade.tasks.question.enroll.QuestionEnrollRequest;
 import com.example.medicalqnaclient.server.facade.tasks.question.enroll.QuestionEnrollResponse;
 import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionGetRequest;
@@ -34,7 +34,7 @@ public class ServiceServer implements Server {
     private final QuestionsGetRequest questionsGetRequest = new QuestionsGetRequest();
     private final QuestionGetRequest questionGetRequest = new QuestionGetRequest();
     private final QuestionEnrollRequest questionEnrollRequest = new QuestionEnrollRequest();
-//    private final QuestionEditRequest questionEditRequest = new QuestionEditRequest();
+    private final QuestionEditRequest questionEditRequest = new QuestionEditRequest();
 //    private final QuestionDeleteRequest questionDeleteRequest = new QuestionDeleteRequest();
 //
     @Override
@@ -79,12 +79,12 @@ public class ServiceServer implements Server {
         String url = urlProvider.getEnrollQuestionUrl();
         return questionEnrollRequest.post(url, id, title, symptom, content);
     }
-//
-//    @Override
-//    public QuestionEditResponse editQuestion(int questionId, String title, String symptom, String content) {
-//        String url = urlProvider.getEditQuestionUrl();
-//        return questionEditRequest.patch(url, questionId, title, symptom, content);
-//    }
+
+    @Override
+    public QuestionEditResponse editQuestion(int questionId, String title, String symptom, String content) {
+        String url = urlProvider.getEditQuestionUrl();
+        return questionEditRequest.patch(url, questionId, title, symptom, content);
+    }
 //
 //    @Override
 //    public QuestionDeleteResponse deleteQuestion(int questionId) {
