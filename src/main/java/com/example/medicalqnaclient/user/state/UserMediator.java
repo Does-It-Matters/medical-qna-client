@@ -93,11 +93,11 @@ public class UserMediator implements ReadWriteUserMediator {
 //        user.deleteQuestion(server, readingQuestionId);
 //        goHome();
 //    }
-//
-//    @Override
-//    public List<QuestionTitle> search(String query) {
-//        return user.search(server, query);
-//    }
+
+    @Override
+    public List<QuestionTitle> search(String query) {
+        return user.search(query);
+    }
 
     @Override
     public List<QuestionTitle> getQuestionList() {

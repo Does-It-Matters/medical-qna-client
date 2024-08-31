@@ -33,14 +33,8 @@ public class QuestionsGetRequest {
 //            return getQuestionListAll(url);
 //        }
 //    }
-//
-//    public static List<QuestionTitle> search(String symptom) {
-//        return List.of(
-//                new QuestionTitle(1, "Search 1"),
-//                new QuestionTitle(2, "Search 2"),
-//                new QuestionTitle(3, "Search 3"),
-//                new QuestionTitle(4, "Search 4"),
-//                new QuestionTitle(5, "Search 5")
-//        );
-//    }
+
+    public static List<QuestionTitle> search(String symptom) {
+        return List.of();
+    }
 }

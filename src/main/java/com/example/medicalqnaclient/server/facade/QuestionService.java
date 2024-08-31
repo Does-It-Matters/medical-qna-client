@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface QuestionService {
     List<QuestionTitle> getQuestionList();
-//    List<QuestionTitle> search(String query);
+    List<QuestionTitle> search(String query);
     QuestionResponse readQuestion(int questionId);
     QuestionEnrollResponse enrollQuestion(String id, String title, String symptom, String content);
 //    QuestionEditResponse editQuestion(int questionId, String title, String symptom, String content);

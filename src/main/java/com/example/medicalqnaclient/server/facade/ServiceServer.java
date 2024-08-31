@@ -62,11 +62,11 @@ public class ServiceServer implements Server {
         return questionsGetRequest.getQuestionListAll(url);
     }
 
-//    @Override
-//    public List<QuestionTitle> search(String query) {
-//        String url = urlProvider.getSearchUrl();
-//        return questionsGetRequest.search(query);
-//    }
+    @Override
+    public List<QuestionTitle> search(String query) {
+        String url = urlProvider.getSearchUrl();
+        return questionsGetRequest.search(query);
+    }
 
     @Override
     public QuestionResponse readQuestion(int questionId) {

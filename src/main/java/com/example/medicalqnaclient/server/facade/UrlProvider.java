@@ -28,9 +28,9 @@ class UrlProvider {
         return config.getBaseUrl() + "/api/v3/question/list";
     }
 
-//    String getSearchUrl() {
-//        return null;
-//    }
+    String getSearchUrl() {
+        return null;
+    }
 
     String getQuestionUrl() {
         return config.getBaseUrl() + "/api/v3/question/";

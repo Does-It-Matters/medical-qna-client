@@ -55,4 +55,9 @@ public abstract class AbstractUser implements User {
     public List<QuestionTitle> getQuestionList() {
         return server.getQuestionList();
     }
+
+    @Override
+    public List<QuestionTitle> search(String query) {
+        return server.search(query);
+    }
 }

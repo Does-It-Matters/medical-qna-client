@@ -70,10 +70,10 @@ public class QuestionsLoggedOutUsersController extends ViewController {
     protected void onLoginButtonClick() {
         publisher.publishLoginEvent();
     }
-//
-//    protected void onSearchButtonClick() {
-//        setList(mediator.search(userQueryTextArea.getText()));
-//    }
+
+    protected void onSearchButtonClick() {
+        setList(mediator.search(userQueryTextArea.getText()));
+    }
 
     private void setList(List<QuestionTitle> list) {
         ObservableList<QuestionTitle> items = FXCollections.observableArrayList(list);

@@ -57,12 +57,6 @@ class All extends AbstractUser {
 //    }
 //
 //    @Override
-//    public List<QuestionTitle> search(Server server, String query) {
-//        return server.search(query);
-//    }
-//
-//
-//    @Override
 //    public boolean canPostQuestion() {
 //        return false;
 //    }
