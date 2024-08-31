@@ -11,6 +11,9 @@ import com.example.medicalqnaclient.page.pages.application.question.QuestionView
 import com.example.medicalqnaclient.page.pages.application.up.doctor.DoctorSignUpPage;
 import com.example.medicalqnaclient.page.pages.application.up.patient.PatientSignUpPage;
 import com.example.medicalqnaclient.page.pages.application.start.ApplicationStartPage;
+import com.example.medicalqnaclient.page.pages.log.start.LogStartPage;
+import com.example.medicalqnaclient.page.pages.resource.start.ResourceStartPage;
+import com.example.medicalqnaclient.page.pages.test.start.TestStartPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -34,7 +37,10 @@ public class PageRegistry {
             MyProfilePage myProfilePage,
             QuestionViewPage questionViewPage,
             QuestionPostPage questionPostPage,
-            QuestionEditPage questionEditPage
+            QuestionEditPage questionEditPage,
+            TestStartPage testStartPage,
+            ResourceStartPage resourceStartPage,
+            LogStartPage logStartPage
     ) {
         applicationPages.put(PageType.START_PAGE, applicationStartPage);
         applicationPages.put(PageType.HOME_PAGE, homePage);
@@ -45,6 +51,12 @@ public class PageRegistry {
         applicationPages.put(PageType.QUESTION_VIEW_PAGE, questionViewPage);
         applicationPages.put(PageType.QUESTION_POST_PAGE, questionPostPage);
         applicationPages.put(PageType.QUESTION_EDIT_PAGE, questionEditPage);
+
+        testPages.put(PageType.TEST_START_PAGE, testStartPage);
+
+        systemResourcePages.put(PageType.RESOURCE_START_PAGE, resourceStartPage);
+
+        logPages.put(PageType.LOG_START_PAGE, logStartPage);
     }
 
     public Map<PageType, Page> getApplicationPages() {

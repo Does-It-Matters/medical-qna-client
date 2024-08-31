@@ -49,5 +49,21 @@ public enum PageType {
     /**
      * <b> 역할: 질문 수정 화면 </b>
      */
-    QUESTION_EDIT_PAGE;
+    QUESTION_EDIT_PAGE,
+
+    /**
+     * <b> 역할: 시작 화면 </b>
+     */
+    TEST_START_PAGE,
+
+
+    /**
+     * <b> 역할: 시작 화면 </b>
+     */
+    RESOURCE_START_PAGE,
+
+    /**
+     * <b> 역할: 시작 화면 </b>
+     */
+    LOG_START_PAGE;
 }

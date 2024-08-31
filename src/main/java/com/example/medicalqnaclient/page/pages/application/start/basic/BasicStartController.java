@@ -1,6 +1,6 @@
 package com.example.medicalqnaclient.page.pages.application.start.basic;
 
-import com.example.medicalqnaclient.page.core.ApplicationController;
+import com.example.medicalqnaclient.page.pages.application.ApplicationController;
 import com.example.medicalqnaclient.page.event.publishers.QnAPublisher;
 import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
 import javafx.scene.control.Button;

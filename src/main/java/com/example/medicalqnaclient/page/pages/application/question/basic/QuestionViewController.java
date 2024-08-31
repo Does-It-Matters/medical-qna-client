@@ -1,6 +1,6 @@
 package com.example.medicalqnaclient.page.pages.application.question.basic;
 
-import com.example.medicalqnaclient.page.core.ApplicationController;
+import com.example.medicalqnaclient.page.pages.application.ApplicationController;
 import com.example.medicalqnaclient.page.event.publishers.QnAPublisher;
 import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
 import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;

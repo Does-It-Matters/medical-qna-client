@@ -1,8 +1,8 @@
-package com.example.medicalqnaclient.page.core;
+package com.example.medicalqnaclient.page.pages.application;
 
+import com.example.medicalqnaclient.page.core.Controller;
 import com.example.medicalqnaclient.page.event.publishers.QnAPublisher;
 import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
-import javafx.scene.layout.Pane;
 
 /**
  * 역할
@@ -11,7 +11,7 @@ import javafx.scene.layout.Pane;
  * 2. 사용자 상태 객체와 상호작용
  * 3. 이벤트를 발행
  */
-public abstract class ApplicationController {
+public abstract class ApplicationController implements Controller {
     protected final QnAPublisher publisher;
     protected final ReadWriteUserMediator mediator;
 
@@ -19,6 +19,4 @@ public abstract class ApplicationController {
         this.publisher = publisher;
         this.mediator = mediator;
     }
-
-    public abstract Pane getLayout();
 }
