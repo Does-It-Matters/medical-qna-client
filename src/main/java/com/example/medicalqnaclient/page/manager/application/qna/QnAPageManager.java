@@ -4,20 +4,11 @@ import com.example.medicalqnaclient.page.core.PageManager;
 import com.example.medicalqnaclient.page.core.Start;
 import com.example.medicalqnaclient.page.core.Page;
 import com.example.medicalqnaclient.page.core.PageType;
-import com.example.medicalqnaclient.page.pages.home.HomePage;
-import com.example.medicalqnaclient.page.pages.login.LoginPage;
-import com.example.medicalqnaclient.page.pages.profile.MyProfilePage;
-import com.example.medicalqnaclient.page.pages.question.QuestionEditPage;
-import com.example.medicalqnaclient.page.pages.question.QuestionPostPage;
-import com.example.medicalqnaclient.page.pages.question.QuestionViewPage;
-import com.example.medicalqnaclient.page.pages.sign.up.doctor.DoctorSignUpPage;
-import com.example.medicalqnaclient.page.pages.sign.up.patient.PatientSignUpPage;
-import com.example.medicalqnaclient.page.pages.start.StartPage;
+import com.example.medicalqnaclient.page.manager.core.PageRegistry;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import static com.example.medicalqnaclient.page.core.PageType.*;
@@ -37,7 +28,7 @@ import static com.example.medicalqnaclient.page.core.PageType.*;
  */
 @Component
 public class QnAPageManager implements PageManager, Start {
-    private final Map<PageType, Page> PAGES = new HashMap<>();
+    private final Map<PageType, Page> pages;
     private Stage stage;
     private int width;
     private int height;
@@ -49,26 +40,8 @@ public class QnAPageManager implements PageManager, Start {
      * </p>
      */
     @Autowired
-    public QnAPageManager(
-            StartPage startPage,
-            HomePage homePage,
-            LoginPage loginPage,
-            DoctorSignUpPage doctorSignUpPage,
-            PatientSignUpPage patientSignUpPage,
-            MyProfilePage myProfilePage,
-            QuestionViewPage questionViewPage,
-            QuestionPostPage questionPostPage,
-            QuestionEditPage questionEditPage
-    ) {
-        PAGES.put(START_PAGE, startPage);
-        PAGES.put(HOME_PAGE, homePage);
-        PAGES.put(LOGIN_PAGE, loginPage);
-        PAGES.put(DOCTOR_SIGN_UP_PAGE, doctorSignUpPage);
-        PAGES.put(PATIENT_SIGN_UP_PAGE, patientSignUpPage);
-        PAGES.put(MY_PROFILE_PAGE, myProfilePage);
-        PAGES.put(QUESTION_VIEW_PAGE, questionViewPage);
-        PAGES.put(QUESTION_POST_PAGE, questionPostPage);
-        PAGES.put(QUESTION_EDIT_PAGE, questionEditPage);
+    public QnAPageManager(PageRegistry pageRegistry) {
+        pages = pageRegistry.getApplicationPages();
     }
 
     @Override
@@ -82,7 +55,7 @@ public class QnAPageManager implements PageManager, Start {
 
     @Override
     public void show(PageType type) {
-        Page page = PAGES.get(type);
+        Page page = pages.get(type);
         stage.setScene(page.getScene(width, height));
         stage.setTitle(page.getTitle());
         stage.show();
