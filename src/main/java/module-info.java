@@ -90,6 +90,8 @@ module com.example.medicalqnaclient {
     opens com.example.medicalqnaclient.page.manager.monitor.log to spring.core;
     exports com.example.medicalqnaclient.page.manager.monitor.system;
     opens com.example.medicalqnaclient.page.manager.monitor.system to spring.core;
+    exports com.example.medicalqnaclient.page.manager.test;
+    opens com.example.medicalqnaclient.page.manager.test to spring.core;
     exports com.example.medicalqnaclient.page.event.events;
     opens com.example.medicalqnaclient.page.event.events to spring.core;
     exports com.example.medicalqnaclient.page.event.listeners;
