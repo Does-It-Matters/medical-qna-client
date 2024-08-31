@@ -18,16 +18,5 @@ public interface ReadWriteUserMediator extends ReadUserMediator {
 //    public void editQuestion(String title, String symptom, String content);
 //    public void deleteQuestion();
 //    public List<QuestionTitle> search(String query);
-//    public void getLoginView();
     public List<QuestionTitle> getQuestionList();
-//    public QuestionResponse readQuestion();
-//    public void getPatientSignUpView();
-//    public void getDoctorSignUpView();
-//    public void getPostQuestionView();
-//    public void getEditQuestionView();
-//    public void getMonitorView();
-//    public void getRSocketTestView();
-//    public void getLoadTestView();
-//    public void monitorSystemResources();
-//    public void monitorLogs();
 }

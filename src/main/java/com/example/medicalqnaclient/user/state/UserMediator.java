@@ -98,43 +98,9 @@ public class UserMediator implements ReadWriteUserMediator {
 //    public List<QuestionTitle> search(String query) {
 //        return user.search(server, query);
 //    }
-//
-//    @Override
-//    public void getLoginView() {
-//        setScene(loadFXML(Fxml.LOGIN));
-//    }
 
     @Override
     public List<QuestionTitle> getQuestionList() {
         return user.getQuestionList();
     }
-//
-//    @Override
-//    public void getPostQuestionView() {
-//        if (user.canPostQuestion()) {
-//            setScene(loadFXML(Fxml.QUESTION_POST));
-//        } else {
-//            throw new UnauthorizedAccessException("질문은 환자만 등록할 수 있습니다");
-//        }
-//    }
-//
-//    @Override
-//    public void getEditQuestionView() {
-//        setScene(loadFXML(Fxml.QUESTION_EDIT));
-//    }
-//
-//    @Override
-//    public void getMonitorView() {
-//        setScene(loadFXML(Fxml.SYSTEM_MONITORING));
-//    }
-//
-//    @Override
-//    public void getRSocketTestView() {
-//        setScene(loadFXML(Fxml.RSOCKET_TEST));
-//    }
-//
-//    @Override
-//    public void getLoadTestView() {
-//        setScene(loadFXML(Fxml.LOAD_TEST));
-//    }
 }
