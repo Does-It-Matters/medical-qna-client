@@ -61,8 +61,8 @@ public class LoginController extends ViewController {
 
         loginButton.setOnAction(e -> onLoginButtonClick());
         homeButton.setOnAction(e -> onHomeButtonClick());
-//        patientSignUpButton.setOnAction(e -> onPatientSignUpButtonClick());
-//        doctorSignUpButton.setOnAction(e -> onDoctorSignUpButtonClick());
+        patientSignUpButton.setOnAction(e -> onPatientSignUpButtonClick());
+        doctorSignUpButton.setOnAction(e -> onDoctorSignUpButtonClick());
 
         layout.getChildren().addAll(userIdField, passwordField, loginButton, homeButton, patientSignUpButton, doctorSignUpButton);
 
@@ -101,23 +101,23 @@ public class LoginController extends ViewController {
         publisher.publishGoHomeEvent();
     }
 
-//    /**
-//     * <b> 역할: 환자 회원가입 버튼 클릭 시 호출 </b>
-//     * <p>
-//     * - 환자 회원가입 화면으로 이동 <br>
-//     * </p>
-//     */
-//    protected void onPatientSignUpButtonClick() {
-//        mediator.getPatientSignUpView();
-//    }
+    /**
+     * <b> 역할: 환자 회원가입 버튼 클릭 시 호출 </b>
+     * <p>
+     * - 환자 회원가입 화면으로 이동 <br>
+     * </p>
+     */
+    protected void onPatientSignUpButtonClick() {
+        publisher.publishPatientSignUpEvent();
+    }
 
-//    /**
-//     * <b> 역할: 의료진 회원가입 버튼 클릭 시 호출 </b>
-//     * <p>
-//     * - 의료진 회원가입 화면으로 이동 <br>
-//     * </p>
-//     */
-//    protected void onDoctorSignUpButtonClick() {
-//        mediator.getDoctorSignUpView();
-//    }
+    /**
+     * <b> 역할: 의료진 회원가입 버튼 클릭 시 호출 </b>
+     * <p>
+     * - 의료진 회원가입 화면으로 이동 <br>
+     * </p>
+     */
+    protected void onDoctorSignUpButtonClick() {
+        publisher.publishDoctorSignUpEvent();
+    }
 }
