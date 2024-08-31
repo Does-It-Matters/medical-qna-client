@@ -20,7 +20,6 @@ public class UserMediator implements ReadWriteUserMediator {
     private final UserFactory userFactory;
 
     private User user;
-//    private int readingQuestionId;
 
     @Autowired
     public UserMediator(UserFactory userFactory) {
@@ -67,12 +66,11 @@ public class UserMediator implements ReadWriteUserMediator {
 //    public void getMyProfile() {
 //        setScene(loadFXML(Fxml.MY_PROFILE));
 //    }
-//
-//    @Override
-//    public void postQuestion(String title, String symptom, String content) {
-//        user.postQuestion(server, title, symptom, content);
-//        goHome();
-//    }
+
+    @Override
+    public void postQuestion(String title, String symptom, String content) {
+        user.postQuestion(title, symptom, content);
+    }
 //
 //    @Override
 //    public void readQuestion(int questionId) {

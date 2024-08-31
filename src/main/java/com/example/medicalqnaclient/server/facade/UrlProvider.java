@@ -35,10 +35,10 @@ class UrlProvider {
 //    String getQuestionUrl() {
 //        return config.getBaseUrl() + "/api/v2/question/";
 //    }
-//
-//    String getEnrollQuestionUrl() {
-//        return config.getBaseUrl() + "/api/v2/question/enroll";
-//    }
+
+    String getEnrollQuestionUrl() {
+        return config.getBaseUrl() + "/api/v3/question/enroll";
+    }
 //
 //    String getEditQuestionUrl() {
 //        return config.getBaseUrl() + "/api/v2/question";

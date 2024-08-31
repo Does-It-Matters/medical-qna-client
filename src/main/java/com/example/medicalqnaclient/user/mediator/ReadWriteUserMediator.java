@@ -10,7 +10,7 @@ public interface ReadWriteUserMediator extends ReadUserMediator {
     public void signUpAsPatient(String id, String pw);
     public void signUpAsDoctor(String id, String pw, String name, String field, String hospital, String introduction);
 //    public void getMyProfile();
-//    public void postQuestion(String title, String symptom, String content);
+    public void postQuestion(String title, String symptom, String content);
 //    public void readQuestion(int questionId);
 //    public void editQuestion(String title, String symptom, String content);
 //    public void deleteQuestion();

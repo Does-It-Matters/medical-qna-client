@@ -44,11 +44,6 @@ class Doctor extends AbstractUser {
 //    }
 //
 //    @Override
-//    public QuestionEnrollResponse postQuestion(Server server, String title, String symptom, String content) {
-//        return null;
-//    }
-//
-//    @Override
 //    public QuestionResponse readQuestion(Server server, int questionId) {
 //        return server.readQuestion(questionId);
 //    }

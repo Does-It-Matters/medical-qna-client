@@ -19,11 +19,11 @@ module com.example.medicalqnaclient {
     requires spring.core;
     requires spring.messaging;
 //    exports com.example.medicalqnaclient.server.facade.tasks.question.read;
-//    exports com.example.medicalqnaclient.server.facade.tasks.question.enroll;
 //    exports com.example.medicalqnaclient.server.facade.tasks.questionlist to com.fasterxml.jackson.databind;
-//    opens com.example.medicalqnaclient.server.facade.tasks.question.enroll to com.fasterxml.jackson.databind;
 //    exports com.example.medicalqnaclient.server.facade.tasks.question.edit;
 //    exports com.example.medicalqnaclient.server.facade.tasks.question.delete;
+
+    opens com.example.medicalqnaclient.server.facade.tasks.question.enroll to com.fasterxml.jackson.databind;
 
     exports com.example.medicalqnaclient;
     exports com.example.medicalqnaclient.server.facade;

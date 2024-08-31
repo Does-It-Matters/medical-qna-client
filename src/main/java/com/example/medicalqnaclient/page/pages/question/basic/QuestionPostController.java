@@ -63,7 +63,8 @@ public class QuestionPostController extends ViewController {
      * </p>
      */
     protected void onWriteButtonClick() {
-//        mediator.postQuestion(titleTextField.getText(), symptomTextArea.getText(), questionTextArea.getText());
+        mediator.postQuestion(titleTextField.getText(), symptomTextArea.getText(), questionTextArea.getText());
+        publisher.publishGoHomeEvent();
     }
 
     /**

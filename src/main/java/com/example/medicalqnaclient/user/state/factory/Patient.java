@@ -2,7 +2,7 @@ package com.example.medicalqnaclient.user.state.factory;
 
 //import com.example.medicalqnaclient.server.facade.Server;
 //import com.example.medicalqnaclient.server.facade.tasks.question.edit.QuestionEditResponse;
-//import com.example.medicalqnaclient.server.facade.tasks.question.enroll.QuestionEnrollResponse;
+import com.example.medicalqnaclient.server.facade.tasks.question.enroll.QuestionEnrollResponse;
 //import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
 //import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
 import com.example.medicalqnaclient.server.facade.Server;
@@ -37,11 +37,11 @@ class Patient extends AbstractUser {
 //    public void getMyProfile() {
 //
 //    }
-//
-//    @Override
-//    public QuestionEnrollResponse postQuestion(Server server, String title, String symptom, String content) {
-//        return server.enrollQuestion(id, title, symptom, content);
-//    }
+
+    @Override
+    public QuestionEnrollResponse postQuestion(String title, String symptom, String content) {
+        return server.enrollQuestion(id, title, symptom, content);
+    }
 //
 //    @Override
 //    public QuestionResponse readQuestion(Server server, int questionId) {

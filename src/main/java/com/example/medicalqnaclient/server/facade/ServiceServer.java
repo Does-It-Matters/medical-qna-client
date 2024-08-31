@@ -5,8 +5,8 @@ import com.example.medicalqnaclient.server.facade.config.ServerConfig;
 //import com.example.medicalqnaclient.server.facade.tasks.question.delete.QuestionDeleteResponse;
 //import com.example.medicalqnaclient.server.facade.tasks.question.edit.QuestionEditRequest;
 //import com.example.medicalqnaclient.server.facade.tasks.question.edit.QuestionEditResponse;
-//import com.example.medicalqnaclient.server.facade.tasks.question.enroll.QuestionEnrollRequest;
-//import com.example.medicalqnaclient.server.facade.tasks.question.enroll.QuestionEnrollResponse;
+import com.example.medicalqnaclient.server.facade.tasks.question.enroll.QuestionEnrollRequest;
+import com.example.medicalqnaclient.server.facade.tasks.question.enroll.QuestionEnrollResponse;
 //import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionGetRequest;
 //import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
 //import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionsGetRequest;
@@ -33,7 +33,7 @@ public class ServiceServer implements Server {
     private final DoctorSignUpRequest doctorSignUpRequest = new DoctorSignUpRequest();
 //    private final QuestionsGetRequest questionsGetRequest = new QuestionsGetRequest();
 //    private final QuestionGetRequest questionGetRequest = new QuestionGetRequest();
-//    private final QuestionEnrollRequest questionEnrollRequest = new QuestionEnrollRequest();
+    private final QuestionEnrollRequest questionEnrollRequest = new QuestionEnrollRequest();
 //    private final QuestionEditRequest questionEditRequest = new QuestionEditRequest();
 //    private final QuestionDeleteRequest questionDeleteRequest = new QuestionDeleteRequest();
 //
@@ -73,12 +73,12 @@ public class ServiceServer implements Server {
 //        String url = urlProvider.getQuestionUrl();
 //        return questionGetRequest.getQuestion(url, questionId);
 //    }
-//
-//    @Override
-//    public QuestionEnrollResponse enrollQuestion(String id, String title, String symptom, String content) {
-//        String url = urlProvider.getEnrollQuestionUrl();
-//        return questionEnrollRequest.post(url, id, title, symptom, content);
-//    }
+
+    @Override
+    public QuestionEnrollResponse enrollQuestion(String id, String title, String symptom, String content) {
+        String url = urlProvider.getEnrollQuestionUrl();
+        return questionEnrollRequest.post(url, id, title, symptom, content);
+    }
 //
 //    @Override
 //    public QuestionEditResponse editQuestion(int questionId, String title, String symptom, String content) {
