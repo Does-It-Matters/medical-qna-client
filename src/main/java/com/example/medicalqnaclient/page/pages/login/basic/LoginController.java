@@ -3,6 +3,8 @@ package com.example.medicalqnaclient.page.pages.login.basic;
 import com.example.medicalqnaclient.page.core.ViewController;
 import com.example.medicalqnaclient.page.event.publishers.QnAPublisher;
 import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
+import com.example.medicalqnaclient.user.state.factory.exception.AlreadyLoggedInException;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -57,7 +59,7 @@ public class LoginController extends ViewController {
         patientSignUpButton = new Button("Sign Up as Patient");
         doctorSignUpButton = new Button("Sign Up as Doctor");
 
-//        loginButton.setOnAction(e -> onLoginButtonClick());
+        loginButton.setOnAction(e -> onLoginButtonClick());
         homeButton.setOnAction(e -> onHomeButtonClick());
 //        patientSignUpButton.setOnAction(e -> onPatientSignUpButtonClick());
 //        doctorSignUpButton.setOnAction(e -> onDoctorSignUpButtonClick());
@@ -67,26 +69,27 @@ public class LoginController extends ViewController {
         return layout;
     }
 
-//    /**
-//     * <b> 역할: 로그인 버튼 클릭 시 호출 메소드 </b>
-//     * <p>
-//     * - 사용자가 입력한 ID와 비밀번호로 로그인 시도 <br>
-//     * </p>
-//     */
-//    protected void onLoginButtonClick() {
-//        String id = useridField.getText();
-//        String password = passwordField.getText();
-//        try {
-//            mediator.login(id, password);
-//        } catch (AlreadyLoggedInException e) {
-//            // 이미 로그인된 상태를 알림
-//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//            alert.setTitle("Login Error");
-//            alert.setHeaderText(null);
-//            alert.setContentText("You are already logged in!");
-//            alert.showAndWait();
-//        }
-//    }
+    /**
+     * <b> 역할: 로그인 버튼 클릭 시 호출 메소드 </b>
+     * <p>
+     * - 사용자가 입력한 ID와 비밀번호로 로그인 시도 <br>
+     * </p>
+     */
+    protected void onLoginButtonClick() {
+        String id = userIdField.getText();
+        String password = passwordField.getText();
+        try {
+            mediator.login(id, password);
+            publisher.publishGoHomeEvent();
+        } catch (AlreadyLoggedInException e) {
+            // 이미 로그인된 상태를 알림
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Login Error");
+            alert.setHeaderText(null);
+            alert.setContentText("You are already logged in!");
+            alert.showAndWait();
+        }
+    }
 
     /**
      * <b> 역할: 홈 버튼 클릭 시 호출 </b>

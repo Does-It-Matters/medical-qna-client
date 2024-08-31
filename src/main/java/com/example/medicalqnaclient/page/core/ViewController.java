@@ -13,7 +13,7 @@ import javafx.scene.layout.Pane;
  */
 public abstract class ViewController {
     protected final QnAPublisher publisher;
-    private final ReadWriteUserMediator mediator;
+    protected final ReadWriteUserMediator mediator;
 
     public ViewController(QnAPublisher publisher, ReadWriteUserMediator mediator) {
         this.publisher = publisher;
