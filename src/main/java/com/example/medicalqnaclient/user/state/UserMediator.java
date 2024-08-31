@@ -32,7 +32,7 @@ public class UserMediator implements ReadWriteUserMediator {
 
     @Override
     public boolean isLoggedIn() {
-        return false;
+        return user.isLoggedIn();
     }
 
 //    @Override
