@@ -19,10 +19,9 @@ public interface User {
     public QuestionEnrollResponse postQuestion(String title, String symptom, String content);
     public QuestionResponse readQuestion(int questionId);
     public QuestionEditResponse editQuestion(int questionId, String title, String symptom, String content);
-//    public void deleteQuestion(Server server, int questionId);
+    public void deleteQuestion(int questionId);
     public List<QuestionTitle> search(String query);
     public List<QuestionTitle> getQuestionList();
-//    public boolean canPostQuestion();
 //    public void monitorSystemResources();
 //    public void monitorLogs();
 }

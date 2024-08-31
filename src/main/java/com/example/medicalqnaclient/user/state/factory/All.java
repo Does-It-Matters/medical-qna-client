@@ -38,14 +38,4 @@ class All extends AbstractUser {
     public void signUpAsDoctor(String id, String pw, String name, String field, String hospital, String introduction) {
         server.signUpAsDoctor(id, pw, name, field, hospital, introduction);
     }
-//
-//    @Override
-//    public void deleteQuestion(Server server, int questionId) {
-//
-//    }
-//
-//    @Override
-//    public boolean canPostQuestion() {
-//        return false;
-//    }
 }

@@ -40,10 +40,12 @@ public abstract class AbstractUser implements User {
 
     @Override
     public void getMyProfile() {
+        System.out.println("구현되지 않음");
     }
 
     @Override
     public QuestionEnrollResponse postQuestion(String title, String symptom, String content) {
+        System.out.println("적절한 권한 필요");
         return null;
     }
 
@@ -65,5 +67,10 @@ public abstract class AbstractUser implements User {
     @Override
     public QuestionEditResponse editQuestion(int questionId, String title, String symptom, String content) {
         return null;
+    }
+
+    @Override
+    public void deleteQuestion(int questionId) {
+        System.out.println("적절한 권한 필요");
     }
 }

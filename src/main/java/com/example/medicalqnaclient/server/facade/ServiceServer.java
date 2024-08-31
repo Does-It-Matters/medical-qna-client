@@ -1,8 +1,9 @@
 package com.example.medicalqnaclient.server.facade;
 
 import com.example.medicalqnaclient.server.facade.config.ServerConfig;
-//import com.example.medicalqnaclient.server.facade.tasks.question.delete.QuestionDeleteRequest;
-//import com.example.medicalqnaclient.server.facade.tasks.question.delete.QuestionDeleteResponse;
+import com.example.medicalqnaclient.server.facade.tasks.question.delete.QuestionDeleteRequest;
+import com.example.medicalqnaclient.server.facade.tasks.question.delete.QuestionDeleteResponse;
+import com.example.medicalqnaclient.server.facade.tasks.question.delete.QuestionDeleteResponse;
 import com.example.medicalqnaclient.server.facade.tasks.question.edit.QuestionEditRequest;
 import com.example.medicalqnaclient.server.facade.tasks.question.edit.QuestionEditResponse;
 import com.example.medicalqnaclient.server.facade.tasks.question.enroll.QuestionEnrollRequest;
@@ -35,8 +36,8 @@ public class ServiceServer implements Server {
     private final QuestionGetRequest questionGetRequest = new QuestionGetRequest();
     private final QuestionEnrollRequest questionEnrollRequest = new QuestionEnrollRequest();
     private final QuestionEditRequest questionEditRequest = new QuestionEditRequest();
-//    private final QuestionDeleteRequest questionDeleteRequest = new QuestionDeleteRequest();
-//
+    private final QuestionDeleteRequest questionDeleteRequest = new QuestionDeleteRequest();
+
     @Override
     public LoginResponse login(String id, String password) throws Exception {
         String url = urlProvider.getLoginUrl();
@@ -85,10 +86,10 @@ public class ServiceServer implements Server {
         String url = urlProvider.getEditQuestionUrl();
         return questionEditRequest.patch(url, questionId, title, symptom, content);
     }
-//
-//    @Override
-//    public QuestionDeleteResponse deleteQuestion(int questionId) {
-//        String url = urlProvider.getDeleteQuestionUrl();
-//        return questionDeleteRequest.delete(url, questionId);
-//    }
+
+    @Override
+    public QuestionDeleteResponse deleteQuestion(int questionId) {
+        String url = urlProvider.getDeleteQuestionUrl();
+        return questionDeleteRequest.delete(url, questionId);
+    }
 }

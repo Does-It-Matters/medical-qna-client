@@ -28,15 +28,4 @@ class Doctor extends AbstractUser {
     public boolean isLoggedIn() {
         return true;
     }
-
-//
-//    @Override
-//    public void deleteQuestion(Server server, int questionId) {
-//
-//    }
-//
-//    @Override
-//    public boolean canPostQuestion() {
-//        return false;
-//    }
 }

@@ -43,8 +43,8 @@ class UrlProvider {
     String getEditQuestionUrl() {
         return config.getBaseUrl() + "/api/v3/question";
     }
-//
-//    String getDeleteQuestionUrl() {
-//        return config.getBaseUrl() + "/api/v2/question/";
-//    }
+
+    String getDeleteQuestionUrl() {
+        return config.getBaseUrl() + "/api/v3/question/";
+    }
 }

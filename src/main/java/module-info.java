@@ -18,12 +18,13 @@ module com.example.medicalqnaclient {
     requires spring.beans;
     requires spring.core;
     requires spring.messaging;
-//    exports com.example.medicalqnaclient.server.facade.tasks.question.delete;
 
+    // 서버 통신 관련
     opens com.example.medicalqnaclient.server.facade.tasks.question.enroll to com.fasterxml.jackson.databind;
     exports com.example.medicalqnaclient.server.facade.tasks.questionlist to com.fasterxml.jackson.databind;
     exports com.example.medicalqnaclient.server.facade.tasks.question.read;
     exports com.example.medicalqnaclient.server.facade.tasks.question.edit;
+    exports com.example.medicalqnaclient.server.facade.tasks.question.delete;
 
     exports com.example.medicalqnaclient;
     exports com.example.medicalqnaclient.server.facade;

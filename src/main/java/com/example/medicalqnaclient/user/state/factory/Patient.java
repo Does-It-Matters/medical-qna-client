@@ -33,14 +33,9 @@ class Patient extends AbstractUser {
     public QuestionEditResponse editQuestion(int questionId, String title, String symptom, String content) {
         return server.editQuestion(questionId, title, symptom, content);
     }
-//
-//    @Override
-//    public void deleteQuestion(Server server, int questionId) {
-//        server.deleteQuestion(questionId);
-//    }
-//
-//    @Override
-//    public boolean canPostQuestion() {
-//        return true;
-//    }
+
+    @Override
+    public void deleteQuestion(int questionId) {
+        server.deleteQuestion(questionId);
+    }
 }

@@ -87,14 +87,4 @@ public class QnAPublisher {
     public void publishQuestionEditEvent() {
         eventPublisher.publishEvent(new QuestionEditEvent(this, "Question Edit Event"));
     }
-
-//    /**
-//     * <b> 역할: 질문 삭제 화면 이벤트 publish 메소드 </b>
-//     * <p>
-//     * - 메시지와 함께 질문 삭제 이벤트 발행  <br>
-//     * </p>
-//     */
-//    public void publishQuestionDeleteEvent() {
-//        eventPublisher.publishEvent(new QuestionDeleteEvent(this, "Question Delete Event"));
-//    }
 }
