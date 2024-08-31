@@ -52,17 +52,16 @@ public class UserMediator implements ReadWriteUserMediator {
         user = users.get(UserType.ALL);
     }
 
-//    @Override
-//    public void signUpAsPatient(String id, String pw) {
-//        user.signUpAsPatient(server, id, pw);
-//        setScene(loadFXML(Fxml.LOGIN));
-//    }
-//
-//    @Override
-//    public void signUpAsDoctor(String id, String pw, String name, String field, String hospital, String introduction) {
-//        user.signUpAsDoctor(server, id, pw, name, field, hospital, introduction);
-//        setScene(loadFXML(Fxml.LOGIN));
-//    }
+    @Override
+    public void signUpAsPatient(String id, String pw) {
+        user.signUpAsPatient(id, pw);
+    }
+
+    @Override
+    public void signUpAsDoctor(String id, String pw, String name, String field, String hospital, String introduction) {
+        user.signUpAsDoctor(id, pw, name, field, hospital, introduction);
+    }
+
 //
 //    @Override
 //    public void getMyProfile() {

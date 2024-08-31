@@ -58,9 +58,10 @@ public class PatientSignUpController extends ViewController {
      * </p>
      */
     protected void onSignUpButtonClick() {
-//        String id = idField.getText();
-//        String password = passwordField.getText();
-//        mediator.signUpAsPatient(id, password);
+        String id = idField.getText();
+        String password = passwordField.getText();
+        mediator.signUpAsPatient(id, password);
+        publisher.publishLoginEvent();
     }
 
     /**

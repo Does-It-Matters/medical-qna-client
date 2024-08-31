@@ -36,20 +36,15 @@ class All extends AbstractUser {
         return false;
     }
 
-//    @Override
-//    public void logout() {
-//
-//    }
-//
-//    @Override
-//    public void signUpAsPatient(Server server, String id, String pw) {
-//        server.signUpAsPatient(id, pw);
-//    }
-//
-//    @Override
-//    public void signUpAsDoctor(Server server, String id, String pw, String name, String field, String hospital, String introduction) {
-//        server.signUpAsDoctor(id, pw, name, field, hospital, introduction);
-//    }
+    @Override
+    public void signUpAsPatient(String id, String pw) {
+        server.signUpAsPatient(id, pw);
+    }
+
+    @Override
+    public void signUpAsDoctor(String id, String pw, String name, String field, String hospital, String introduction) {
+        server.signUpAsDoctor(id, pw, name, field, hospital, introduction);
+    }
 //
 //    @Override
 //    public void getMyProfile() {

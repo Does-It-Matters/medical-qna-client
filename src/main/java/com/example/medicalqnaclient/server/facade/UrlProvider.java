@@ -16,6 +16,14 @@ class UrlProvider {
         return config.getBaseUrl() + "/api/v3/sign-in";
     }
 
+    String getSignUpAsPatientUrl() {
+        return config.getBaseUrl() + "/api/v3/patient/sign-up";
+    }
+
+    String getSignUpAsDoctorUrl() {
+        return config.getBaseUrl() + "/api/v3/doctor/sign-up";
+    }
+
 //    String getQuestionListUrl() {
 //        return config.getBaseUrl() + "/api/v2/question/list";
 //    }
@@ -26,14 +34,6 @@ class UrlProvider {
 //
 //    String getQuestionUrl() {
 //        return config.getBaseUrl() + "/api/v2/question/";
-//    }
-//
-//    String getSignUpAsPatientUrl() {
-//        return config.getBaseUrl() + "/api/v2/patient/sign-up";
-//    }
-//
-//    String getSignUpAsDoctorUrl() {
-//        return config.getBaseUrl() + "/api/v2/doctor/sign-up";
 //    }
 //
 //    String getEnrollQuestionUrl() {

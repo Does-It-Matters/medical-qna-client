@@ -13,9 +13,8 @@ public interface User {
     public void setId(String id);
     public LoginResponse login(String id, String password) throws AlreadyLoggedInException;
     public boolean isLoggedIn();
-//    public void logout();
-//    public void signUpAsPatient(Server server, String id, String pw);
-//    public void signUpAsDoctor(Server server, String id, String pw, String name, String field, String hospital, String introduction);
+    public void signUpAsPatient(String id, String pw);
+    public void signUpAsDoctor(String id, String pw, String name, String field, String hospital, String introduction);
 //    public void getMyProfile();
 //    public QuestionEnrollResponse postQuestion(Server server, String title, String symptom, String content);
 //    public QuestionResponse readQuestion(Server server, int questionId);

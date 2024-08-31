@@ -70,7 +70,7 @@ public class DoctorSignUpController extends ViewController {
         signUpButton = new Button("Sign Up");
         homeButton = new Button("Home");
 
-//        signUpButton.setOnAction(e -> onSignUpButtonClick());
+        signUpButton.setOnAction(e -> onSignUpButtonClick());
         homeButton.setOnAction(e -> onHomeButtonClick());
 
         layout.getChildren().addAll(idField, passwordField, nameField, fieldField, hospitalField, introductionField, signUpButton, homeButton);
@@ -78,30 +78,31 @@ public class DoctorSignUpController extends ViewController {
         return layout;
     }
 
-//    /**
-//     * <b> 역할: 의료진 회원가입 버튼 클릭 시 호출 메소드 </b>
-//     * <p>
-//     * - 사용자가 입력한 정보로 회원가입 시도 <br>
-//     * </p>
-//     */
-//    protected void onSignUpButtonClick() {
-//        String id = idField.getText();
-//        String password = passwordField.getText();
-//        String name = nameField.getText();
-//        String field = fieldField.getText();
-//        String hospital = hospitalField.getText();
-//        String introduction = introductionField.getText();
-//
-//        if (id.isEmpty() || password.isEmpty() || name.isEmpty() || field.isEmpty() || hospital.isEmpty() || introduction.isEmpty()) {
-//            Alert alert = new Alert(AlertType.WARNING);
-//            alert.setTitle("Sign Up Error");
-//            alert.setHeaderText(null);
-//            alert.setContentText("Please fill out all fields.");
-//            alert.showAndWait();
-//        } else {
-//            mediator.signUpAsDoctor(id, password, name, field, hospital, introduction);
-//        }
-//    }
+    /**
+     * <b> 역할: 의료진 회원가입 버튼 클릭 시 호출 메소드 </b>
+     * <p>
+     * - 사용자가 입력한 정보로 회원가입 시도 <br>
+     * </p>
+     */
+    protected void onSignUpButtonClick() {
+        String id = idField.getText();
+        String password = passwordField.getText();
+        String name = nameField.getText();
+        String field = fieldField.getText();
+        String hospital = hospitalField.getText();
+        String introduction = introductionField.getText();
+
+        if (id.isEmpty() || password.isEmpty() || name.isEmpty() || field.isEmpty() || hospital.isEmpty() || introduction.isEmpty()) {
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setTitle("Sign Up Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill out all fields.");
+            alert.showAndWait();
+        } else {
+            mediator.signUpAsDoctor(id, password, name, field, hospital, introduction);
+            publisher.publishLoginEvent();
+        }
+    }
 
     /**
      * <b> 역할: 홈 버튼 클릭 시 호출 </b>

@@ -32,20 +32,6 @@ class Patient extends AbstractUser {
         return true;
     }
 
-//    @Override
-//    public void logout() {
-//
-//    }
-//
-//    @Override
-//    public void signUpAsPatient(Server server, String id, String pw) {
-//        throw new UnauthorizedAccessException();
-//    }
-//
-//    @Override
-//    public void signUpAsDoctor(Server server, String id, String pw, String name, String field, String hospital, String introduction) {
-//        throw new UnauthorizedAccessException();
-//    }
 //
 //    @Override
 //    public void getMyProfile() {
