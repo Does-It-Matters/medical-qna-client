@@ -39,7 +39,7 @@ public class QuestionsLoggedInUsersController extends ViewController {
 
         logoutButton.setOnAction(e -> onLogoutButtonClick());
 //        searchButton.setOnAction(e -> onSearchButtonClick());
-//        postButton.setOnAction(e -> onPostButtonClick());
+        postButton.setOnAction(e -> onPostButtonClick());
 
         layout.getChildren().addAll(userNameMenuButton, categoryComboBox, listView, userQueryTextArea, searchButton, postButton, logoutButton);
 //        setList(mediator.getQuestionList());
@@ -70,12 +70,8 @@ public class QuestionsLoggedInUsersController extends ViewController {
 //            }
 //        });
 //    }
-//
-//    protected void onPostButtonClick() {
-//        try {
-//            mediator.getPostQuestionView();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
+
+    protected void onPostButtonClick() {
+        publisher.publishQuestionPostEvent();
+    }
 }

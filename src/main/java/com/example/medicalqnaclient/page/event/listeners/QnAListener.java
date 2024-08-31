@@ -1,10 +1,7 @@
 package com.example.medicalqnaclient.page.event.listeners;
 
 import com.example.medicalqnaclient.page.core.PageManager;
-import com.example.medicalqnaclient.page.event.events.DoctorSignUpEvent;
-import com.example.medicalqnaclient.page.event.events.GoHomeEvent;
-import com.example.medicalqnaclient.page.event.events.LoginEvent;
-import com.example.medicalqnaclient.page.event.events.PatientSignUpEvent;
+import com.example.medicalqnaclient.page.event.events.*;
 import com.example.medicalqnaclient.page.manager.application.qna.QnAPageManager;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
@@ -76,5 +73,18 @@ public class QnAListener {
     public void handlePatientSignUpEvent(PatientSignUpEvent event) {
         System.out.println("Handling event: " + event.getMessage());
         pageManager.show(PATIENT_SIGN_UP_PAGE);
+    }
+
+    /**
+     * <b> 역할: 질문 등록 화면 이벤트 처리 메소드 </b>
+     * <p>
+     * - 메시지 출력 <br>
+     * - {@link QnAPageManager}에 질문 등록 화면 표현 요청 <br>
+     * </p>
+     */
+    @EventListener
+    public void handleQuestionPostEvent(QuestionPostEvent event) {
+        System.out.println("Handling event: " + event.getMessage());
+        pageManager.show(QUESTION_POST_PAGE);
     }
 }

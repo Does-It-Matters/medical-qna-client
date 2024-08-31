@@ -57,4 +57,14 @@ public class QnAPublisher {
     public void publishPatientSignUpEvent() {
         eventPublisher.publishEvent(new PatientSignUpEvent(this, "Patient Sign Up Event"));
     }
+
+    /**
+     * <b> 역할: 질문 등록 화면 이벤트 publish 메소드 </b>
+     * <p>
+     * - 메시지와 함께 질문 등록 이벤트 발행  <br>
+     * </p>
+     */
+    public void publishQuestionPostEvent() {
+        eventPublisher.publishEvent(new QuestionPostEvent(this, "Question Post Event"));
+    }
 }
