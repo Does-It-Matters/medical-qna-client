@@ -11,7 +11,7 @@ public class StartPage extends ApplicationPage {
 
     @Autowired
     public StartPage(ReadUserMediator userMediator, BasicStartStrategy strategy) {
-        super("Start Page", userMediator, strategy);
+        super("Application Start Page", userMediator, strategy);
     }
 
     @Override
