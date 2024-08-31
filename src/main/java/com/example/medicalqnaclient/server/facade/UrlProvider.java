@@ -12,10 +12,10 @@ class UrlProvider {
         this.config = config;
     }
 
-//    String getLoginUrl() {
-//        return config.getBaseUrl() + "/api/v2/sign-in";
-//    }
-//
+    String getLoginUrl() {
+        return config.getBaseUrl() + "/api/v3/sign-in";
+    }
+
 //    String getQuestionListUrl() {
 //        return config.getBaseUrl() + "/api/v2/question/list";
 //    }

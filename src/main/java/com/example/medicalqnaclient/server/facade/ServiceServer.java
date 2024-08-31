@@ -14,8 +14,8 @@ import com.example.medicalqnaclient.server.facade.config.ServerConfig;
 //import com.example.medicalqnaclient.server.facade.tasks.signup.common.SignUpResponse;
 //import com.example.medicalqnaclient.server.facade.tasks.signup.doctor.DoctorSignUpRequest;
 //import com.example.medicalqnaclient.server.facade.tasks.signup.patient.PatientSignUpRequest;
-//import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginRequest;
-//import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
+import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginRequest;
+import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
 
 import java.util.List;
 
@@ -26,7 +26,7 @@ public class ServiceServer implements Server {
 //    /**
 //     * 각 요청 클래스를 인스턴스화하여 테스트 용이하도록 진행
 //     */
-//    private final LoginRequest loginRequest = new LoginRequest();
+    private final LoginRequest loginRequest = new LoginRequest();
 //    private final QuestionsGetRequest questionsGetRequest = new QuestionsGetRequest();
 //    private final QuestionGetRequest questionGetRequest = new QuestionGetRequest();
 //    private final PatientSignUpRequest patientSignUpRequest = new PatientSignUpRequest();
@@ -35,11 +35,11 @@ public class ServiceServer implements Server {
 //    private final QuestionEditRequest questionEditRequest = new QuestionEditRequest();
 //    private final QuestionDeleteRequest questionDeleteRequest = new QuestionDeleteRequest();
 //
-//    @Override
-//    public LoginResponse login(String id, String password) throws Exception {
-//        String url = urlProvider.getLoginUrl();
-//        return loginRequest.post(url, id, password);
-//    }
+    @Override
+    public LoginResponse login(String id, String password) throws Exception {
+        String url = urlProvider.getLoginUrl();
+        return loginRequest.post(url, id, password);
+    }
 //
 //    @Override
 //    public List<QuestionTitle> getQuestionList() {
