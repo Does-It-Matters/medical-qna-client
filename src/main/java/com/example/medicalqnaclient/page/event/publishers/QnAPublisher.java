@@ -67,4 +67,14 @@ public class QnAPublisher {
     public void publishQuestionPostEvent() {
         eventPublisher.publishEvent(new QuestionPostEvent(this, "Question Post Event"));
     }
+
+    /**
+     * <b> 역할: 질문 조회 화면 이벤트 publish 메소드 </b>
+     * <p>
+     * - 메시지와 함께 질문 조회 이벤트 발행  <br>
+     * </p>
+     */
+    public void publishQuestionViewEvent() {
+        eventPublisher.publishEvent(new QuestionViewEvent(this, "Question View Event"));
+    }
 }

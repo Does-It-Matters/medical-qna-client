@@ -2,8 +2,8 @@ package com.example.medicalqnaclient.user.state.factory;
 
 //import com.example.medicalqnaclient.server.facade.tasks.question.edit.QuestionEditResponse;
 import com.example.medicalqnaclient.server.facade.tasks.question.enroll.QuestionEnrollResponse;
-//import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
-//import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
+import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
+import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
 import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
 import com.example.medicalqnaclient.user.state.factory.exception.AlreadyLoggedInException;
 
@@ -17,11 +17,11 @@ public interface User {
     public void signUpAsDoctor(String id, String pw, String name, String field, String hospital, String introduction);
 //    public void getMyProfile();
     public QuestionEnrollResponse postQuestion(String title, String symptom, String content);
-//    public QuestionResponse readQuestion(Server server, int questionId);
+    public QuestionResponse readQuestion(int questionId);
 //    public QuestionEditResponse editQuestion(Server server, int questionId, String title, String symptom, String content);
 //    public void deleteQuestion(Server server, int questionId);
 //    public List<QuestionTitle> search(Server server, String query);
-//    public List<QuestionTitle> getQuestionList(Server server);
+    public List<QuestionTitle> getQuestionList();
 //    public boolean canPostQuestion();
 //    public void monitorSystemResources();
 //

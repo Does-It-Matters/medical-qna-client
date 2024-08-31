@@ -1,7 +1,9 @@
 package com.example.medicalqnaclient.user.mediator;
 
-//import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
-//import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
+import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
+import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
+
+import java.util.List;
 
 public interface ReadWriteUserMediator extends ReadUserMediator {
 
@@ -11,12 +13,13 @@ public interface ReadWriteUserMediator extends ReadUserMediator {
     public void signUpAsDoctor(String id, String pw, String name, String field, String hospital, String introduction);
 //    public void getMyProfile();
     public void postQuestion(String title, String symptom, String content);
-//    public void readQuestion(int questionId);
+    public void setReadingQuestionId(int questionId);
+    public QuestionResponse readQuestion();
 //    public void editQuestion(String title, String symptom, String content);
 //    public void deleteQuestion();
 //    public List<QuestionTitle> search(String query);
 //    public void getLoginView();
-//    public List<QuestionTitle> getQuestionList();
+    public List<QuestionTitle> getQuestionList();
 //    public QuestionResponse readQuestion();
 //    public void getPatientSignUpView();
 //    public void getDoctorSignUpView();

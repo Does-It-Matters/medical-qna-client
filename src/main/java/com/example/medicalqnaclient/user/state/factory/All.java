@@ -52,11 +52,6 @@ class All extends AbstractUser {
 //    }
 //
 //    @Override
-//    public QuestionResponse readQuestion(Server server, int questionId) {
-//        return server.readQuestion(questionId);
-//    }
-//
-//    @Override
 //    public QuestionEditResponse editQuestion(Server server, int questionId, String title, String symptom, String content) {
 //        return null;
 //    }
@@ -71,10 +66,6 @@ class All extends AbstractUser {
 //        return server.search(query);
 //    }
 //
-//    @Override
-//    public List<QuestionTitle> getQuestionList(Server server) {
-//        return server.getQuestionList();
-//    }
 //
 //    @Override
 //    public boolean canPostQuestion() {

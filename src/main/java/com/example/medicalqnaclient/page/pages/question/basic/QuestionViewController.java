@@ -2,6 +2,7 @@ package com.example.medicalqnaclient.page.pages.question.basic;
 
 import com.example.medicalqnaclient.page.core.ViewController;
 import com.example.medicalqnaclient.page.event.publishers.QnAPublisher;
+import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
 import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -64,11 +65,11 @@ public class QuestionViewController extends ViewController {
      * </p>
      */
     protected void initialize() {
-//        QuestionResponse response = mediator.readQuestion();
-//        titleLabel.setText("Title: " + response.getQuestionDetail().getTitle());
-//        idLabel.setText("User ID: " + response.getQuestionDetail().getUid());
-//        symptomLabel.setText("Symptom: " + response.getQuestionDetail().getSymptom());
-//        contentLabel.setText("Content: " + response.getQuestionDetail().getContent());
+        QuestionResponse response = mediator.readQuestion();
+        titleLabel.setText("Title: " + response.getQuestionDetail().getTitle());
+        idLabel.setText("User ID: " + response.getQuestionDetail().getUid());
+        symptomLabel.setText("Symptom: " + response.getQuestionDetail().getSymptom());
+        contentLabel.setText("Content: " + response.getQuestionDetail().getContent());
     }
 
     /**

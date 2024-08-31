@@ -44,11 +44,6 @@ class Doctor extends AbstractUser {
 //    }
 //
 //    @Override
-//    public QuestionResponse readQuestion(Server server, int questionId) {
-//        return server.readQuestion(questionId);
-//    }
-//
-//    @Override
 //    public QuestionEditResponse editQuestion(Server server, int questionId, String title, String symptom, String content) {
 //        return null;
 //    }
@@ -61,11 +56,6 @@ class Doctor extends AbstractUser {
 //    @Override
 //    public List<QuestionTitle> search(Server server, String query) {
 //        return server.search(query);
-//    }
-//
-//    @Override
-//    public List<QuestionTitle> getQuestionList(Server server) {
-//        return server.getQuestionList();
 //    }
 //
 //    @Override

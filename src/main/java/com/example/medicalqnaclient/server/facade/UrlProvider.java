@@ -24,17 +24,17 @@ class UrlProvider {
         return config.getBaseUrl() + "/api/v3/doctor/sign-up";
     }
 
-//    String getQuestionListUrl() {
-//        return config.getBaseUrl() + "/api/v2/question/list";
-//    }
-//
+    String getQuestionListUrl() {
+        return config.getBaseUrl() + "/api/v3/question/list";
+    }
+
 //    String getSearchUrl() {
 //        return null;
 //    }
-//
-//    String getQuestionUrl() {
-//        return config.getBaseUrl() + "/api/v2/question/";
-//    }
+
+    String getQuestionUrl() {
+        return config.getBaseUrl() + "/api/v3/question/";
+    }
 
     String getEnrollQuestionUrl() {
         return config.getBaseUrl() + "/api/v3/question/enroll";

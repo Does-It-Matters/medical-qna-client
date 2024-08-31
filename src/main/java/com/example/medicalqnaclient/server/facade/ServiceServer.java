@@ -7,10 +7,10 @@ import com.example.medicalqnaclient.server.facade.config.ServerConfig;
 //import com.example.medicalqnaclient.server.facade.tasks.question.edit.QuestionEditResponse;
 import com.example.medicalqnaclient.server.facade.tasks.question.enroll.QuestionEnrollRequest;
 import com.example.medicalqnaclient.server.facade.tasks.question.enroll.QuestionEnrollResponse;
-//import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionGetRequest;
-//import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
-//import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionsGetRequest;
-//import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
+import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionGetRequest;
+import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
+import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionsGetRequest;
+import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
 import com.example.medicalqnaclient.server.facade.tasks.signup.common.SignUpResponse;
 import com.example.medicalqnaclient.server.facade.tasks.signup.doctor.DoctorSignUpRequest;
 import com.example.medicalqnaclient.server.facade.tasks.signup.patient.PatientSignUpRequest;
@@ -31,8 +31,8 @@ public class ServiceServer implements Server {
     private final LoginRequest loginRequest = new LoginRequest();
     private final PatientSignUpRequest patientSignUpRequest = new PatientSignUpRequest();
     private final DoctorSignUpRequest doctorSignUpRequest = new DoctorSignUpRequest();
-//    private final QuestionsGetRequest questionsGetRequest = new QuestionsGetRequest();
-//    private final QuestionGetRequest questionGetRequest = new QuestionGetRequest();
+    private final QuestionsGetRequest questionsGetRequest = new QuestionsGetRequest();
+    private final QuestionGetRequest questionGetRequest = new QuestionGetRequest();
     private final QuestionEnrollRequest questionEnrollRequest = new QuestionEnrollRequest();
 //    private final QuestionEditRequest questionEditRequest = new QuestionEditRequest();
 //    private final QuestionDeleteRequest questionDeleteRequest = new QuestionDeleteRequest();
@@ -54,25 +54,25 @@ public class ServiceServer implements Server {
         String url = urlProvider.getSignUpAsDoctorUrl();
         return doctorSignUpRequest.post(url, id, pw, name, field, hospital, introduction);
     }
-//
-//    @Override
-//    public List<QuestionTitle> getQuestionList() {
-////        String encodedQueryString = URLEncoder.encode(queryString, StandardCharsets.UTF_8); 안전하게 url 인코딩 처리하기
-//        String url = urlProvider.getQuestionListUrl();
-//        return questionsGetRequest.getQuestionListAll(url);
-//    }
-//
+
+    @Override
+    public List<QuestionTitle> getQuestionList() {
+//        String encodedQueryString = URLEncoder.encode(queryString, StandardCharsets.UTF_8); 안전하게 url 인코딩 처리하기
+        String url = urlProvider.getQuestionListUrl();
+        return questionsGetRequest.getQuestionListAll(url);
+    }
+
 //    @Override
 //    public List<QuestionTitle> search(String query) {
 //        String url = urlProvider.getSearchUrl();
 //        return questionsGetRequest.search(query);
 //    }
-//
-//    @Override
-//    public QuestionResponse readQuestion(int questionId) {
-//        String url = urlProvider.getQuestionUrl();
-//        return questionGetRequest.getQuestion(url, questionId);
-//    }
+
+    @Override
+    public QuestionResponse readQuestion(int questionId) {
+        String url = urlProvider.getQuestionUrl();
+        return questionGetRequest.getQuestion(url, questionId);
+    }
 
     @Override
     public QuestionEnrollResponse enrollQuestion(String id, String title, String symptom, String content) {

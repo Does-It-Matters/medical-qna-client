@@ -87,4 +87,17 @@ public class QnAListener {
         System.out.println("Handling event: " + event.getMessage());
         pageManager.show(QUESTION_POST_PAGE);
     }
+
+    /**
+     * <b> 역할: 질문 조회 화면 이벤트 처리 메소드 </b>
+     * <p>
+     * - 메시지 출력 <br>
+     * - {@link QnAPageManager}에 질문 조회 화면 표현 요청 <br>
+     * </p>
+     */
+    @EventListener
+    public void handleQuestionViewEvent(QuestionViewEvent event) {
+        System.out.println("Handling event: " + event.getMessage());
+        pageManager.show(QUESTION_VIEW_PAGE);
+    }
 }

@@ -1,7 +1,7 @@
 package com.example.medicalqnaclient.user.state;
 
-//import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
-//import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
+import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
+import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
 import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
 import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
 import com.example.medicalqnaclient.user.state.factory.User;
@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Component
@@ -20,6 +21,7 @@ public class UserMediator implements ReadWriteUserMediator {
     private final UserFactory userFactory;
 
     private User user;
+    private int readingQuestionId;
 
     @Autowired
     public UserMediator(UserFactory userFactory) {
@@ -71,18 +73,17 @@ public class UserMediator implements ReadWriteUserMediator {
     public void postQuestion(String title, String symptom, String content) {
         user.postQuestion(title, symptom, content);
     }
-//
-//    @Override
-//    public void readQuestion(int questionId) {
-//        readingQuestionId = questionId;
-//        setScene(loadFXML(Fxml.QUESTION));
-//    }
-//
-//    @Override
-//    public QuestionResponse readQuestion() {
-//        return user.readQuestion(server, readingQuestionId);
-//    }
-//
+
+    @Override
+    public void setReadingQuestionId(int questionId) {
+        readingQuestionId = questionId;
+    }
+
+    @Override
+    public QuestionResponse readQuestion() {
+        return user.readQuestion(readingQuestionId);
+    }
+
 //    @Override
 //    public void editQuestion(String title, String symptom, String content) {
 //        user.editQuestion(server, readingQuestionId, title, symptom, content);
@@ -104,11 +105,11 @@ public class UserMediator implements ReadWriteUserMediator {
 //    public void getLoginView() {
 //        setScene(loadFXML(Fxml.LOGIN));
 //    }
-//
-//    @Override
-//    public List<QuestionTitle> getQuestionList() {
-//        return user.getQuestionList(server);
-//    }
+
+    @Override
+    public List<QuestionTitle> getQuestionList() {
+        return user.getQuestionList();
+    }
 //
 //    @Override
 //    public void getPostQuestionView() {
