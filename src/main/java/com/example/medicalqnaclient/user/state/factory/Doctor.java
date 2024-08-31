@@ -13,8 +13,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-class Doctor implements User {
-    private String id;
+class Doctor extends AbstractUser {
 
     private Doctor() {}
 

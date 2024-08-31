@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-class All implements User {
+class All extends AbstractUser {
     private All() {}
 
 //    @Override
