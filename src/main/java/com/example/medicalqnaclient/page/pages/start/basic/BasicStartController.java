@@ -19,12 +19,9 @@ public class BasicStartController extends ViewController {
     public Pane getLayout() {
         VBox root = new VBox(10);
         Button goHomeButton = new Button("Go Home");
-        Button getMonitorPageButton = new Button("Monitor page");
-
         goHomeButton.setOnAction(e -> publisher.publishGoHomeEvent());
-//        getMonitorPageButton.setOnAction(e -> mediator.getMonitorView());
 
-        root.getChildren().addAll(goHomeButton, getMonitorPageButton);
+        root.getChildren().addAll(goHomeButton);
         return root;
     }
 }
