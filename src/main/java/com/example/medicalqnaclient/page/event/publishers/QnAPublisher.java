@@ -1,7 +1,6 @@
 package com.example.medicalqnaclient.page.event.publishers;
 
-import com.example.medicalqnaclient.page.event.events.GoHomeEvent;
-import com.example.medicalqnaclient.page.event.events.LoginEvent;
+import com.example.medicalqnaclient.page.event.events.*;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
@@ -29,7 +28,6 @@ public class QnAPublisher {
         eventPublisher.publishEvent(new GoHomeEvent(this, "Go Home Event"));
     }
 
-
     /**
      * <b> 역할: 로그인 화면 이벤트 publish 메소드 </b>
      * <p>
@@ -38,5 +36,25 @@ public class QnAPublisher {
      */
     public void publishLoginEvent() {
         eventPublisher.publishEvent(new LoginEvent(this, "Login Event"));
+    }
+
+    /**
+     * <b> 역할: 의료진 회원가입 화면 이벤트 publish 메소드 </b>
+     * <p>
+     * - 메시지와 함께 의료진 회원가입 이벤트 발행  <br>
+     * </p>
+     */
+    public void publishDoctorSignUpEvent() {
+        eventPublisher.publishEvent(new DoctorSignUpEvent(this, "Doctor Sign Up Event"));
+    }
+
+    /**
+     * <b> 역할: 환자 회원가입 화면 이벤트 publish 메소드 </b>
+     * <p>
+     * - 메시지와 함께 환자 회원가입 이벤트 발행  <br>
+     * </p>
+     */
+    public void publishPatientSignUpEvent() {
+        eventPublisher.publishEvent(new PatientSignUpEvent(this, "Patient Sign Up Event"));
     }
 }
