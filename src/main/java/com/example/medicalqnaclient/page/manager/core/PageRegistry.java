@@ -2,15 +2,15 @@ package com.example.medicalqnaclient.page.manager.core;
 
 import com.example.medicalqnaclient.page.core.Page;
 import com.example.medicalqnaclient.page.core.PageType;
-import com.example.medicalqnaclient.page.pages.home.HomePage;
-import com.example.medicalqnaclient.page.pages.login.LoginPage;
-import com.example.medicalqnaclient.page.pages.profile.MyProfilePage;
-import com.example.medicalqnaclient.page.pages.question.QuestionEditPage;
-import com.example.medicalqnaclient.page.pages.question.QuestionPostPage;
-import com.example.medicalqnaclient.page.pages.question.QuestionViewPage;
-import com.example.medicalqnaclient.page.pages.sign.up.doctor.DoctorSignUpPage;
-import com.example.medicalqnaclient.page.pages.sign.up.patient.PatientSignUpPage;
-import com.example.medicalqnaclient.page.pages.start.StartPage;
+import com.example.medicalqnaclient.page.pages.application.home.HomePage;
+import com.example.medicalqnaclient.page.pages.application.login.LoginPage;
+import com.example.medicalqnaclient.page.pages.application.profile.MyProfilePage;
+import com.example.medicalqnaclient.page.pages.application.question.QuestionEditPage;
+import com.example.medicalqnaclient.page.pages.application.question.QuestionPostPage;
+import com.example.medicalqnaclient.page.pages.application.question.QuestionViewPage;
+import com.example.medicalqnaclient.page.pages.application.up.doctor.DoctorSignUpPage;
+import com.example.medicalqnaclient.page.pages.application.up.patient.PatientSignUpPage;
+import com.example.medicalqnaclient.page.pages.application.start.StartPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

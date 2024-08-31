@@ -39,49 +39,49 @@ module com.example.medicalqnaclient {
     opens com.example.medicalqnaclient to javafx.fxml, spring.core;
 
     // spring 빈 생성하기 위해서 exports와 opens 둘 다 설정하기
-    exports com.example.medicalqnaclient.page.pages.start;
-    opens com.example.medicalqnaclient.page.pages.start to spring.core;
+    exports com.example.medicalqnaclient.page.pages.application.start;
+    opens com.example.medicalqnaclient.page.pages.application.start to spring.core;
 
-    exports com.example.medicalqnaclient.page.pages.home;
-    opens com.example.medicalqnaclient.page.pages.home to spring.core;
+    exports com.example.medicalqnaclient.page.pages.application.home;
+    opens com.example.medicalqnaclient.page.pages.application.home to spring.core;
 
-    exports com.example.medicalqnaclient.page.pages.login;
-    opens com.example.medicalqnaclient.page.pages.login to spring.core;
+    exports com.example.medicalqnaclient.page.pages.application.login;
+    opens com.example.medicalqnaclient.page.pages.application.login to spring.core;
 
-    exports com.example.medicalqnaclient.page.pages.login.basic;
-    opens com.example.medicalqnaclient.page.pages.login.basic to spring.core;
+    exports com.example.medicalqnaclient.page.pages.application.login.basic;
+    opens com.example.medicalqnaclient.page.pages.application.login.basic to spring.core;
 
-    exports com.example.medicalqnaclient.page.pages.sign.up.doctor;
-    opens com.example.medicalqnaclient.page.pages.sign.up.doctor to spring.core;
-    exports com.example.medicalqnaclient.page.pages.sign.up.doctor.basic;
-    opens com.example.medicalqnaclient.page.pages.sign.up.doctor.basic to spring.core;
+    exports com.example.medicalqnaclient.page.pages.application.up.doctor;
+    opens com.example.medicalqnaclient.page.pages.application.up.doctor to spring.core;
+    exports com.example.medicalqnaclient.page.pages.application.up.doctor.basic;
+    opens com.example.medicalqnaclient.page.pages.application.up.doctor.basic to spring.core;
 
-    exports com.example.medicalqnaclient.page.pages.sign.up.patient;
-    opens com.example.medicalqnaclient.page.pages.sign.up.patient to spring.core;
-    exports com.example.medicalqnaclient.page.pages.sign.up.patient.basic;
-    opens com.example.medicalqnaclient.page.pages.sign.up.patient.basic to spring.core;
+    exports com.example.medicalqnaclient.page.pages.application.up.patient;
+    opens com.example.medicalqnaclient.page.pages.application.up.patient to spring.core;
+    exports com.example.medicalqnaclient.page.pages.application.up.patient.basic;
+    opens com.example.medicalqnaclient.page.pages.application.up.patient.basic to spring.core;
 
-    exports com.example.medicalqnaclient.page.pages.profile;
-    opens com.example.medicalqnaclient.page.pages.profile to spring.core;
-    exports com.example.medicalqnaclient.page.pages.profile.basic;
-    opens com.example.medicalqnaclient.page.pages.profile.basic to spring.core;
+    exports com.example.medicalqnaclient.page.pages.application.profile;
+    opens com.example.medicalqnaclient.page.pages.application.profile to spring.core;
+    exports com.example.medicalqnaclient.page.pages.application.profile.basic;
+    opens com.example.medicalqnaclient.page.pages.application.profile.basic to spring.core;
 
-    exports com.example.medicalqnaclient.page.pages.question;
-    opens com.example.medicalqnaclient.page.pages.question to spring.core;
-    exports com.example.medicalqnaclient.page.pages.question.basic;
-    opens com.example.medicalqnaclient.page.pages.question.basic to spring.core;
+    exports com.example.medicalqnaclient.page.pages.application.question;
+    opens com.example.medicalqnaclient.page.pages.application.question to spring.core;
+    exports com.example.medicalqnaclient.page.pages.application.question.basic;
+    opens com.example.medicalqnaclient.page.pages.application.question.basic to spring.core;
 
     exports com.example.medicalqnaclient.user.state;
     opens com.example.medicalqnaclient.user.state to spring.core;
 
     exports com.example.medicalqnaclient.user.state.factory;
     opens com.example.medicalqnaclient.user.state.factory to spring.core;
-    exports com.example.medicalqnaclient.page.pages.home.log.in;
-    opens com.example.medicalqnaclient.page.pages.home.log.in to spring.core;
-    exports com.example.medicalqnaclient.page.pages.home.log.out;
-    opens com.example.medicalqnaclient.page.pages.home.log.out to spring.core;
-    exports com.example.medicalqnaclient.page.pages.start.basic;
-    opens com.example.medicalqnaclient.page.pages.start.basic to spring.core;
+    exports com.example.medicalqnaclient.page.pages.application.home.log.in;
+    opens com.example.medicalqnaclient.page.pages.application.home.log.in to spring.core;
+    exports com.example.medicalqnaclient.page.pages.application.home.log.out;
+    opens com.example.medicalqnaclient.page.pages.application.home.log.out to spring.core;
+    exports com.example.medicalqnaclient.page.pages.application.start.basic;
+    opens com.example.medicalqnaclient.page.pages.application.start.basic to spring.core;
     exports com.example.medicalqnaclient.page.core;
     opens com.example.medicalqnaclient.page.core to spring.core;
     exports com.example.medicalqnaclient.page.manager.application.qna;
