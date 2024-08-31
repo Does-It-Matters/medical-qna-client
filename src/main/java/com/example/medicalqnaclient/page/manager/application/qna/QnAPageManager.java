@@ -47,6 +47,12 @@ public class QnAPageManager implements PageManager, Start {
         PAGES.put(START_PAGE, startPage);
         PAGES.put(HOME_PAGE, homePage);
         PAGES.put(LOGIN_PAGE, loginPage);
+//        PAGES.put(DOCTOR_SIGN_UP_PAGE, Page);
+//        PAGES.put(PATIENT_SIGN_UP_PAGE, Page);
+//        PAGES.put(MY_PROFILE_PAGE, Page);
+//        PAGES.put(QUESTION_VIEW_PAGE, Page);
+//        PAGES.put(QUESTION_POST_PAGE, Page);
+//        PAGES.put(QUESTION_EDIT_PAGE, Page);
     }
 
     @Override
