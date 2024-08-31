@@ -51,17 +51,7 @@ public class UserMediator implements ReadWriteUserMediator {
     public void logout() {
         user = users.get(UserType.ALL);
     }
-//
-//    @Override
-//    public void getPatientSignUpView() {
-//        setScene(loadFXML(Fxml.PATIENT_SIGN_UP));
-//    }
-//
-//    @Override
-//    public void getDoctorSignUpView() {
-//        setScene(loadFXML(Fxml.DOCTOR_SIGN_UP));
-//    }
-//
+
 //    @Override
 //    public void signUpAsPatient(String id, String pw) {
 //        user.signUpAsPatient(server, id, pw);
