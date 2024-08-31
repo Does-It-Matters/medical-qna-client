@@ -36,23 +36,6 @@ public class UserMediator implements ReadWriteUserMediator {
     }
 
 //    @Override
-//    public void goHome() {
-//        if (user.isLoggedIn()) {
-//            setScene(loadFXML(Fxml.QUESTIONS_LOGGED_IN_USERS));
-//        } else {
-//            setScene(loadFXML(Fxml.QUESTIONS_LOGGED_OUT_USERS));
-//        }
-//    }
-//
-//    private void setScene(Parent root) {
-//        if (root != null) {
-//            primaryStage.getScene().setRoot(root);
-//        } else {
-//            System.err.println("Failed to load new scene");
-//        }
-//    }
-//
-//    @Override
 //    public void login(String id, String pw) throws AlreadyLoggedInException {
 //        LoginResponse response = user.login(server, id, pw);
 //        if(response.getStatusCode() == 200) {
