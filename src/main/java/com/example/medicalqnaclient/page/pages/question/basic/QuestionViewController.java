@@ -45,7 +45,7 @@ public class QuestionViewController extends ViewController {
 
         homeButton = new Button("Home");
         editButton = new Button("Edit");
-        deleteButton = new Button("Delete");
+        deleteButton = new Button("Delete (planning)");
 
         homeButton.setOnAction(e -> onHomeButtonClick());
         editButton.setOnAction(e -> onEditButtonClick());
@@ -89,7 +89,7 @@ public class QuestionViewController extends ViewController {
      * </p>
      */
     protected void onEditButtonClick() {
-//        mediator.getEditQuestionView();
+        publisher.publishQuestionEditEvent();
     }
 
     /**
@@ -99,6 +99,6 @@ public class QuestionViewController extends ViewController {
      * </p>
      */
     protected void onDeleteButtonClick() {
-//        mediator.deleteQuestion();
+//        publisher.publishQuestionDeleteEvent();
     }
 }

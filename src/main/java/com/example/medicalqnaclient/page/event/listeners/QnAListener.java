@@ -100,4 +100,30 @@ public class QnAListener {
         System.out.println("Handling event: " + event.getMessage());
         pageManager.show(QUESTION_VIEW_PAGE);
     }
+
+    /**
+     * <b> 역할: 질문 수정 화면 이벤트 처리 메소드 </b>
+     * <p>
+     * - 메시지 출력 <br>
+     * - {@link QnAPageManager}에 질문 수정 화면 표현 요청 <br>
+     * </p>
+     */
+    @EventListener
+    public void handleQuestionEditEvent(QuestionEditEvent event) {
+        System.out.println("Handling event: " + event.getMessage());
+        pageManager.show(QUESTION_EDIT_PAGE);
+    }
+
+//    /**
+//     * <b> 역할: 질문 삭제 화면 이벤트 처리 메소드 </b>
+//     * <p>
+//     * - 메시지 출력 <br>
+//     * - {@link QnAPageManager}에 질문 삭제 화면 표현 요청 <br>
+//     * </p>
+//     */
+//    @EventListener
+//    public void handleQuestionDeleteEvent(QuestionDeleteEvent event) {
+//        System.out.println("Handling event: " + event.getMessage());
+//        pageManager.show(QUESTION_DELETE_PAGE);
+//    }
 }
