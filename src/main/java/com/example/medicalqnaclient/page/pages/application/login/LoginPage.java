@@ -1,6 +1,6 @@
 package com.example.medicalqnaclient.page.pages.application.login;
 
-import com.example.medicalqnaclient.page.core.ApplicationPage;
+import com.example.medicalqnaclient.page.pages.application.ApplicationPage;
 import com.example.medicalqnaclient.page.core.PageStrategy;
 import com.example.medicalqnaclient.page.pages.application.login.basic.LoginStrategy;
 import com.example.medicalqnaclient.user.mediator.ReadUserMediator;

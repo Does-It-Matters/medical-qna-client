@@ -1,5 +1,7 @@
-package com.example.medicalqnaclient.page.core;
+package com.example.medicalqnaclient.page.pages.application;
 
+import com.example.medicalqnaclient.page.core.Page;
+import com.example.medicalqnaclient.page.core.PageStrategy;
 import com.example.medicalqnaclient.user.mediator.ReadUserMediator;
 import javafx.scene.Scene;
 
