@@ -20,6 +20,9 @@ import java.util.Map;
 @Component
 public class PageRegistry {
     private final Map<PageType, Page> applicationPages = new HashMap<>();
+    private final Map<PageType, Page> testPages = new HashMap<>();
+    private final Map<PageType, Page> systemResourcePages = new HashMap<>();
+    private final Map<PageType, Page> logPages = new HashMap<>();
 
     @Autowired
     public PageRegistry(
@@ -46,5 +49,17 @@ public class PageRegistry {
 
     public Map<PageType, Page> getApplicationPages() {
         return applicationPages;
+    }
+
+    public Map<PageType, Page> getTestPages() {
+        return testPages;
+    }
+
+    public Map<PageType, Page> getSystemResourcePages() {
+        return systemResourcePages;
+    }
+
+    public Map<PageType, Page> getLogPages() {
+        return logPages;
     }
 }

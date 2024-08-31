@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.page.manager.monitor.system;
+package com.example.medicalqnaclient.page.manager.test;
 
 import com.example.medicalqnaclient.page.core.Page;
 import com.example.medicalqnaclient.page.core.PageManager;
@@ -11,15 +11,15 @@ import org.springframework.stereotype.Component;
 import java.util.Map;
 
 @Component
-public class SystemResourcePageManager implements PageManager {
+public class TestPageManager implements PageManager {
     private final Map<PageType, Page> pages;
     private Stage stage;
     private int width;
     private int height;
 
     @Autowired
-    public SystemResourcePageManager(PageRegistry pageRegistry) {
-        pages = pageRegistry.getSystemResourcePages();
+    public TestPageManager(PageRegistry pageRegistry) {
+        pages = pageRegistry.getTestPages();
     }
 
     @Override
