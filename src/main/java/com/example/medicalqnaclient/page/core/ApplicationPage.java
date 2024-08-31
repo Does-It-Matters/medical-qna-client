@@ -3,12 +3,12 @@ package com.example.medicalqnaclient.page.core;
 import com.example.medicalqnaclient.user.mediator.ReadUserMediator;
 import javafx.scene.Scene;
 
-public abstract class AbstractPage implements Page {
+public abstract class ApplicationPage implements Page {
     protected final ReadUserMediator userMediator;
     protected String title;
     protected PageStrategy strategy;
 
-    public AbstractPage(String title, ReadUserMediator userMediator, PageStrategy strategy) {
+    public ApplicationPage(String title, ReadUserMediator userMediator, PageStrategy strategy) {
         this.title = title;
         this.userMediator = userMediator;
         this.strategy = strategy;

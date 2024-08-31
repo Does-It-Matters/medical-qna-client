@@ -1,6 +1,6 @@
 package com.example.medicalqnaclient.page.pages.application.profile;
 
-import com.example.medicalqnaclient.page.core.AbstractPage;
+import com.example.medicalqnaclient.page.core.ApplicationPage;
 import com.example.medicalqnaclient.page.core.PageStrategy;
 import com.example.medicalqnaclient.page.pages.application.profile.basic.MyProfileStrategy;
 import com.example.medicalqnaclient.user.mediator.ReadUserMediator;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  * </p>
  */
 @Component
-public class MyProfilePage extends AbstractPage {
+public class MyProfilePage extends ApplicationPage {
     private final PageStrategy myProfileStrategy;
 
     @Autowired

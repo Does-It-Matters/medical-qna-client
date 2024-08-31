@@ -1,13 +1,13 @@
 package com.example.medicalqnaclient.page.pages.application.start;
 
 import com.example.medicalqnaclient.page.pages.application.start.basic.BasicStartStrategy;
-import com.example.medicalqnaclient.page.core.AbstractPage;
+import com.example.medicalqnaclient.page.core.ApplicationPage;
 import com.example.medicalqnaclient.user.mediator.ReadUserMediator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class StartPage extends AbstractPage {
+public class StartPage extends ApplicationPage {
 
     @Autowired
     public StartPage(ReadUserMediator userMediator, BasicStartStrategy strategy) {
