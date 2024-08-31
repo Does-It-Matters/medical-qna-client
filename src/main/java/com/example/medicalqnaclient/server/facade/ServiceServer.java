@@ -16,9 +16,11 @@ import com.example.medicalqnaclient.server.facade.config.ServerConfig;
 //import com.example.medicalqnaclient.server.facade.tasks.signup.patient.PatientSignUpRequest;
 import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginRequest;
 import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class ServiceServer implements Server {
     private final ServerConfig config = ServerConfig.LOCALHOST;
     private final UrlProvider urlProvider = new UrlProvider(config);

@@ -27,6 +27,8 @@ module com.example.medicalqnaclient {
 //    exports com.example.medicalqnaclient.server.facade.tasks.question.delete;
 
     exports com.example.medicalqnaclient;
+    exports com.example.medicalqnaclient.server.facade;
+
 //    exports com.example.medicalqnaclient.controller;
 //    exports com.example.medicalqnaclient.server.facade.tasks.signup.common to com.fasterxml.jackson.databind;
 //    exports com.example.medicalqnaclient.server.facade.tasks.signup.patient to com.fasterxml.jackson.databind;
