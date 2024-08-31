@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class StartPage extends LogPage {
+public class LogStartPage extends LogPage {
 
     @Autowired
-    public StartPage(BasicStartStrategy strategy) {
+    public LogStartPage(BasicStartStrategy strategy) {
         super("Monitor Log Start Page", strategy);
     }
 

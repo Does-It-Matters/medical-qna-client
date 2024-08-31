@@ -1,16 +1,16 @@
-package com.example.medicalqnaclient.page.pages.test.start;
+package com.example.medicalqnaclient.page.pages.resource.start;
 
 import com.example.medicalqnaclient.page.pages.application.start.basic.BasicStartStrategy;
-import com.example.medicalqnaclient.page.pages.test.TestPage;
+import com.example.medicalqnaclient.page.pages.resource.ResourcePage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class StartPage extends TestPage {
+public class ResourceStartPage extends ResourcePage {
 
     @Autowired
-    public StartPage(BasicStartStrategy strategy) {
-        super("Test Start Page", strategy);
+    public ResourceStartPage(BasicStartStrategy strategy) {
+        super("Monitor System Resource Start Page", strategy);
     }
 
     @Override

@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class StartPage extends ApplicationPage {
+public class ApplicationStartPage extends ApplicationPage {
 
     @Autowired
-    public StartPage(ReadUserMediator userMediator, BasicStartStrategy strategy) {
+    public ApplicationStartPage(ReadUserMediator userMediator, BasicStartStrategy strategy) {
         super("Application Start Page", userMediator, strategy);
     }
 

@@ -10,7 +10,7 @@ import com.example.medicalqnaclient.page.pages.application.question.QuestionPost
 import com.example.medicalqnaclient.page.pages.application.question.QuestionViewPage;
 import com.example.medicalqnaclient.page.pages.application.up.doctor.DoctorSignUpPage;
 import com.example.medicalqnaclient.page.pages.application.up.patient.PatientSignUpPage;
-import com.example.medicalqnaclient.page.pages.application.start.StartPage;
+import com.example.medicalqnaclient.page.pages.application.start.ApplicationStartPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -26,7 +26,7 @@ public class PageRegistry {
 
     @Autowired
     public PageRegistry(
-            StartPage startPage,
+            ApplicationStartPage applicationStartPage,
             HomePage homePage,
             LoginPage loginPage,
             DoctorSignUpPage doctorSignUpPage,
@@ -36,7 +36,7 @@ public class PageRegistry {
             QuestionPostPage questionPostPage,
             QuestionEditPage questionEditPage
     ) {
-        applicationPages.put(PageType.START_PAGE, startPage);
+        applicationPages.put(PageType.START_PAGE, applicationStartPage);
         applicationPages.put(PageType.HOME_PAGE, homePage);
         applicationPages.put(PageType.LOGIN_PAGE, loginPage);
         applicationPages.put(PageType.DOCTOR_SIGN_UP_PAGE, doctorSignUpPage);
