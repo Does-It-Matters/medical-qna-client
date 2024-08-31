@@ -2,11 +2,12 @@ package com.example.medicalqnaclient.user.state;
 
 //import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
 //import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
-//import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
+import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
 import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
 import com.example.medicalqnaclient.user.state.factory.User;
 import com.example.medicalqnaclient.user.state.factory.UserFactory;
 import com.example.medicalqnaclient.user.state.factory.UserType;
+import com.example.medicalqnaclient.user.state.factory.exception.AlreadyLoggedInException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,8 +17,9 @@ import java.util.Map;
 @Component
 public class UserMediator implements ReadWriteUserMediator {
     private final Map<UserType, User> users = new HashMap<>();
-    private final User user;
     private final UserFactory userFactory;
+
+    private User user;
 //    private int readingQuestionId;
 
     @Autowired
@@ -35,22 +37,16 @@ public class UserMediator implements ReadWriteUserMediator {
         return user.isLoggedIn();
     }
 
-//    @Override
-//    public void login(String id, String pw) throws AlreadyLoggedInException {
-//        LoginResponse response = user.login(server, id, pw);
-//        if(response.getStatusCode() == 200) {
-//            if (response.getRole().getRole().equals("patient")) { // UserType, Role 유지보수 필요
-//                user = UserFactory.getInstance(UserType.PATIENT);
-//            } else if (response.getRole().getRole().equals("doctor")) {
-//                user = UserFactory.getInstance(UserType.DOCTOR);
-//            } else if (response.getRole().getRole().equals("admin")) {
-//                user = UserFactory.getInstance(UserType.ADMIN);
-//            }
-//            user.setId(id);
-//        }
-//        goHome();
-//    }
-//
+    @Override
+    public void login(String id, String pw) throws AlreadyLoggedInException {
+        LoginResponse response = user.login(id, pw);
+        if (response.getStatusCode() == 200) {
+            UserType type = UserType.getUserType(response.getRole().getRole());
+            user = users.get(type);
+            user.setId(id);
+        }
+    }
+
 //    @Override
 //    public void logout() {
 //        user = UserFactory.getInstance(UserType.ALL);
