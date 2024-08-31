@@ -6,7 +6,7 @@ package com.example.medicalqnaclient.user.mediator;
 public interface ReadWriteUserMediator extends ReadUserMediator {
 
     public void login(String id, String pw);
-//    public void logout();
+    public void logout();
 //    public void signUpAsPatient(String id, String pw);
 //    public void signUpAsDoctor(String id, String pw, String name, String field, String hospital, String introduction);
 //    public void getMyProfile();

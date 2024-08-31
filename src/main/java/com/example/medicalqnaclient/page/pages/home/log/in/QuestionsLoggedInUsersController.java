@@ -37,7 +37,7 @@ public class QuestionsLoggedInUsersController extends ViewController {
         searchButton = new Button("Search");
         postButton = new Button("Post");
 
-//        logoutButton.setOnAction(e -> onLogoutButtonClick());
+        logoutButton.setOnAction(e -> onLogoutButtonClick());
 //        searchButton.setOnAction(e -> onSearchButtonClick());
 //        postButton.setOnAction(e -> onPostButtonClick());
 
@@ -50,10 +50,11 @@ public class QuestionsLoggedInUsersController extends ViewController {
 //    private void handleSelectedQuestion(QuestionTitle questionTitle) {
 //        mediator.readQuestion(questionTitle.getQuestionId());
 //    }
-//
-//    protected void onLogoutButtonClick() {
-//        mediator.logout();
-//    }
+
+    protected void onLogoutButtonClick() {
+        mediator.logout();
+        publisher.publishGoHomeEvent();
+    }
 //
 //    protected void onSearchButtonClick() {
 //        setList(mediator.search(userQueryTextArea.getText()));

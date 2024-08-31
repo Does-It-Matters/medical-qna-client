@@ -47,11 +47,10 @@ public class UserMediator implements ReadWriteUserMediator {
         }
     }
 
-//    @Override
-//    public void logout() {
-//        user = UserFactory.getInstance(UserType.ALL);
-//        goHome();
-//    }
+    @Override
+    public void logout() {
+        user = users.get(UserType.ALL);
+    }
 //
 //    @Override
 //    public void getPatientSignUpView() {
