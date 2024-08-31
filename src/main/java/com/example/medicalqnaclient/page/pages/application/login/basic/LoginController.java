@@ -1,6 +1,6 @@
 package com.example.medicalqnaclient.page.pages.application.login.basic;
 
-import com.example.medicalqnaclient.page.core.ViewController;
+import com.example.medicalqnaclient.page.core.ApplicationController;
 import com.example.medicalqnaclient.page.event.publishers.QnAPublisher;
 import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
 import com.example.medicalqnaclient.user.state.factory.exception.AlreadyLoggedInException;
@@ -22,7 +22,7 @@ import org.springframework.stereotype.Component;
  * </p>
  */
 @Component
-public class LoginController extends ViewController {
+public class LoginController extends ApplicationController {
     private TextField userIdField;
     private PasswordField passwordField;
     private Button loginButton;

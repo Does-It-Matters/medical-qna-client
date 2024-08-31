@@ -1,6 +1,6 @@
 package com.example.medicalqnaclient.page.pages.application.up.doctor.basic;
 
-import com.example.medicalqnaclient.page.core.ViewController;
+import com.example.medicalqnaclient.page.core.ApplicationController;
 import com.example.medicalqnaclient.page.event.publishers.QnAPublisher;
 import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
 import javafx.scene.control.Alert;
@@ -21,7 +21,7 @@ import org.springframework.stereotype.Component;
  * </p>
  */
 @Component
-public class DoctorSignUpController extends ViewController {
+public class DoctorSignUpController extends ApplicationController {
     private TextField idField;
     private TextField passwordField;
     private TextField nameField;

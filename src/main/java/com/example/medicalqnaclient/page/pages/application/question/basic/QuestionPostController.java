@@ -1,6 +1,6 @@
 package com.example.medicalqnaclient.page.pages.application.question.basic;
 
-import com.example.medicalqnaclient.page.core.ViewController;
+import com.example.medicalqnaclient.page.core.ApplicationController;
 import com.example.medicalqnaclient.page.event.publishers.QnAPublisher;
 import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
 import javafx.scene.control.Button;
@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
  * </p>
  */
 @Component
-public class QuestionPostController extends ViewController {
+public class QuestionPostController extends ApplicationController {
     private TextField titleTextField;
     private TextArea symptomTextArea;
     private TextArea questionTextArea;

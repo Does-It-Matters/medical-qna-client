@@ -1,6 +1,6 @@
 package com.example.medicalqnaclient.page.pages.application.home.log.out;
 
-import com.example.medicalqnaclient.page.core.ViewController;
+import com.example.medicalqnaclient.page.core.ApplicationController;
 import com.example.medicalqnaclient.page.event.publishers.QnAPublisher;
 import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
 import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
@@ -21,7 +21,7 @@ import java.util.List;
  * <b> 역할: 로그아웃된 상태에서 질문 목록 조회 컨트롤러 클래스 </b>
  */
 @Component
-public class QuestionsLoggedOutUsersController extends ViewController {
+public class QuestionsLoggedOutUsersController extends ApplicationController {
     private ComboBox<String> categoryComboBox;
     private ListView<QuestionTitle> listView;
     private TextArea userQueryTextArea;

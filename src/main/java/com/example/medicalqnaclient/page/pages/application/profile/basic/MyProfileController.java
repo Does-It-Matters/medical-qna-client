@@ -1,6 +1,6 @@
 package com.example.medicalqnaclient.page.pages.application.profile.basic;
 
-import com.example.medicalqnaclient.page.core.ViewController;
+import com.example.medicalqnaclient.page.core.ApplicationController;
 import com.example.medicalqnaclient.page.event.publishers.QnAPublisher;
 import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
 import javafx.scene.control.Button;
@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
  * </p>
  */
 @Component
-public class MyProfileController extends ViewController {
+public class MyProfileController extends ApplicationController {
     private Label idLabel;
     private Label roleLabel;
     private Button homeButton;

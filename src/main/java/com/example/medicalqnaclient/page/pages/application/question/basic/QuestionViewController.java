@@ -1,6 +1,6 @@
 package com.example.medicalqnaclient.page.pages.application.question.basic;
 
-import com.example.medicalqnaclient.page.core.ViewController;
+import com.example.medicalqnaclient.page.core.ApplicationController;
 import com.example.medicalqnaclient.page.event.publishers.QnAPublisher;
 import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
 import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
  * </p>
  */
 @Component
-public class QuestionViewController extends ViewController {
+public class QuestionViewController extends ApplicationController {
     private Label titleLabel;
     private Label idLabel;
     private Label symptomLabel;

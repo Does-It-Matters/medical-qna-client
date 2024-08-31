@@ -1,6 +1,6 @@
 package com.example.medicalqnaclient.page.pages.application.home.log.in;
 
-import com.example.medicalqnaclient.page.core.ViewController;
+import com.example.medicalqnaclient.page.core.ApplicationController;
 import com.example.medicalqnaclient.page.event.publishers.QnAPublisher;
 import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
 import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class QuestionsLoggedInUsersController extends ViewController {
+public class QuestionsLoggedInUsersController extends ApplicationController {
     private ComboBox<String> categoryComboBox;
     private ListView<QuestionTitle> listView;
     private MenuButton userNameMenuButton;
