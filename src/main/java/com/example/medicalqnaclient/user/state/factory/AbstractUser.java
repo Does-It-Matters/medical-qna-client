@@ -38,6 +38,10 @@ public abstract class AbstractUser implements User {
     }
 
     @Override
+    public void getMyProfile() {
+    }
+
+    @Override
     public QuestionEnrollResponse postQuestion(String title, String symptom, String content) {
         return null;
     }

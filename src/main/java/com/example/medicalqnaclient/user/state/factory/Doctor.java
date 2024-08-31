@@ -36,12 +36,6 @@ class Doctor extends AbstractUser {
     public boolean isLoggedIn() {
         return true;
     }
-
-//
-//    @Override
-//    public void getMyProfile() {
-//
-//    }
 //
 //    @Override
 //    public QuestionEditResponse editQuestion(Server server, int questionId, String title, String symptom, String content) {

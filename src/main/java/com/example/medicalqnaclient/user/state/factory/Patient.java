@@ -32,12 +32,6 @@ class Patient extends AbstractUser {
         return true;
     }
 
-//
-//    @Override
-//    public void getMyProfile() {
-//
-//    }
-
     @Override
     public QuestionEnrollResponse postQuestion(String title, String symptom, String content) {
         return server.enrollQuestion(id, title, symptom, content);

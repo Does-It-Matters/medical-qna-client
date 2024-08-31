@@ -63,11 +63,9 @@ public class UserMediator implements ReadWriteUserMediator {
         user.signUpAsDoctor(id, pw, name, field, hospital, introduction);
     }
 
-//
-//    @Override
-//    public void getMyProfile() {
-//        setScene(loadFXML(Fxml.MY_PROFILE));
-//    }
+    @Override
+    public void getMyProfile() {
+    }
 
     @Override
     public void postQuestion(String title, String symptom, String content) {
