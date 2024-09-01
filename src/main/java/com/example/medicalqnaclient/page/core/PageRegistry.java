@@ -1,7 +1,5 @@
-package com.example.medicalqnaclient.page.manager.core;
+package com.example.medicalqnaclient.page.core;
 
-import com.example.medicalqnaclient.page.core.Page;
-import com.example.medicalqnaclient.page.core.PageType;
 import com.example.medicalqnaclient.page.pages.application.home.HomePage;
 import com.example.medicalqnaclient.page.pages.application.login.LoginPage;
 import com.example.medicalqnaclient.page.pages.application.profile.MyProfilePage;

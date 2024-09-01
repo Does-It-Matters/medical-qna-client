@@ -1,28 +1,28 @@
-package com.example.medicalqnaclient.page.manager.monitor.system;
+package com.example.medicalqnaclient.page.manager.log;
 
 import com.example.medicalqnaclient.page.core.Page;
 import com.example.medicalqnaclient.page.core.PageManager;
 import com.example.medicalqnaclient.page.core.PageType;
 import com.example.medicalqnaclient.page.core.Start;
-import com.example.medicalqnaclient.page.manager.core.PageRegistry;
+import com.example.medicalqnaclient.page.core.PageRegistry;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
 
-import static com.example.medicalqnaclient.page.core.PageType.RESOURCE_START_PAGE;
+import static com.example.medicalqnaclient.page.core.PageType.LOG_START_PAGE;
 
 @Component
-public class SystemResourcePageManager implements PageManager, Start {
+public class LogPageManager implements PageManager, Start {
     private final Map<PageType, Page> pages;
     private Stage stage;
     private int width;
     private int height;
 
     @Autowired
-    public SystemResourcePageManager(PageRegistry pageRegistry) {
-        pages = pageRegistry.getSystemResourcePages();
+    public LogPageManager(PageRegistry pageRegistry) {
+        pages = pageRegistry.getLogPages();
     }
 
     @Override
@@ -31,7 +31,7 @@ public class SystemResourcePageManager implements PageManager, Start {
         this.width = width;
         this.height = height;
 
-        show(RESOURCE_START_PAGE);
+        show(LOG_START_PAGE);
     }
 
     @Override

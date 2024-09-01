@@ -1,10 +1,10 @@
-package com.example.medicalqnaclient.page.manager.application.qna;
+package com.example.medicalqnaclient.page.manager.application;
 
 import com.example.medicalqnaclient.page.core.PageManager;
 import com.example.medicalqnaclient.page.core.Start;
 import com.example.medicalqnaclient.page.core.Page;
 import com.example.medicalqnaclient.page.core.PageType;
-import com.example.medicalqnaclient.page.manager.core.PageRegistry;
+import com.example.medicalqnaclient.page.core.PageRegistry;
 import javafx.stage.Stage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

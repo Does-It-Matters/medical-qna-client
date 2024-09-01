@@ -1,9 +1,9 @@
 package com.example.medicalqnaclient;
 
-import com.example.medicalqnaclient.page.manager.application.qna.QnAPageManager;
+import com.example.medicalqnaclient.page.manager.application.QnAPageManager;
 import com.example.medicalqnaclient.page.core.Start;
-import com.example.medicalqnaclient.page.manager.monitor.log.LogPageManager;
-import com.example.medicalqnaclient.page.manager.monitor.system.SystemResourcePageManager;
+import com.example.medicalqnaclient.page.manager.log.LogPageManager;
+import com.example.medicalqnaclient.page.manager.resource.SystemResourcePageManager;
 import com.example.medicalqnaclient.page.manager.test.TestPageManager;
 import javafx.application.Application;
 import javafx.stage.Stage;
