@@ -1,10 +1,10 @@
 package com.example.medicalqnaclient;
 
-import com.example.medicalqnaclient.page.manager.application.QnAPageManager;
+import com.example.medicalqnaclient.page.application.ApplicationPageManager;
 import com.example.medicalqnaclient.page.core.Start;
-import com.example.medicalqnaclient.page.manager.log.LogPageManager;
-import com.example.medicalqnaclient.page.manager.resource.SystemResourcePageManager;
-import com.example.medicalqnaclient.page.manager.test.TestPageManager;
+import com.example.medicalqnaclient.page.log.LogPageManager;
+import com.example.medicalqnaclient.page.resource.SystemResourcePageManager;
+import com.example.medicalqnaclient.page.test.TestPageManager;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -29,7 +29,7 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        final Start application = context.getBean(QnAPageManager.class);
+        final Start application = context.getBean(ApplicationPageManager.class);
         final Start log = context.getBean(LogPageManager.class);
         final Start resource = context.getBean(SystemResourcePageManager.class);
         final Start test = context.getBean(TestPageManager.class);
