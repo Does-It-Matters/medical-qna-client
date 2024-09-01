@@ -78,7 +78,6 @@ module com.example.medicalqnaclient {
     exports com.example.medicalqnaclient.page.pages.log.start.basic;
     opens com.example.medicalqnaclient.page.pages.log.start.basic to spring.core;
 
-    exports com.example.medicalqnaclient.page.pages.log.home;
     opens com.example.medicalqnaclient.page.pages.log.home to spring.core;
     exports com.example.medicalqnaclient.page.pages.log.home.temp;
     opens com.example.medicalqnaclient.page.pages.log.home.temp to spring.core;
@@ -118,8 +117,6 @@ module com.example.medicalqnaclient {
     opens com.example.medicalqnaclient.page.manager.monitor.system to spring.core;
     exports com.example.medicalqnaclient.page.manager.test;
     opens com.example.medicalqnaclient.page.manager.test to spring.core;
-    exports com.example.medicalqnaclient.page.event.events;
-    opens com.example.medicalqnaclient.page.event.events to spring.core;
     exports com.example.medicalqnaclient.page.event.listeners;
     opens com.example.medicalqnaclient.page.event.listeners to spring.core;
     exports com.example.medicalqnaclient.page.event.publishers;
@@ -128,6 +125,8 @@ module com.example.medicalqnaclient {
     opens com.example.medicalqnaclient.page.manager.core to spring.core;
     exports com.example.medicalqnaclient.page.pages.application;
     opens com.example.medicalqnaclient.page.pages.application to spring.core;
+    exports com.example.medicalqnaclient.page.event.events.application;
+    opens com.example.medicalqnaclient.page.event.events.application to spring.core;
 
 //    opens com.example.medicalqnaclient.controller.monitor to spring.core;
 //    exports com.example.medicalqnaclient.controller.monitor;

@@ -1,6 +1,6 @@
 package com.example.medicalqnaclient.page.event.publishers;
 
-import com.example.medicalqnaclient.page.event.events.*;
+import com.example.medicalqnaclient.page.event.events.application.*;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 

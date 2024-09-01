@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.page.event.events;
+package com.example.medicalqnaclient.page.event.events.application;
 
 import org.springframework.context.ApplicationEvent;
 

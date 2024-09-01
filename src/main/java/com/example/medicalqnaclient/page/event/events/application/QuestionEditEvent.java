@@ -1,11 +1,11 @@
-package com.example.medicalqnaclient.page.event.events;
+package com.example.medicalqnaclient.page.event.events.application;
 
 import org.springframework.context.ApplicationEvent;
 
-public class PatientSignUpEvent extends ApplicationEvent {
+public class QuestionEditEvent extends ApplicationEvent {
     private final String message;
 
-    public PatientSignUpEvent(Object source, String message) {
+    public QuestionEditEvent(Object source, String message) {
         super(source);
         this.message = message;
     }

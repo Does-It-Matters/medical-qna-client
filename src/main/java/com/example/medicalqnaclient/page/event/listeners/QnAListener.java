@@ -1,7 +1,7 @@
 package com.example.medicalqnaclient.page.event.listeners;
 
 import com.example.medicalqnaclient.page.core.PageManager;
-import com.example.medicalqnaclient.page.event.events.*;
+import com.example.medicalqnaclient.page.event.events.application.*;
 import com.example.medicalqnaclient.page.manager.application.qna.QnAPageManager;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
