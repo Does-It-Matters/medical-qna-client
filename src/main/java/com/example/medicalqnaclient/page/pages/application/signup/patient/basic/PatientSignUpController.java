@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.page.pages.application.up.patient.basic;
+package com.example.medicalqnaclient.page.pages.application.signup.patient.basic;
 
 import com.example.medicalqnaclient.page.pages.application.ApplicationController;
 import com.example.medicalqnaclient.page.event.publishers.QnAPublisher;

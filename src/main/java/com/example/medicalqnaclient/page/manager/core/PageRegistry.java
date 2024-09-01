@@ -8,8 +8,8 @@ import com.example.medicalqnaclient.page.pages.application.profile.MyProfilePage
 import com.example.medicalqnaclient.page.pages.application.question.QuestionEditPage;
 import com.example.medicalqnaclient.page.pages.application.question.QuestionPostPage;
 import com.example.medicalqnaclient.page.pages.application.question.QuestionViewPage;
-import com.example.medicalqnaclient.page.pages.application.up.doctor.DoctorSignUpPage;
-import com.example.medicalqnaclient.page.pages.application.up.patient.PatientSignUpPage;
+import com.example.medicalqnaclient.page.pages.application.signup.doctor.DoctorSignUpPage;
+import com.example.medicalqnaclient.page.pages.application.signup.patient.PatientSignUpPage;
 import com.example.medicalqnaclient.page.pages.application.start.ApplicationStartPage;
 import com.example.medicalqnaclient.page.pages.log.start.LogStartPage;
 import com.example.medicalqnaclient.page.pages.resource.start.ResourceStartPage;
