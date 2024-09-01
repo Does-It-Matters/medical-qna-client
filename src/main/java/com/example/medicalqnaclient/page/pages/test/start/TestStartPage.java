@@ -1,7 +1,7 @@
 package com.example.medicalqnaclient.page.pages.test.start;
 
-import com.example.medicalqnaclient.page.pages.application.start.basic.BasicStartStrategy;
 import com.example.medicalqnaclient.page.pages.test.TestPage;
+import com.example.medicalqnaclient.page.pages.test.start.basic.TestStartStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class TestStartPage extends TestPage {
 
     @Autowired
-    public TestStartPage(BasicStartStrategy strategy) {
+    public TestStartPage(TestStartStrategy strategy) {
         super("Test Start Page", strategy);
     }
 

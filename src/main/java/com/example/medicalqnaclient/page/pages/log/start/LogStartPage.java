@@ -1,7 +1,7 @@
 package com.example.medicalqnaclient.page.pages.log.start;
 
-import com.example.medicalqnaclient.page.pages.application.start.basic.BasicStartStrategy;
 import com.example.medicalqnaclient.page.pages.log.LogPage;
+import com.example.medicalqnaclient.page.pages.log.start.basic.LogStartStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class LogStartPage extends LogPage {
 
     @Autowired
-    public LogStartPage(BasicStartStrategy strategy) {
+    public LogStartPage(LogStartStrategy strategy) {
         super("Monitor Log Start Page", strategy);
     }
 
