@@ -15,6 +15,15 @@
 3. RSocket으로 비동기 데이터 스트림 전송  
 
 ## Architecture
+### v7: 여러 page manager로 확장
+소소하지만 생각보다 고려할 것이 많은 변화
+- application page manager
+- test page manager
+- resource page manager
+- log page manager
+<br> 애플리케이션 페이지 매니저에서 3가지 페이지 매니저 확장
+<br> -> 인터페이스, 추상 클래스 계층을 고려해서 코드의 중복은 줄이고 계층의 역할을 분명히 하기, 스프링 중복 빈 등을 고려  
+
 ### v6: 이벤트 기반 아키텍처로 순환 참조 제거 
 배경: 기존의 컨트롤러 객체와 중재자 객체 간의 상호 참조로 복잡한 설계를 간소화하기 위해 
 - 스프링의 ApplicationEvent 활용 
