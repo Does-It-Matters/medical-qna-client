@@ -2,7 +2,7 @@ package com.example.medicalqnaclient.page.application.pages.question.basic;
 
 import com.example.medicalqnaclient.page.application.event.ApplicationPublisher;
 import com.example.medicalqnaclient.page.application.pages.ApplicationController;
-import com.example.medicalqnaclient.server.facade.tasks.question.read.QuestionResponse;
+import com.example.medicalqnaclient.server.application.tasks.question.read.QuestionResponse;
 import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;

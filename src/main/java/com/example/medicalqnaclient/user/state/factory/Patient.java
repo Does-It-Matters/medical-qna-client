@@ -1,8 +1,9 @@
 package com.example.medicalqnaclient.user.state.factory;
 
-import com.example.medicalqnaclient.server.facade.tasks.question.edit.QuestionEditResponse;
-import com.example.medicalqnaclient.server.facade.tasks.question.enroll.QuestionEnrollResponse;
-import com.example.medicalqnaclient.server.facade.Server;
+import com.example.medicalqnaclient.server.application.tasks.question.edit.QuestionEditResponse;
+import com.example.medicalqnaclient.server.application.tasks.question.enroll.QuestionEnrollResponse;
+import com.example.medicalqnaclient.server.application.ApplicationServer;
+import com.example.medicalqnaclient.user.state.core.AbstractUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,8 +11,8 @@ import org.springframework.stereotype.Component;
 class Patient extends AbstractUser {
 
     @Autowired
-    private Patient (Server server) {
-        super(server);
+    private Patient (ApplicationServer applicationServer) {
+        super(applicationServer);
     }
 
     @Override
@@ -26,16 +27,16 @@ class Patient extends AbstractUser {
 
     @Override
     public QuestionEnrollResponse postQuestion(String title, String symptom, String content) {
-        return server.enrollQuestion(id, title, symptom, content);
+        return applicationServer.enrollQuestion(id, title, symptom, content);
     }
 
     @Override
     public QuestionEditResponse editQuestion(int questionId, String title, String symptom, String content) {
-        return server.editQuestion(questionId, title, symptom, content);
+        return applicationServer.editQuestion(questionId, title, symptom, content);
     }
 
     @Override
     public void deleteQuestion(int questionId) {
-        server.deleteQuestion(questionId);
+        applicationServer.deleteQuestion(questionId);
     }
 }

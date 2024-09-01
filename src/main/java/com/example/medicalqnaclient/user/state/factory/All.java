@@ -1,8 +1,9 @@
 package com.example.medicalqnaclient.user.state.factory;
 
-import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
-import com.example.medicalqnaclient.server.facade.Server;
-import com.example.medicalqnaclient.user.state.factory.exception.AlreadyLoggedInException;
+import com.example.medicalqnaclient.server.application.tasks.user.login.LoginResponse;
+import com.example.medicalqnaclient.server.application.ApplicationServer;
+import com.example.medicalqnaclient.user.state.core.AbstractUser;
+import com.example.medicalqnaclient.user.state.exception.AlreadyLoggedInException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,14 +11,14 @@ import org.springframework.stereotype.Component;
 class All extends AbstractUser {
 
     @Autowired
-    private All (Server server) {
-        super(server);
+    private All (ApplicationServer applicationServer) {
+        super(applicationServer);
     }
 
     @Override
     public LoginResponse login(String id, String pw) throws AlreadyLoggedInException {
         try {
-            return server.login(id, pw);
+            return applicationServer.login(id, pw);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
@@ -31,11 +32,11 @@ class All extends AbstractUser {
 
     @Override
     public void signUpAsPatient(String id, String pw) {
-        server.signUpAsPatient(id, pw);
+        applicationServer.signUpAsPatient(id, pw);
     }
 
     @Override
     public void signUpAsDoctor(String id, String pw, String name, String field, String hospital, String introduction) {
-        server.signUpAsDoctor(id, pw, name, field, hospital, introduction);
+        applicationServer.signUpAsDoctor(id, pw, name, field, hospital, introduction);
     }
 }

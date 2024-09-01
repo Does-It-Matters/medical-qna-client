@@ -44,7 +44,6 @@ module com.example.medicalqnaclient {
     exports com.example.medicalqnaclient.page.application.pages.signup.patient.basic;
     exports com.example.medicalqnaclient.page.application.pages.start;
     exports com.example.medicalqnaclient.page.application.pages.start.basic;
-
     // page.log 계층
     exports com.example.medicalqnaclient.page.log;
     exports com.example.medicalqnaclient.page.log.event;
@@ -54,37 +53,38 @@ module com.example.medicalqnaclient {
     opens com.example.medicalqnaclient.page.log.pages.home.temp to spring.core;
     exports com.example.medicalqnaclient.page.log.pages.start;
     exports com.example.medicalqnaclient.page.log.pages.start.basic;
-
     // page.resource 계층
     exports com.example.medicalqnaclient.page.resource;
     exports com.example.medicalqnaclient.page.resource.pages.start;
     exports com.example.medicalqnaclient.page.resource.pages.start.basic;
-//
     // page.test 계층
     exports com.example.medicalqnaclient.page.test;
     exports com.example.medicalqnaclient.page.test.pages.start;
     exports com.example.medicalqnaclient.page.test.pages.start.basic;
-    exports com.example.medicalqnaclient.user.state;
-
-    // util 계층
+    // page.util 계층
     exports com.example.medicalqnaclient.page.util;
     //  페이지 계층 끝
+
     // 서버 계층 시작
-    exports com.example.medicalqnaclient.server.facade.tasks.question.delete to com.fasterxml.jackson.databind;
-    exports com.example.medicalqnaclient.server.facade.tasks.question.edit to com.fasterxml.jackson.databind;
-    opens com.example.medicalqnaclient.server.facade.tasks.question.enroll to com.fasterxml.jackson.databind;
-    exports com.example.medicalqnaclient.server.facade.tasks.question.read to com.fasterxml.jackson.databind;
-    exports com.example.medicalqnaclient.server.facade.tasks.questionlist to com.fasterxml.jackson.databind;
-    exports com.example.medicalqnaclient.server.facade.tasks.signup.common to com.fasterxml.jackson.databind;
-    exports com.example.medicalqnaclient.server.facade.tasks.signup.patient to com.fasterxml.jackson.databind;
-    exports com.example.medicalqnaclient.server.facade.tasks.signup.doctor to com.fasterxml.jackson.databind;
-    exports com.example.medicalqnaclient.server.facade.tasks.user.login to com.fasterxml.jackson.databind;
-    exports com.example.medicalqnaclient.server.facade;
+    exports com.example.medicalqnaclient.server.application.tasks.question.delete to com.fasterxml.jackson.databind;
+    exports com.example.medicalqnaclient.server.application.tasks.question.edit to com.fasterxml.jackson.databind;
+    opens com.example.medicalqnaclient.server.application.tasks.question.enroll to com.fasterxml.jackson.databind;
+    exports com.example.medicalqnaclient.server.application.tasks.question.read to com.fasterxml.jackson.databind;
+    exports com.example.medicalqnaclient.server.application.tasks.questionlist to com.fasterxml.jackson.databind;
+    exports com.example.medicalqnaclient.server.application.tasks.signup.common to com.fasterxml.jackson.databind;
+    exports com.example.medicalqnaclient.server.application.tasks.signup.patient to com.fasterxml.jackson.databind;
+    exports com.example.medicalqnaclient.server.application.tasks.signup.doctor to com.fasterxml.jackson.databind;
+    exports com.example.medicalqnaclient.server.application.tasks.user.login to com.fasterxml.jackson.databind;
+    exports com.example.medicalqnaclient.server.utils.url;
+    exports com.example.medicalqnaclient.server.application;
     // 서버 계층 끝
+
     // 유저 계층 시작
+    exports com.example.medicalqnaclient.user.mediator;
     exports com.example.medicalqnaclient.user.state.factory;
     opens com.example.medicalqnaclient.user.state.factory to spring.core;
     // 유저 계층 끝
+
     exports com.example.medicalqnaclient;
     opens com.example.medicalqnaclient to spring.core;
 }

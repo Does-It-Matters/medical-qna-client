@@ -1,5 +1,7 @@
 package com.example.medicalqnaclient.user.state.factory;
 
+import com.example.medicalqnaclient.user.state.core.User;
+import com.example.medicalqnaclient.user.state.core.UserType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

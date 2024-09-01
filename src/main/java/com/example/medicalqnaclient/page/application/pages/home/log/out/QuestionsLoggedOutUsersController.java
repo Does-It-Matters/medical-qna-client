@@ -2,7 +2,7 @@ package com.example.medicalqnaclient.page.application.pages.home.log.out;
 
 import com.example.medicalqnaclient.page.application.event.ApplicationPublisher;
 import com.example.medicalqnaclient.page.application.pages.ApplicationController;
-import com.example.medicalqnaclient.server.facade.tasks.questionlist.QuestionTitle;
+import com.example.medicalqnaclient.server.application.tasks.questionlist.QuestionTitle;
 import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
