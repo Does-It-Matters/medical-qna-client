@@ -78,6 +78,11 @@ module com.example.medicalqnaclient {
     exports com.example.medicalqnaclient.page.pages.log.start.basic;
     opens com.example.medicalqnaclient.page.pages.log.start.basic to spring.core;
 
+    exports com.example.medicalqnaclient.page.pages.log.home;
+    opens com.example.medicalqnaclient.page.pages.log.home to spring.core;
+    exports com.example.medicalqnaclient.page.pages.log.home.temp;
+    opens com.example.medicalqnaclient.page.pages.log.home.temp to spring.core;
+
     exports com.example.medicalqnaclient.page.pages.resource;
     opens com.example.medicalqnaclient.page.pages.resource to spring.core;
     exports com.example.medicalqnaclient.page.pages.resource.start;
