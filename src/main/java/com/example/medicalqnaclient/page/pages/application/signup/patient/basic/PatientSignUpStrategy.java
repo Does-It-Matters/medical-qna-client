@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.page.pages.application.up.patient.basic;
+package com.example.medicalqnaclient.page.pages.application.signup.patient.basic;
 
 import com.example.medicalqnaclient.page.core.PageStrategy;
 import org.springframework.beans.factory.annotation.Autowired;

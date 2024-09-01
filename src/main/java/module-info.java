@@ -51,15 +51,15 @@ module com.example.medicalqnaclient {
     exports com.example.medicalqnaclient.page.pages.application.login.basic;
     opens com.example.medicalqnaclient.page.pages.application.login.basic to spring.core;
 
-    exports com.example.medicalqnaclient.page.pages.application.up.doctor;
-    opens com.example.medicalqnaclient.page.pages.application.up.doctor to spring.core;
-    exports com.example.medicalqnaclient.page.pages.application.up.doctor.basic;
-    opens com.example.medicalqnaclient.page.pages.application.up.doctor.basic to spring.core;
+    exports com.example.medicalqnaclient.page.pages.application.signup.doctor;
+    opens com.example.medicalqnaclient.page.pages.application.signup.doctor to spring.core;
+    exports com.example.medicalqnaclient.page.pages.application.signup.doctor.basic;
+    opens com.example.medicalqnaclient.page.pages.application.signup.doctor.basic to spring.core;
 
-    exports com.example.medicalqnaclient.page.pages.application.up.patient;
-    opens com.example.medicalqnaclient.page.pages.application.up.patient to spring.core;
-    exports com.example.medicalqnaclient.page.pages.application.up.patient.basic;
-    opens com.example.medicalqnaclient.page.pages.application.up.patient.basic to spring.core;
+    exports com.example.medicalqnaclient.page.pages.application.signup.patient;
+    opens com.example.medicalqnaclient.page.pages.application.signup.patient to spring.core;
+    exports com.example.medicalqnaclient.page.pages.application.signup.patient.basic;
+    opens com.example.medicalqnaclient.page.pages.application.signup.patient.basic to spring.core;
 
     exports com.example.medicalqnaclient.page.pages.application.profile;
     opens com.example.medicalqnaclient.page.pages.application.profile to spring.core;
