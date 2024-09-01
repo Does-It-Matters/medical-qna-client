@@ -33,6 +33,6 @@ public class LogListener {
     @EventListener
     public void handleHomeEvent(GoLogHomeEvent event) {
         System.out.println("Handling event: " + event.getMessage());
-        pageManager.show(HOME_PAGE);
+        pageManager.show(LOG_HOME_PAGE);
     }
 }

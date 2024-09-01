@@ -18,6 +18,7 @@ public class LogStartController extends LogController {
     public Pane getLayout() {
         VBox root = new VBox(10);
         Button goHomeButton = new Button("Go Log Home");
+        goHomeButton.setOnAction(e -> publisher.publishGoHomeEvent());
 
         root.getChildren().addAll(goHomeButton);
         return root;

@@ -11,6 +11,7 @@ import com.example.medicalqnaclient.page.pages.application.question.QuestionView
 import com.example.medicalqnaclient.page.pages.application.signup.doctor.DoctorSignUpPage;
 import com.example.medicalqnaclient.page.pages.application.signup.patient.PatientSignUpPage;
 import com.example.medicalqnaclient.page.pages.application.start.ApplicationStartPage;
+import com.example.medicalqnaclient.page.pages.log.home.LogHomePage;
 import com.example.medicalqnaclient.page.pages.log.start.LogStartPage;
 import com.example.medicalqnaclient.page.pages.resource.start.ResourceStartPage;
 import com.example.medicalqnaclient.page.pages.test.start.TestStartPage;
@@ -40,7 +41,8 @@ public class PageRegistry {
             QuestionEditPage questionEditPage,
             TestStartPage testStartPage,
             ResourceStartPage resourceStartPage,
-            LogStartPage logStartPage
+            LogStartPage logStartPage,
+            LogHomePage logHomePage
     ) {
         applicationPages.put(PageType.START_PAGE, applicationStartPage);
         applicationPages.put(PageType.HOME_PAGE, homePage);
@@ -57,6 +59,7 @@ public class PageRegistry {
         systemResourcePages.put(PageType.RESOURCE_START_PAGE, resourceStartPage);
 
         logPages.put(PageType.LOG_START_PAGE, logStartPage);
+        logPages.put(PageType.LOG_HOME_PAGE, logHomePage);
     }
 
     public Map<PageType, Page> getApplicationPages() {
