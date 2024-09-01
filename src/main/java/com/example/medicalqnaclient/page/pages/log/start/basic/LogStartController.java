@@ -1,5 +1,6 @@
 package com.example.medicalqnaclient.page.pages.log.start.basic;
 
+import com.example.medicalqnaclient.page.event.publishers.LogPublisher;
 import com.example.medicalqnaclient.page.pages.log.LogController;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
@@ -9,8 +10,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class LogStartController extends LogController {
 
-    public LogStartController() {
-        super();
+    public LogStartController(LogPublisher publisher) {
+        super(publisher);
     }
 
     @Override

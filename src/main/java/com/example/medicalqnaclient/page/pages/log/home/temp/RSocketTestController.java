@@ -1,5 +1,6 @@
 package com.example.medicalqnaclient.page.pages.log.home.temp;
 
+import com.example.medicalqnaclient.page.event.publishers.LogPublisher;
 import com.example.medicalqnaclient.page.pages.log.LogController;
 import javafx.application.Platform;
 import javafx.scene.control.Button;
@@ -22,8 +23,8 @@ public class RSocketTestController extends LogController {
 
     private Label rsocketLabel;
 
-    public RSocketTestController() {
-        super();
+    public RSocketTestController(LogPublisher publisher) {
+        super(publisher);
     }
 
     @Override
