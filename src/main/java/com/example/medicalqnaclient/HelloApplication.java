@@ -2,6 +2,9 @@ package com.example.medicalqnaclient;
 
 import com.example.medicalqnaclient.page.manager.application.qna.QnAPageManager;
 import com.example.medicalqnaclient.page.core.Start;
+import com.example.medicalqnaclient.page.manager.monitor.log.LogPageManager;
+import com.example.medicalqnaclient.page.manager.monitor.system.SystemResourcePageManager;
+import com.example.medicalqnaclient.page.manager.test.TestPageManager;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -27,9 +30,15 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         final Start application = context.getBean(QnAPageManager.class);
-        application.start(stage, 900, 600);
-    }
+        final Start log = context.getBean(LogPageManager.class);
+        final Start resource = context.getBean(SystemResourcePageManager.class);
+        final Start test = context.getBean(TestPageManager.class);
 
+        application.start(stage, 800, 900);
+        log.start(new Stage(), 800, 800);
+        resource.start(new Stage(), 800, 700);
+        test.start(new Stage(), 800, 600);
+    }
 
     @Override
     public void stop() throws Exception {
