@@ -1,6 +1,7 @@
 package com.example.medicalqnaclient.user.state.factory;
 
-import com.example.medicalqnaclient.server.facade.Server;
+import com.example.medicalqnaclient.server.application.ApplicationServer;
+import com.example.medicalqnaclient.user.state.core.AbstractUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -8,8 +9,8 @@ import org.springframework.stereotype.Component;
 class Admin extends AbstractUser {
 
     @Autowired
-    private Admin (Server server) {
-        super(server);
+    private Admin (ApplicationServer applicationServer) {
+        super(applicationServer);
     }
 
     @Override

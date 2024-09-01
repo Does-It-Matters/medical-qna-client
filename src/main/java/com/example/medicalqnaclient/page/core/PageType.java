@@ -65,5 +65,11 @@ public enum PageType {
     /**
      * <b> 역할: 시작 화면 </b>
      */
-    LOG_START_PAGE;
+    LOG_START_PAGE,
+
+
+    /**
+     * <b> 역할: 로그 홈 화면 </b>
+     */
+    LOG_HOME_PAGE;;
 }

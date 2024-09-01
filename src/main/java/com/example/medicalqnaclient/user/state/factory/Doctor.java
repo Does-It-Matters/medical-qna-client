@@ -1,8 +1,9 @@
 package com.example.medicalqnaclient.user.state.factory;
 
-import com.example.medicalqnaclient.server.facade.tasks.user.login.LoginResponse;
-import com.example.medicalqnaclient.server.facade.Server;
-import com.example.medicalqnaclient.user.state.factory.exception.AlreadyLoggedInException;
+import com.example.medicalqnaclient.server.application.tasks.user.login.LoginResponse;
+import com.example.medicalqnaclient.server.application.ApplicationServer;
+import com.example.medicalqnaclient.user.state.core.AbstractUser;
+import com.example.medicalqnaclient.user.state.exception.AlreadyLoggedInException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -10,8 +11,8 @@ import org.springframework.stereotype.Component;
 class Doctor extends AbstractUser {
 
     @Autowired
-    private Doctor (Server server) {
-        super(server);
+    private Doctor (ApplicationServer applicationServer) {
+        super(applicationServer);
     }
 
     @Override
