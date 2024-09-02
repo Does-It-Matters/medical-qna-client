@@ -22,4 +22,7 @@ module com.example.medicalqnaclient.utils {
     requires org.slf4j;
     requires ch.qos.logback.classic;
     requires spring.web;
+
+    exports com.example.medicalqnaclient.utils.format;
+    exports com.example.medicalqnaclient.utils.network;
 }
