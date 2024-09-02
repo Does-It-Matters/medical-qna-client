@@ -1,11 +1,13 @@
 package com.example.medicalqnaclient;
 
-import com.example.medicalqnaclient.page.application.ApplicationPageManager;
+import com.example.medicalqnaclient.domain.application.page.navigator.ApplicationPageNavigator;
 import com.example.medicalqnaclient.page.core.Start;
-import com.example.medicalqnaclient.page.log.LogPageManager;
-import com.example.medicalqnaclient.page.resource.SystemResourcePageManager;
-import com.example.medicalqnaclient.page.test.TestPageManager;
+import com.example.medicalqnaclient.domain.log.page.navigator.LogPageNavigator;
+import com.example.medicalqnaclient.domain.resource.page.navigator.ResourcePageNavigator;
+import com.example.medicalqnaclient.domain.test.page.navigator.TestPageNavigator;
 import javafx.application.Application;
+import javafx.geometry.Rectangle2D;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -29,15 +31,28 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        final Start application = context.getBean(ApplicationPageManager.class);
-        final Start log = context.getBean(LogPageManager.class);
-        final Start resource = context.getBean(SystemResourcePageManager.class);
-        final Start test = context.getBean(TestPageManager.class);
+        initializeStages(stage);
+    }
 
-        application.start(stage, 800, 900);
-        log.start(new Stage(), 800, 800);
-        resource.start(new Stage(), 800, 700);
-        test.start(new Stage(), 800, 600);
+    private void initializeStages(Stage primaryStage) throws IOException {
+        Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+        int unitWidth = (int) screenBounds.getWidth() / 8;
+        int unitHeight = (int) screenBounds.getHeight() / 8;
+
+        int width = unitWidth * 3, height = unitHeight * 3;
+        int right = width + 10, down = height + 50;
+
+        initializeStage(ApplicationPageNavigator.class, primaryStage, unitWidth, unitHeight, width, height);
+        initializeStage(LogPageNavigator.class, new Stage(), unitWidth + right, unitHeight, width, height);
+        initializeStage(ResourcePageNavigator.class, new Stage(), unitWidth + right, unitHeight + down, width, height);
+        initializeStage(TestPageNavigator.class, new Stage(), unitWidth, unitHeight + down, width, height);
+    }
+
+    private void initializeStage(Class<? extends Start> pageManagerClass, Stage stage, int startX, int startY, int width, int height) throws IOException {
+        Start pageManager = context.getBean(pageManagerClass);
+        pageManager.start(stage, width, height);
+        stage.setY(startY);
+        stage.setX(startX);
     }
 
     @Override

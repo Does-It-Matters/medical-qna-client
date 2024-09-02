@@ -15,14 +15,51 @@
 3. RSocket으로 비동기 데이터 스트림 전송  
 
 ## Architecture
-### v7: 여러 page manager로 확장
-소소하지만 생각보다 고려할 것이 많은 변화
-- application page manager
-- test page manager
-- resource page manager
-- log page manager
-<br> 애플리케이션 페이지 매니저에서 3가지 페이지 매니저 확장
-<br> -> 인터페이스, 추상 클래스 계층을 고려해서 코드의 중복은 줄이고 계층의 역할을 분명히 하기, 스프링 중복 빈 등을 고려  
+### v7: 여러 도메인으로 확장
+소소할 줄 알았지만 많은 변화
+<br> 가장 큰 변화 - 응집성 있는 구성 
+<br> 이전의 목표 - 결합도 줄이기 
+- application page (기존)
+- log page (추가)
+- resource page (추가)
+- test page (추가)
+```
+com.example.medicalqnaclient
+├── domain 
+│   ├── application
+│   ├── log
+│   ├── resource
+│   └── test
+├── page.core                화면 전환 역할 정의 모듈 
+├── utils
+├── HelloApplication.java    JavaFX, Spring 애플리케이션 
+```
+```
+├── domain(application, log, resource, test) 구성 
+│   ├── page                 페이지 표현
+│   ├── network              서버와의 통신 
+│   └── mediator             page와 network 간의 중재자
+```
+```
+├── page
+│   ├── event(a)             화면 전환 event, publisher, listener 정의  
+│   ├── navigator(b)         발생한 event에 해당하는 페이지 표현  
+│   ├── pages(c)             각 페이지 구성 정의(page, strategy, controller)
+과정 a -> b -> c -> a
+(a) event -> listener 
+(b) -> navigator 
+(c) -> page -> strategy -> controller 
+(a) -> publisher -> event
+```
+```
+├── application.mediator            application.mediator 특화 구성 - 상태 패턴  
+│   ├── state                       Doctor, Patient 등 상태 패턴 적용 
+│   │   ├── core                    사용자 상태, 타입 정의
+│   │   ├── exception               권한에 따른 예외 발생 
+│   │   ├── factory                 Admin, All, Doctor, Patient, UserFactory
+│   ├── ReadUserMediator.java       페이지 계층의 전략을 선택하는 데 활용  
+│   └── ReadWriteUserMediator.java  페이지 계층의 컨트롤러 계층과 네트워크 계층의 상호작용 중재 
+```
 
 ### v6: 이벤트 기반 아키텍처로 순환 참조 제거 
 배경: 기존의 컨트롤러 객체와 중재자 객체 간의 상호 참조로 복잡한 설계를 간소화하기 위해 
