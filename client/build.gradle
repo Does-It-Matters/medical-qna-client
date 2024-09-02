@@ -50,6 +50,7 @@ dependencies {
     implementation project(':domain-application')
     implementation project(':domain-log')
     implementation project(':domain-resource')
+    implementation project(':domain-test')
 }
 
 test {

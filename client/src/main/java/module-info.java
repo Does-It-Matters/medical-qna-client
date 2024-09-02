@@ -24,13 +24,7 @@ module com.example.medicalqnaclient {
     requires com.example.medicalqnaclient.domain.application;
     requires com.example.medicalqnaclient.domain.log;
     requires com.example.medicalqnaclient.domain.resource;
-
-    // test 도메인
-    // - page
-    exports com.example.medicalqnaclient.domain.test.page.navigator;
-    exports com.example.medicalqnaclient.domain.test.page.pages;
-    exports com.example.medicalqnaclient.domain.test.page.pages.start;
-    exports com.example.medicalqnaclient.domain.test.page.pages.start.basic;
+    requires com.example.medicalqnaclient.domain.test;
 
     // 루트 패키지
     exports com.example.medicalqnaclient;

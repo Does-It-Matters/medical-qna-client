@@ -3,11 +3,6 @@ module com.example.medicalqnaclient.domain.test {
     requires javafx.fxml;
     requires javafx.web;
 
-    requires org.controlsfx.controls;
-    requires com.dlsc.formsfx;
-    requires org.kordamp.ikonli.javafx;
-    requires eu.hansolo.tilesfx;
-    requires java.net.http;
     requires com.fasterxml.jackson.databind;
     requires rsocket.core;
     requires rsocket.transport.netty;
@@ -22,4 +17,13 @@ module com.example.medicalqnaclient.domain.test {
     requires org.slf4j;
     requires ch.qos.logback.classic;
     requires spring.web;
+    
+    requires com.example.medicalqnaclient.page.core;
+
+    // test 도메인
+    // - page
+    exports com.example.medicalqnaclient.domain.test.page.navigator;
+    exports com.example.medicalqnaclient.domain.test.page.pages;
+    exports com.example.medicalqnaclient.domain.test.page.pages.start;
+    exports com.example.medicalqnaclient.domain.test.page.pages.start.basic;
 }
