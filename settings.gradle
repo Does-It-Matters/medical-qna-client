@@ -1,1 +1,3 @@
 rootProject.name = "medical-qna-client"
+
+include 'client'
