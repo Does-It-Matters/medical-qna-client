@@ -49,6 +49,7 @@ dependencies {
     implementation project(':core-page')
     implementation project(':domain-application')
     implementation project(':domain-log')
+    implementation project(':domain-resource')
 }
 
 test {
