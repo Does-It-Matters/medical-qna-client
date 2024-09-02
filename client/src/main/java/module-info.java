@@ -22,6 +22,7 @@ module com.example.medicalqnaclient {
     requires org.slf4j;
     requires ch.qos.logback.classic;
     requires spring.web;
+    requires com.example.medicalqnaclient.utils;
 
     // spring 빈 생성하기 위해서 exports와 opens 설정하기
 
