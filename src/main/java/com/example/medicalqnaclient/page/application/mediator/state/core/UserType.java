@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.user.state.core;
+package com.example.medicalqnaclient.page.application.mediator.state.core;
 
 public enum UserType {
     ALL, PATIENT, DOCTOR, ADMIN;

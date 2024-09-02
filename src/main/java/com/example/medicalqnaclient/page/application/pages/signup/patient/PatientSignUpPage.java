@@ -3,7 +3,7 @@ package com.example.medicalqnaclient.page.application.pages.signup.patient;
 import com.example.medicalqnaclient.page.application.pages.ApplicationPage;
 import com.example.medicalqnaclient.page.application.pages.signup.patient.basic.PatientSignUpStrategy;
 import com.example.medicalqnaclient.page.core.PageStrategy;
-import com.example.medicalqnaclient.user.mediator.ReadUserMediator;
+import com.example.medicalqnaclient.page.application.mediator.ReadUserMediator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

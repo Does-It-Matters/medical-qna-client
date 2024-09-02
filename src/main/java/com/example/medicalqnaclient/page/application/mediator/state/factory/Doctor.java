@@ -1,9 +1,9 @@
-package com.example.medicalqnaclient.user.state.factory;
+package com.example.medicalqnaclient.page.application.mediator.state.factory;
 
 import com.example.medicalqnaclient.server.application.tasks.user.login.LoginResponse;
 import com.example.medicalqnaclient.server.application.ApplicationServer;
-import com.example.medicalqnaclient.user.state.core.AbstractUser;
-import com.example.medicalqnaclient.user.state.exception.AlreadyLoggedInException;
+import com.example.medicalqnaclient.page.application.mediator.state.core.AbstractUser;
+import com.example.medicalqnaclient.page.application.mediator.state.exception.AlreadyLoggedInException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

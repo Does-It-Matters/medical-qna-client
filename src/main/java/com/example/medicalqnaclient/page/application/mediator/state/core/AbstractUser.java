@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.user.state.core;
+package com.example.medicalqnaclient.page.application.mediator.state.core;
 
 import com.example.medicalqnaclient.server.application.ApplicationServer;
 import com.example.medicalqnaclient.server.application.tasks.question.edit.QuestionEditResponse;
@@ -6,8 +6,8 @@ import com.example.medicalqnaclient.server.application.tasks.question.enroll.Que
 import com.example.medicalqnaclient.server.application.tasks.question.read.QuestionResponse;
 import com.example.medicalqnaclient.server.application.tasks.questionlist.QuestionTitle;
 import com.example.medicalqnaclient.server.application.tasks.user.login.LoginResponse;
-import com.example.medicalqnaclient.user.state.exception.AlreadyLoggedInException;
-import com.example.medicalqnaclient.user.state.exception.UnauthorizedAccessException;
+import com.example.medicalqnaclient.page.application.mediator.state.exception.AlreadyLoggedInException;
+import com.example.medicalqnaclient.page.application.mediator.state.exception.UnauthorizedAccessException;
 
 import java.util.List;
 

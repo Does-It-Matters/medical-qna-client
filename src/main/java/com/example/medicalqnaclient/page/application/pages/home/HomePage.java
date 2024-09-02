@@ -4,7 +4,7 @@ import com.example.medicalqnaclient.page.application.pages.ApplicationPage;
 import com.example.medicalqnaclient.page.application.pages.home.log.in.LoggedInStrategy;
 import com.example.medicalqnaclient.page.application.pages.home.log.out.LoggedOutStrategy;
 import com.example.medicalqnaclient.page.core.PageStrategy;
-import com.example.medicalqnaclient.user.mediator.ReadUserMediator;
+import com.example.medicalqnaclient.page.application.mediator.ReadUserMediator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

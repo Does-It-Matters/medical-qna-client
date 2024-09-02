@@ -2,7 +2,7 @@ package com.example.medicalqnaclient.page.application.pages.signup.doctor.basic;
 
 import com.example.medicalqnaclient.page.application.event.ApplicationPublisher;
 import com.example.medicalqnaclient.page.application.pages.ApplicationController;
-import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
+import com.example.medicalqnaclient.page.application.mediator.ReadWriteUserMediator;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;

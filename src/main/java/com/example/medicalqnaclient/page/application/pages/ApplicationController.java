@@ -2,7 +2,7 @@ package com.example.medicalqnaclient.page.application.pages;
 
 import com.example.medicalqnaclient.page.core.Controller;
 import com.example.medicalqnaclient.page.application.event.ApplicationPublisher;
-import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
+import com.example.medicalqnaclient.page.application.mediator.ReadWriteUserMediator;
 
 /**
  * 역할

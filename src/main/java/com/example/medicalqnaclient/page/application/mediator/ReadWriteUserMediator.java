@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.user.mediator;
+package com.example.medicalqnaclient.page.application.mediator;
 
 import com.example.medicalqnaclient.server.application.tasks.question.read.QuestionResponse;
 import com.example.medicalqnaclient.server.application.tasks.questionlist.QuestionTitle;

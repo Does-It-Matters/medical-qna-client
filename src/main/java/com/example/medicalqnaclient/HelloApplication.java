@@ -1,6 +1,6 @@
 package com.example.medicalqnaclient;
 
-import com.example.medicalqnaclient.page.application.ApplicationPageManager;
+import com.example.medicalqnaclient.page.application.pages.ApplicationPageManager;
 import com.example.medicalqnaclient.page.core.Start;
 import com.example.medicalqnaclient.page.log.LogPageManager;
 import com.example.medicalqnaclient.page.resource.SystemResourcePageManager;

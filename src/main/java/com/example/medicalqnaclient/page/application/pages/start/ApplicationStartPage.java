@@ -2,7 +2,7 @@ package com.example.medicalqnaclient.page.application.pages.start;
 
 import com.example.medicalqnaclient.page.application.pages.ApplicationPage;
 import com.example.medicalqnaclient.page.application.pages.start.basic.BasicStartStrategy;
-import com.example.medicalqnaclient.user.mediator.ReadUserMediator;
+import com.example.medicalqnaclient.page.application.mediator.ReadUserMediator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

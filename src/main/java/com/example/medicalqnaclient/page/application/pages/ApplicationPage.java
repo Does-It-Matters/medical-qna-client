@@ -2,7 +2,7 @@ package com.example.medicalqnaclient.page.application.pages;
 
 import com.example.medicalqnaclient.page.core.Page;
 import com.example.medicalqnaclient.page.core.PageStrategy;
-import com.example.medicalqnaclient.user.mediator.ReadUserMediator;
+import com.example.medicalqnaclient.page.application.mediator.ReadUserMediator;
 import javafx.scene.Scene;
 
 public abstract class ApplicationPage implements Page {

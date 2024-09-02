@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.user.state.exception;
+package com.example.medicalqnaclient.page.application.mediator.state.exception;
 
 /**
  * 이미 로그인 했지만 로그인 요청 시 발생하는 예외 클래스

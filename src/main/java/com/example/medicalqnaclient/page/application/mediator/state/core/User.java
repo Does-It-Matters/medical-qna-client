@@ -1,11 +1,11 @@
-package com.example.medicalqnaclient.user.state.core;
+package com.example.medicalqnaclient.page.application.mediator.state.core;
 
 import com.example.medicalqnaclient.server.application.tasks.question.edit.QuestionEditResponse;
 import com.example.medicalqnaclient.server.application.tasks.question.enroll.QuestionEnrollResponse;
 import com.example.medicalqnaclient.server.application.tasks.question.read.QuestionResponse;
 import com.example.medicalqnaclient.server.application.tasks.questionlist.QuestionTitle;
 import com.example.medicalqnaclient.server.application.tasks.user.login.LoginResponse;
-import com.example.medicalqnaclient.user.state.exception.AlreadyLoggedInException;
+import com.example.medicalqnaclient.page.application.mediator.state.exception.AlreadyLoggedInException;
 
 import java.util.List;
 

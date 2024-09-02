@@ -27,8 +27,11 @@ module com.example.medicalqnaclient {
 
     // 페이지 계층 시작
     // page.application 계층
-    exports com.example.medicalqnaclient.page.application;
     exports com.example.medicalqnaclient.page.application.event;
+    exports com.example.medicalqnaclient.page.application.mediator;
+    exports com.example.medicalqnaclient.page.application.mediator.state.factory;
+    opens com.example.medicalqnaclient.page.application.mediator.state.factory to spring.core;
+    exports com.example.medicalqnaclient.page.application.pages;
     exports com.example.medicalqnaclient.page.application.pages.home;
     exports com.example.medicalqnaclient.page.application.pages.home.log.in;
     exports com.example.medicalqnaclient.page.application.pages.home.log.out;
@@ -78,12 +81,6 @@ module com.example.medicalqnaclient {
     exports com.example.medicalqnaclient.server.utils.url;
     exports com.example.medicalqnaclient.server.application;
     // 서버 계층 끝
-
-    // 유저 계층 시작
-    exports com.example.medicalqnaclient.user.mediator;
-    exports com.example.medicalqnaclient.user.state.factory;
-    opens com.example.medicalqnaclient.user.state.factory to spring.core;
-    // 유저 계층 끝
 
     exports com.example.medicalqnaclient;
     opens com.example.medicalqnaclient to spring.core;

@@ -2,8 +2,8 @@ package com.example.medicalqnaclient.page.application.pages.login.basic;
 
 import com.example.medicalqnaclient.page.application.event.ApplicationPublisher;
 import com.example.medicalqnaclient.page.application.pages.ApplicationController;
-import com.example.medicalqnaclient.user.mediator.ReadWriteUserMediator;
-import com.example.medicalqnaclient.user.state.exception.AlreadyLoggedInException;
+import com.example.medicalqnaclient.page.application.mediator.ReadWriteUserMediator;
+import com.example.medicalqnaclient.page.application.mediator.state.exception.AlreadyLoggedInException;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;

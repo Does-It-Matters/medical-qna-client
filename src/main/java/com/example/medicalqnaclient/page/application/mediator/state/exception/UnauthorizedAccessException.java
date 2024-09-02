@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.user.state.exception;
+package com.example.medicalqnaclient.page.application.mediator.state.exception;
 
 public class UnauthorizedAccessException extends RuntimeException {
     public UnauthorizedAccessException() {
