@@ -38,15 +38,6 @@ javafx {
 }
 
 dependencies {
-    implementation('org.controlsfx:controlsfx:11.1.2')
-    implementation('com.dlsc.formsfx:formsfx-core:11.6.0') {
-        exclude(group: 'org.openjfx')
-    }
-    implementation('org.kordamp.ikonli:ikonli-javafx:12.3.1')
-    implementation('eu.hansolo:tilesfx:11.48') {
-        exclude(group: 'org.openjfx')
-    }
-
     implementation("org.slf4j:slf4j-api:2.0.11")
     implementation("ch.qos.logback:logback-classic:1.4.14")
 
@@ -56,12 +47,14 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 
     implementation project(':utils')
+    implementation project(':core-page')
 }
 
 test {
     useJUnitPlatform()
 }
 
+// 최종 런타입 환경에서 jlink 작성
 jlink {
     imageZip = project.file("${buildDir}/distributions/app-${javafx.platform.classifier}.zip")
     options = ['--strip-debug', '--compress', '2', '--no-header-files', '--no-man-pages']

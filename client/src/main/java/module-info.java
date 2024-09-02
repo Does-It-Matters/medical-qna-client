@@ -3,10 +3,6 @@ module com.example.medicalqnaclient {
     requires javafx.fxml;
     requires javafx.web;
 
-    requires org.controlsfx.controls;
-    requires com.dlsc.formsfx;
-    requires org.kordamp.ikonli.javafx;
-    requires eu.hansolo.tilesfx;
     requires java.net.http;
     requires com.fasterxml.jackson.databind;
     requires rsocket.core;
@@ -23,6 +19,7 @@ module com.example.medicalqnaclient {
     requires ch.qos.logback.classic;
     requires spring.web;
     requires com.example.medicalqnaclient.utils;
+    requires com.example.medicalqnaclient.page.core;
 
     // spring 빈 생성하기 위해서 exports와 opens 설정하기
 
