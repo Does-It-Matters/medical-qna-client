@@ -22,13 +22,10 @@ module com.example.medicalqnaclient.domain.application {
     requires com.example.medicalqnaclient.utils;
     requires com.example.medicalqnaclient.page.core;
 
-    // application 도메인
-    // - mediator
     exports com.example.medicalqnaclient.domain.application.mediator.state.factory;
     opens com.example.medicalqnaclient.domain.application.mediator.state.factory to spring.core;
     exports com.example.medicalqnaclient.domain.application.mediator;
 
-    // - network
     exports com.example.medicalqnaclient.domain.application.network.server.tasks.question.delete to com.fasterxml.jackson.databind;
     exports com.example.medicalqnaclient.domain.application.network.server.tasks.question.edit to com.fasterxml.jackson.databind;
     opens com.example.medicalqnaclient.domain.application.network.server.tasks.question.enroll to com.fasterxml.jackson.databind;
@@ -41,7 +38,6 @@ module com.example.medicalqnaclient.domain.application {
     exports com.example.medicalqnaclient.domain.application.network.server.url;
     exports com.example.medicalqnaclient.domain.application.network.server;
 
-    // - page
     exports com.example.medicalqnaclient.domain.application.page.event;
     exports com.example.medicalqnaclient.domain.application.page.navigator;
     exports com.example.medicalqnaclient.domain.application.page.pages.home;

@@ -20,7 +20,6 @@ module com.example.medicalqnaclient {
     requires spring.web;
     requires com.example.medicalqnaclient.page.core;
 
-    // spring 빈 생성하기 위해서 exports와 opens 설정하기
     requires com.example.medicalqnaclient.domain.application;
     requires com.example.medicalqnaclient.domain.log;
     requires com.example.medicalqnaclient.domain.resource;

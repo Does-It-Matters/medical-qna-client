@@ -19,11 +19,8 @@ module com.example.medicalqnaclient.domain.log {
     requires ch.qos.logback.classic;
     requires spring.web;
 
-    requires com.example.medicalqnaclient.utils;
     requires com.example.medicalqnaclient.page.core;
 
-    // log 도메인
-    // - page
     exports com.example.medicalqnaclient.domain.log.page.event;
     exports com.example.medicalqnaclient.domain.log.page.navigator;
     exports com.example.medicalqnaclient.domain.log.page.pages.home;

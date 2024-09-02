@@ -21,8 +21,6 @@ module com.example.medicalqnaclient.domain.resource {
 
     requires com.example.medicalqnaclient.page.core;
 
-    // resource 도메인
-    // - page
     exports com.example.medicalqnaclient.domain.resource.page.navigator;
     exports com.example.medicalqnaclient.domain.resource.page.pages.start;
     exports com.example.medicalqnaclient.domain.resource.page.pages.start.basic;

@@ -17,11 +17,9 @@ module com.example.medicalqnaclient.domain.test {
     requires org.slf4j;
     requires ch.qos.logback.classic;
     requires spring.web;
-    
+
     requires com.example.medicalqnaclient.page.core;
 
-    // test 도메인
-    // - page
     exports com.example.medicalqnaclient.domain.test.page.navigator;
     exports com.example.medicalqnaclient.domain.test.page.pages;
     exports com.example.medicalqnaclient.domain.test.page.pages.start;
