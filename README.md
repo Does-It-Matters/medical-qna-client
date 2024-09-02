@@ -15,6 +15,15 @@
 3. RSocket으로 비동기 데이터 스트림 전송  
 
 ## Architecture
+### v8: 응집도를 위해 멀티 모듈 구조 도입
+- client
+- domain-application
+- domain-log
+- domain-resource
+- domain-test
+- page-core
+- utils
+
 ### v7: 여러 도메인으로 확장
 소소할 줄 알았지만 많은 변화
 <br> 가장 큰 변화 - 응집성 있는 구성 
