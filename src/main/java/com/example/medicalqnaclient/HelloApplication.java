@@ -1,10 +1,10 @@
 package com.example.medicalqnaclient;
 
-import com.example.medicalqnaclient.page.application.pages.ApplicationPageManager;
+import com.example.medicalqnaclient.domain.application.page.navigator.ApplicationPageNavigator;
 import com.example.medicalqnaclient.page.core.Start;
-import com.example.medicalqnaclient.page.log.LogPageManager;
-import com.example.medicalqnaclient.page.resource.SystemResourcePageManager;
-import com.example.medicalqnaclient.page.test.TestPageManager;
+import com.example.medicalqnaclient.domain.log.page.navigator.LogPageNavigator;
+import com.example.medicalqnaclient.domain.resource.page.navigator.ResourcePageNavigator;
+import com.example.medicalqnaclient.domain.test.page.navigator.TestPageNavigator;
 import javafx.application.Application;
 import javafx.geometry.Rectangle2D;
 import javafx.stage.Screen;
@@ -42,10 +42,10 @@ public class HelloApplication extends Application {
         int width = unitWidth * 3, height = unitHeight * 3;
         int right = width + 10, down = height + 50;
 
-        initializeStage(ApplicationPageManager.class, primaryStage, unitWidth, unitHeight, width, height);
-        initializeStage(LogPageManager.class, new Stage(), unitWidth + right, unitHeight, width, height);
-        initializeStage(SystemResourcePageManager.class, new Stage(), unitWidth + right, unitHeight + down, width, height);
-        initializeStage(TestPageManager.class, new Stage(), unitWidth, unitHeight + down, width, height);
+        initializeStage(ApplicationPageNavigator.class, primaryStage, unitWidth, unitHeight, width, height);
+        initializeStage(LogPageNavigator.class, new Stage(), unitWidth + right, unitHeight, width, height);
+        initializeStage(ResourcePageNavigator.class, new Stage(), unitWidth + right, unitHeight + down, width, height);
+        initializeStage(TestPageNavigator.class, new Stage(), unitWidth, unitHeight + down, width, height);
     }
 
     private void initializeStage(Class<? extends Start> pageManagerClass, Stage stage, int startX, int startY, int width, int height) throws IOException {

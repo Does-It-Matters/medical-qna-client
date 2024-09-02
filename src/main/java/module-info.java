@@ -23,65 +23,70 @@ module com.example.medicalqnaclient {
     requires ch.qos.logback.classic;
     requires spring.web;
 
-    // spring 빈 생성하기 위해서 exports와 opens 둘 다 설정하기
+    // spring 빈 생성하기 위해서 exports와 opens 설정하기
 
-    // 페이지 계층 시작
-    // page.application 계층
-    exports com.example.medicalqnaclient.page.application.event;
-    exports com.example.medicalqnaclient.page.application.mediator;
-    exports com.example.medicalqnaclient.page.application.mediator.state.factory;
-    opens com.example.medicalqnaclient.page.application.mediator.state.factory to spring.core;
-    exports com.example.medicalqnaclient.page.application.pages;
-    exports com.example.medicalqnaclient.page.application.pages.home;
-    exports com.example.medicalqnaclient.page.application.pages.home.log.in;
-    exports com.example.medicalqnaclient.page.application.pages.home.log.out;
-    exports com.example.medicalqnaclient.page.application.pages.login;
-    exports com.example.medicalqnaclient.page.application.pages.login.basic;
-    exports com.example.medicalqnaclient.page.application.pages.profile;
-    exports com.example.medicalqnaclient.page.application.pages.profile.basic;
-    exports com.example.medicalqnaclient.page.application.pages.question;
-    exports com.example.medicalqnaclient.page.application.pages.question.basic;
-    exports com.example.medicalqnaclient.page.application.pages.signup.doctor;
-    exports com.example.medicalqnaclient.page.application.pages.signup.doctor.basic;
-    exports com.example.medicalqnaclient.page.application.pages.signup.patient;
-    exports com.example.medicalqnaclient.page.application.pages.signup.patient.basic;
-    exports com.example.medicalqnaclient.page.application.pages.start;
-    exports com.example.medicalqnaclient.page.application.pages.start.basic;
-    // page.log 계층
-    exports com.example.medicalqnaclient.page.log;
-    exports com.example.medicalqnaclient.page.log.event;
-    exports com.example.medicalqnaclient.page.log.pages;
-    exports com.example.medicalqnaclient.page.log.pages.home;
-    exports com.example.medicalqnaclient.page.log.pages.home.temp;
-    opens com.example.medicalqnaclient.page.log.pages.home.temp to spring.core;
-    exports com.example.medicalqnaclient.page.log.pages.start;
-    exports com.example.medicalqnaclient.page.log.pages.start.basic;
-    // page.resource 계층
-    exports com.example.medicalqnaclient.page.resource;
-    exports com.example.medicalqnaclient.page.resource.pages.start;
-    exports com.example.medicalqnaclient.page.resource.pages.start.basic;
-    // page.test 계층
-    exports com.example.medicalqnaclient.page.test;
-    exports com.example.medicalqnaclient.page.test.pages.start;
-    exports com.example.medicalqnaclient.page.test.pages.start.basic;
-    // page.util 계층
-    exports com.example.medicalqnaclient.page.util;
-    //  페이지 계층 끝
+    // application 도메인
+    // - mediator
+    exports com.example.medicalqnaclient.domain.application.mediator.state.factory;
+    opens com.example.medicalqnaclient.domain.application.mediator.state.factory to spring.core;
+    exports com.example.medicalqnaclient.domain.application.mediator;
 
-    // 서버 계층 시작
-    exports com.example.medicalqnaclient.server.application.tasks.question.delete to com.fasterxml.jackson.databind;
-    exports com.example.medicalqnaclient.server.application.tasks.question.edit to com.fasterxml.jackson.databind;
-    opens com.example.medicalqnaclient.server.application.tasks.question.enroll to com.fasterxml.jackson.databind;
-    exports com.example.medicalqnaclient.server.application.tasks.question.read to com.fasterxml.jackson.databind;
-    exports com.example.medicalqnaclient.server.application.tasks.questionlist to com.fasterxml.jackson.databind;
-    exports com.example.medicalqnaclient.server.application.tasks.signup.common to com.fasterxml.jackson.databind;
-    exports com.example.medicalqnaclient.server.application.tasks.signup.patient to com.fasterxml.jackson.databind;
-    exports com.example.medicalqnaclient.server.application.tasks.signup.doctor to com.fasterxml.jackson.databind;
-    exports com.example.medicalqnaclient.server.application.tasks.user.login to com.fasterxml.jackson.databind;
-    exports com.example.medicalqnaclient.server.utils.url;
-    exports com.example.medicalqnaclient.server.application;
-    // 서버 계층 끝
+    // - network
+    exports com.example.medicalqnaclient.domain.application.network.server.tasks.question.delete to com.fasterxml.jackson.databind;
+    exports com.example.medicalqnaclient.domain.application.network.server.tasks.question.edit to com.fasterxml.jackson.databind;
+    opens com.example.medicalqnaclient.domain.application.network.server.tasks.question.enroll to com.fasterxml.jackson.databind;
+    exports com.example.medicalqnaclient.domain.application.network.server.tasks.question.read to com.fasterxml.jackson.databind;
+    exports com.example.medicalqnaclient.domain.application.network.server.tasks.questionlist to com.fasterxml.jackson.databind;
+    exports com.example.medicalqnaclient.domain.application.network.server.tasks.signup.common to com.fasterxml.jackson.databind;
+    exports com.example.medicalqnaclient.domain.application.network.server.tasks.signup.patient to com.fasterxml.jackson.databind;
+    exports com.example.medicalqnaclient.domain.application.network.server.tasks.signup.doctor to com.fasterxml.jackson.databind;
+    exports com.example.medicalqnaclient.domain.application.network.server.tasks.user.login to com.fasterxml.jackson.databind;
+    exports com.example.medicalqnaclient.domain.application.network.server.url;
+    exports com.example.medicalqnaclient.domain.application.network.server;
 
+    // - page
+    exports com.example.medicalqnaclient.domain.application.page.event;
+    exports com.example.medicalqnaclient.domain.application.page.navigator;
+    exports com.example.medicalqnaclient.domain.application.page.pages.home;
+    exports com.example.medicalqnaclient.domain.application.page.pages.home.log.in;
+    exports com.example.medicalqnaclient.domain.application.page.pages.home.log.out;
+    exports com.example.medicalqnaclient.domain.application.page.pages.login;
+    exports com.example.medicalqnaclient.domain.application.page.pages.login.basic;
+    exports com.example.medicalqnaclient.domain.application.page.pages.profile;
+    exports com.example.medicalqnaclient.domain.application.page.pages.profile.basic;
+    exports com.example.medicalqnaclient.domain.application.page.pages.question;
+    exports com.example.medicalqnaclient.domain.application.page.pages.question.basic;
+    exports com.example.medicalqnaclient.domain.application.page.pages.signup.doctor;
+    exports com.example.medicalqnaclient.domain.application.page.pages.signup.doctor.basic;
+    exports com.example.medicalqnaclient.domain.application.page.pages.signup.patient;
+    exports com.example.medicalqnaclient.domain.application.page.pages.signup.patient.basic;
+    exports com.example.medicalqnaclient.domain.application.page.pages.start;
+    exports com.example.medicalqnaclient.domain.application.page.pages.start.basic;
+
+    // log 도메인
+    // - page
+    exports com.example.medicalqnaclient.domain.log.page.event;
+    exports com.example.medicalqnaclient.domain.log.page.navigator;
+    exports com.example.medicalqnaclient.domain.log.page.pages.home;
+    exports com.example.medicalqnaclient.domain.log.page.pages.home.temp;
+    opens com.example.medicalqnaclient.domain.log.page.pages.home.temp to spring.core;
+    exports com.example.medicalqnaclient.domain.log.page.pages.start;
+    exports com.example.medicalqnaclient.domain.log.page.pages.start.basic;
+
+    // resource 도메인
+    // - page
+    exports com.example.medicalqnaclient.domain.resource.page.navigator;
+    exports com.example.medicalqnaclient.domain.resource.page.pages.start;
+    exports com.example.medicalqnaclient.domain.resource.page.pages.start.basic;
+
+    // test 도메인
+    // - page
+    exports com.example.medicalqnaclient.domain.test.page.navigator;
+    exports com.example.medicalqnaclient.domain.test.page.pages;
+    exports com.example.medicalqnaclient.domain.test.page.pages.start;
+    exports com.example.medicalqnaclient.domain.test.page.pages.start.basic;
+
+    // 루트 패키지
     exports com.example.medicalqnaclient;
     opens com.example.medicalqnaclient to spring.core;
 }
