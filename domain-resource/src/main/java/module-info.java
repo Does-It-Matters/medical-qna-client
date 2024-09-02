@@ -1,9 +1,6 @@
 module com.example.medicalqnaclient.domain.resource {
     requires javafx.controls;
-    requires javafx.fxml;
-    requires javafx.web;
 
-    requires java.net.http;
     requires com.fasterxml.jackson.databind;
     requires rsocket.core;
     requires rsocket.transport.netty;
