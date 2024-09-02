@@ -22,16 +22,7 @@ module com.example.medicalqnaclient {
 
     // spring 빈 생성하기 위해서 exports와 opens 설정하기
     requires com.example.medicalqnaclient.domain.application;
-
-    // log 도메인
-    // - page
-    exports com.example.medicalqnaclient.domain.log.page.event;
-    exports com.example.medicalqnaclient.domain.log.page.navigator;
-    exports com.example.medicalqnaclient.domain.log.page.pages.home;
-    exports com.example.medicalqnaclient.domain.log.page.pages.home.temp;
-    opens com.example.medicalqnaclient.domain.log.page.pages.home.temp to spring.core;
-    exports com.example.medicalqnaclient.domain.log.page.pages.start;
-    exports com.example.medicalqnaclient.domain.log.page.pages.start.basic;
+    requires com.example.medicalqnaclient.domain.log;
 
     // resource 도메인
     // - page
