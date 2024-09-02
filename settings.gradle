@@ -2,3 +2,4 @@ rootProject.name = "medical-qna-client"
 
 include 'client'
 include 'domain-application'
+include 'domain-log'
