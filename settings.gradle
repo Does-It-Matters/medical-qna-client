@@ -1,1 +1,9 @@
 rootProject.name = "medical-qna-client"
+
+include 'client'
+include 'domain-application'
+include 'domain-log'
+include 'domain-resource'
+include 'domain-test'
+include 'core-page'
+include 'utils'
