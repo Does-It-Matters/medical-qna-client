@@ -178,7 +178,8 @@ public class LoadTestController extends TestController {
 
     private void sendRequest(String url, String method, String jsonBody) {
         HttpRequest.Builder requestBuilder = HttpRequest.newBuilder()
-                .uri(URI.create(url));
+                .uri(URI.create(url))
+                .header("Content-Type", "application/json");
 
         switch (method) {
             case "POST":
