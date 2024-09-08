@@ -11,9 +11,14 @@ module com.example.medicalqnaclient.domain.test {
     requires ch.qos.logback.classic;
 
     requires com.example.medicalqnaclient.page.core;
+    requires java.net.http;
 
+    exports com.example.medicalqnaclient.domain.test.page.event;
     exports com.example.medicalqnaclient.domain.test.page.navigator;
+
     exports com.example.medicalqnaclient.domain.test.page.pages;
     exports com.example.medicalqnaclient.domain.test.page.pages.start;
     exports com.example.medicalqnaclient.domain.test.page.pages.start.basic;
+    exports com.example.medicalqnaclient.domain.test.page.pages.home;
+    exports com.example.medicalqnaclient.domain.test.page.pages.home.load.test;
 }
