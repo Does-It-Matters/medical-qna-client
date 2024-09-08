@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.domain.test.page.pages.home;
+package com.example.medicalqnaclient.domain.test.page.pages.home.load.test;
 
 import com.example.medicalqnaclient.domain.test.page.pages.TestController;
 import javafx.application.Platform;
