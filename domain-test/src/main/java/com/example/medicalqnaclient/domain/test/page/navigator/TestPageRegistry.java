@@ -1,5 +1,6 @@
 package com.example.medicalqnaclient.domain.test.page.navigator;
 
+import com.example.medicalqnaclient.domain.test.page.pages.home.LoadTestPage;
 import com.example.medicalqnaclient.domain.test.page.pages.start.TestStartPage;
 import com.example.medicalqnaclient.page.core.Page;
 import com.example.medicalqnaclient.page.core.PageRegistry;
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.example.medicalqnaclient.domain.test.page.navigator.TestPageType.TEST_START_PAGE;
+import static com.example.medicalqnaclient.domain.test.page.navigator.TestPageType.*;
 
 @Component
 public class TestPageRegistry implements PageRegistry {
@@ -18,9 +19,11 @@ public class TestPageRegistry implements PageRegistry {
 
     @Autowired
     public TestPageRegistry(
-            TestStartPage testStartPage
+            TestStartPage testStartPage,
+            LoadTestPage loadTestPage
     ) {
         testPages.put(TEST_START_PAGE, testStartPage);
+        testPages.put(LOAD_TEST_PAGE, loadTestPage);
     }
 
     @Override
