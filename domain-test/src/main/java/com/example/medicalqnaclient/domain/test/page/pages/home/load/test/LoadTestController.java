@@ -1,5 +1,6 @@
 package com.example.medicalqnaclient.domain.test.page.pages.home.load.test;
 
+import com.example.medicalqnaclient.domain.test.page.event.TestPublisher;
 import com.example.medicalqnaclient.domain.test.page.pages.TestController;
 import javafx.application.Platform;
 import javafx.scene.chart.LineChart;
@@ -40,6 +41,10 @@ public class LoadTestController extends TestController {
     private TextField requestsTextField;
     private Label statusLabel;
     private LineChart<Number, Number> chart;
+
+    public LoadTestController(TestPublisher publisher) {
+        super(publisher);
+    }
 
     @Override
     public Pane getLayout() {
