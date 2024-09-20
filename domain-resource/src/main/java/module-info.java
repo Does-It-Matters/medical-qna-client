@@ -18,7 +18,11 @@ module com.example.medicalqnaclient.domain.resource {
 
     requires com.example.medicalqnaclient.page.core;
 
+    exports com.example.medicalqnaclient.domain.resource.page.event;
     exports com.example.medicalqnaclient.domain.resource.page.navigator;
+
     exports com.example.medicalqnaclient.domain.resource.page.pages.start;
     exports com.example.medicalqnaclient.domain.resource.page.pages.start.basic;
+    exports com.example.medicalqnaclient.domain.resource.page.pages.home;
+    exports com.example.medicalqnaclient.domain.resource.page.pages.home.cpu;
 }
