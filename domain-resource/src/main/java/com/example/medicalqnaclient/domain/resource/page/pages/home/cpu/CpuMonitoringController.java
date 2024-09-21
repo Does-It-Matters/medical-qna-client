@@ -1,5 +1,6 @@
 package com.example.medicalqnaclient.domain.resource.page.pages.home.cpu;
 
+import com.example.medicalqnaclient.domain.resource.page.event.ResourcePublisher;
 import com.example.medicalqnaclient.domain.resource.page.pages.ResourceController;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
@@ -21,7 +22,8 @@ import java.util.List;
 @Component
 public class CpuMonitoringController extends ResourceController {
 
-    private final RSocketRequester.Builder rSocketRequesterBuilder;
+    @Autowired
+    private RSocketRequester.Builder rSocketRequesterBuilder;
 
     private RSocketRequester requester;
 
@@ -30,8 +32,8 @@ public class CpuMonitoringController extends ResourceController {
     private XYChart.Series<Number, Number> cpuSeries;
 
     @Autowired
-    public CpuMonitoringController(RSocketRequester.Builder rSocketRequesterBuilder) {
-        this.rSocketRequesterBuilder = rSocketRequesterBuilder;
+    public CpuMonitoringController(ResourcePublisher publisher) {
+        super(publisher);
     }
 
     @Override
