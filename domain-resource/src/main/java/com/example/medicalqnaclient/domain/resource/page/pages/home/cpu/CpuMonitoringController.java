@@ -104,8 +104,11 @@ public class CpuMonitoringController extends ResourceController {
         Platform.runLater(() -> {
             List<Integer> stats = cpuStatDTO.getCpuStats().get("cpu");
             if (stats != null && !stats.isEmpty()) {
-                int cpuUsage = stats.get(0); // 예시로 첫 번째 값을 CPU 사용량으로 사용
-                long currentTime = System.currentTimeMillis() / 1000; // 초 단위 시간
+                int tempUsage = (int) (stats.get(0) * Math.random()) % 100; // 예시로 첫 번째 값을 활용
+                long tempTime = (long) (100 * Math.random()) % 100; // 초 단위 시간
+
+                int cpuUsage = tempUsage;
+                long currentTime = tempTime;
 
                 cpuSeries.getData().add(new XYChart.Data<>(currentTime, cpuUsage));
 
