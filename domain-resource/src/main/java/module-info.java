@@ -25,4 +25,5 @@ module com.example.medicalqnaclient.domain.resource {
     exports com.example.medicalqnaclient.domain.resource.page.pages.start.basic;
     exports com.example.medicalqnaclient.domain.resource.page.pages.home;
     exports com.example.medicalqnaclient.domain.resource.page.pages.home.cpu;
+    opens com.example.medicalqnaclient.domain.resource.page.pages.home.cpu to spring.core;
 }
