@@ -1,8 +1,9 @@
 package com.example.medicalqnaclient.domain.test.page.pages.home.load.test;
 
-import com.example.medicalqnaclient.domain.test.mediator.Mediator;
+import com.example.medicalqnaclient.domain.test.tester.PerformanceTester;
 import com.example.medicalqnaclient.domain.test.page.event.TestPublisher;
 import com.example.medicalqnaclient.domain.test.page.pages.TestController;
+import com.example.medicalqnaclient.domain.test.tester.Results;
 import javafx.application.Platform;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
@@ -17,7 +18,7 @@ import java.util.Optional;
 
 @Component
 public class LoadTestController extends TestController {
-    private final Mediator mediator;
+    private final PerformanceTester performanceTester;
 
     private TextField urlTextField;
     private TextField jsonBodyTextField;
@@ -28,9 +29,9 @@ public class LoadTestController extends TestController {
     private final XYChart.Series<Number, Number> successSeries = new XYChart.Series<>();
     private final XYChart.Series<Number, Number> failureSeries = new XYChart.Series<>();
 
-    public LoadTestController(TestPublisher publisher, Mediator mediator) {
+    public LoadTestController(TestPublisher publisher, PerformanceTester performanceTester) {
         super(publisher);
-        this.mediator = mediator;
+        this.performanceTester = performanceTester;
     }
 
     @Override
@@ -118,11 +119,11 @@ public class LoadTestController extends TestController {
             return;
         }
 
-        mediator.startLoadTest(url, method, jsonBody, users, requests)
+        performanceTester.startLoadTest(url, method, jsonBody, users, requests)
                 .thenAccept(results -> Platform.runLater(() -> updateUIWithResults(results)));
     }
 
-    private void updateUIWithResults(Mediator.Results results) {
+    private void updateUIWithResults(Results results) {
         statusLabel.setText("Test completed in " + results.duration() + " ms");
         successSeries.getData().add(new XYChart.Data<>(results.duration() / 1000, results.successfulRequests()));
         failureSeries.getData().add(new XYChart.Data<>(results.duration() / 1000, results.failedRequests()));
