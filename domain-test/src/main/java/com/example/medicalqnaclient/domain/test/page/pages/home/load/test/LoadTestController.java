@@ -123,8 +123,8 @@ public class LoadTestController extends TestController {
     }
 
     private void updateUIWithResults(Mediator.Results results) {
-        statusLabel.setText("Test completed in " + results.getDuration() + " ms");
-        successSeries.getData().add(new XYChart.Data<>(results.getDuration() / 1000, results.getSuccessfulRequests()));
-        failureSeries.getData().add(new XYChart.Data<>(results.getDuration() / 1000, results.getFailedRequests()));
+        statusLabel.setText("Test completed in " + results.duration() + " ms");
+        successSeries.getData().add(new XYChart.Data<>(results.duration() / 1000, results.successfulRequests()));
+        failureSeries.getData().add(new XYChart.Data<>(results.duration() / 1000, results.failedRequests()));
     }
 }

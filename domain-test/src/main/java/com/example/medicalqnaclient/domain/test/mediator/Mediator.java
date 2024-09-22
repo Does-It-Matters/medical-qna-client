@@ -78,27 +78,6 @@ public class Mediator {
                 });
     }
 
-    public static class Results {
-        private final int successfulRequests;
-        private final int failedRequests;
-        private final long duration;
-
-        public Results(int successfulRequests, int failedRequests, long duration) {
-            this.successfulRequests = successfulRequests;
-            this.failedRequests = failedRequests;
-            this.duration = duration;
-        }
-
-        public int getSuccessfulRequests() {
-            return successfulRequests;
-        }
-
-        public int getFailedRequests() {
-            return failedRequests;
-        }
-
-        public long getDuration() {
-            return duration;
-        }
+    public record Results(int successfulRequests, int failedRequests, long duration) {
     }
 }
