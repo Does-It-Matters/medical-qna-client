@@ -1,4 +1,4 @@
-package com.example.medicalqnaclient.domain.test.mediator;
+package com.example.medicalqnaclient.domain.test.tester;
 
 import com.example.medicalqnaclient.domain.test.network.HttpClientAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,14 +9,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
 @Component
-public class Mediator {
+public class PerformanceTester {
     private final HttpClientAdapter httpClientAdapter;
     private final AtomicInteger successfulRequests = new AtomicInteger(0);
     private final AtomicInteger failedRequests = new AtomicInteger(0);
     private long startTime;
 
     @Autowired
-    public Mediator(HttpClientAdapter httpClientAdapter) {
+    public PerformanceTester(HttpClientAdapter httpClientAdapter) {
         this.httpClientAdapter = httpClientAdapter;
         this.startTime = System.currentTimeMillis();
     }
