@@ -1,5 +1,6 @@
 package com.example.medicalqnaclient.domain.resource.page.navigator;
 
+import com.example.medicalqnaclient.domain.resource.page.pages.home.CpuMonitoringPage;
 import com.example.medicalqnaclient.domain.resource.page.pages.start.ResourceStartPage;
 import com.example.medicalqnaclient.page.core.Page;
 import com.example.medicalqnaclient.page.core.PageRegistry;
@@ -18,9 +19,11 @@ public class ResourcePageRegistry implements PageRegistry {
 
     @Autowired
     public ResourcePageRegistry(
-            ResourceStartPage resourceStartPage
+            ResourceStartPage resourceStartPage,
+            CpuMonitoringPage cpuMonitoringPage
     ) {
         resourcePages.put(RESOURCE_START_PAGE, resourceStartPage);
+        resourcePages.put(CPU_MONITORING_PAGE, cpuMonitoringPage);
     }
 
     @Override
