@@ -54,7 +54,4 @@ public class PerformanceTester {
                     return null;
                 });
     }
-
-    public record Results(int successfulRequests, int failedRequests, long duration) {
-    }
 }

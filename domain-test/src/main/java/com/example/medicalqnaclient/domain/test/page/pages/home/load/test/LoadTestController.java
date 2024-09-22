@@ -3,6 +3,7 @@ package com.example.medicalqnaclient.domain.test.page.pages.home.load.test;
 import com.example.medicalqnaclient.domain.test.tester.PerformanceTester;
 import com.example.medicalqnaclient.domain.test.page.event.TestPublisher;
 import com.example.medicalqnaclient.domain.test.page.pages.TestController;
+import com.example.medicalqnaclient.domain.test.tester.Results;
 import javafx.application.Platform;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
@@ -122,7 +123,7 @@ public class LoadTestController extends TestController {
                 .thenAccept(results -> Platform.runLater(() -> updateUIWithResults(results)));
     }
 
-    private void updateUIWithResults(PerformanceTester.Results results) {
+    private void updateUIWithResults(Results results) {
         statusLabel.setText("Test completed in " + results.duration() + " ms");
         successSeries.getData().add(new XYChart.Data<>(results.duration() / 1000, results.successfulRequests()));
         failureSeries.getData().add(new XYChart.Data<>(results.duration() / 1000, results.failedRequests()));
